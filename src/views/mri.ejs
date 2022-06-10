@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+
+    <style>
+        body {
+            font-family: poppins;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="" style="padding: 10px 10px;border: 1px solid #a3bdf5;">
+            <table style="color: #000; width: 100%;">
+                <tr>
+                    <td width="33%">
+                        <img src="../public/img/logo.png" class="img-fluid" width="130px" />
+                    </td>
+                    <td width="33%" style="text-align: center;">
+                        <h4 style="font-weight: 700; font-size: 22px;font-family: poppins;">Dr. Rajiv Datoo MD, MBBS,
+                            FACP.</h4>
+                        <p style="font-weight: 500; font-size:20px; margin: 0;font-family: poppins;">12345 Dehlki Road.
+                            Punjab</p>
+                        <p style="font-weight: 500;font-size:20px;font-family: poppins;">Fax:+1-234-786-9876</p>
+                    </td>
+                    <td width="33%" style="text-align: right;">
+                        <h3
+                            style="font-weight: 600;color: red;padding:34% 0 0 0; margin: 0;font-family: poppins;font-size: 22px;">
+                            CT/MRI Requisition Form</h3>
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+
+
+        <table width="100%">
+            <tr>
+                <td style="background: #a3bdf5;padding: 7px 25px;font-weight: 700;color: #000;font-family: poppins;">
+                    PATIENT INFORMATION
+                </td>
+            </tr>
+        </table>
+        <div style="margin: 0 auto; background-color: #eaf3fb;padding: 10px 14px;">
+            <table style="color: #000; width: 100%;">
+                <tr>
+                    <td>
+                        <div style="display: flex;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Name:</span>
+                            <input placeholder="" class="input100" type="text" name="name"
+                                style="background: transparent;width: 100%;border-width: 0 0 2px;border-color: #fff;">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="display: flex;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Address:</span><br>
+                            <input placeholder="" class="input101" type="text" name="address"
+                                style="background: transparent;width: 100%;border-width: 0 0 2px;border-color: #fff;">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <div style="display: flex;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Phone:</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: #fff;">
+
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: flex;">
+                            <span style="font-size: 14px;color: #444444;font-family: poppins; min-width: 160px;">Health
+                                Card number :</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: #fff;">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <div style="display: flex;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins;min-width: 58px;padding: 8px 0 0 0;">D.O.B:</span>
+                            <input placeholder="DD/MM/YYYY" class="input100" type="text" name="dob"
+                                style="background: transparent;width: 100%;border-width: 0 0 2px;border-color:#fff; padding: 6px 0;font-size: 14px;">
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Age:</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: transparent;border-width: 0 0 2px;border-color: #fff;">
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: flex;align-items: center;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Gender:</span>
+                            <div class="gender" style="padding: 0px 15px;">
+                                <input type="radio" id="male1" name="gender" value="male">
+                                <label for="male1" style="margin: 0; font-size: 14px;">Male</label>
+                            </div>
+                            <div class="gender" style="padding: 0px 30px 0 15px;">
+                                <input type="radio" id="female1" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                                <label for="female1" style="margin: 0; font-size: 14px;">Female</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span
+                            style="font-size: 14px;color: #444444;font-family: poppins;min-width: 58px;padding: 8px 0 0 0;">Weight:</span>
+                        <input placeholder="" class="input100" type="text" name="phone"
+                            style="background: transparent;border-width: 0 0 2px;border-color: #fff;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="display: flex;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins;min-width: 117px;padding: 8px 0 0 0;">Date
+                                of LMNP</span>
+                            <input placeholder="DD/MM/YYYY" class="input100" type="text" name="dob"
+                                style="background: transparent;width: 100%;border-width: 0 0 2px;border-color:#fff; padding: 6px 0;font-size: 14px;">
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: flex;align-items: center;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Pregnant:</span>
+                            <div class="gender" style="padding: 0px 15px;">
+                                <input type="radio" id="male2" name="gender" value="male">
+                                <label for="male2" style="margin: 0;font-family: poppins;font-size: 14px;">Yes</label>
+                            </div>
+                            <div class="gender" style="padding: 0px 30px 0 15px;">
+                                <input type="radio" id="female2" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                                <label for="female2" style="margin: 0;font-family: poppins;font-size: 14px;">No</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <h5 style="padding: 10px 0px;font-family: poppins;font-size: 17px;">Significant Clinical History
+                            / Clinical questions to be answered</h5>
+                    </td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td width="33.33%">
+                        <span style="font-size: 16px;color: #444444;font-family: poppins;min-width: 58px;">Creating
+                            Label:</span>
+                        <input placeholder="" class="input100" type="text" name="phone"
+                            style="background: transparent;border-width: 0 0 2px;border-color: #fff;">
+                    </td>
+                    <td width="33.33%">
+                        <span style="font-size: 16px;color: #444444;font-family: poppins; min-width: 58px;">Date of
+                            Collection:</span>
+                        <input placeholder="" class="input100" type="text" name="phone"
+                            style="background: transparent;border-width: 0 0 2px;border-color: #fff;">
+                    </td>
+                    <td width="33.33%">
+                        <div style="display: flex;align-items: center;">
+                            <span style="font-size: 16px;color: #444444;font-family: poppins; min-width: 58px;">Contarst
+                                Allergies?:</span>
+                            <div class="gender" style="padding: 0px 15px;">
+                                <input type="radio" id="male3" name="gender" value="male">
+                                <label for="male3" style="margin: 0;font-family: poppins;font-size: 14px;">Yes</label>
+                            </div>
+                            <div class="gender" style="padding: 0px 30px 0 15px;">
+                                <input type="radio" id="female3" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                                <label for="female3" style="margin: 0;font-family: poppins;font-size: 14px;">No</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table width="67%" style="margin: 30px 0;">
+                <tr style="background: #FFC107;">
+                    <td>
+                        <div class="gender" style="padding: 0px 15px; display: flex;align-items: center;">
+                            <input type="radio" id="male" name="gender" value="male" style="margin-right: 10px;">
+                            <label for="male"
+                                style="margin: 0;font-size: 25px;font-weight: 700;color: #fff;font-family: poppins;"> CT
+                                -scan</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="gender" style="padding: 0px 30px 0 15px; display: flex;align-items: center;">
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:10px;">
+                            <label for="female"
+                                style="margin: 0;font-size: 25px;font-weight: 700;color: #fff;font-family: poppins;">
+                                MRI</label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div style="display: flex;">
+                <table width="33.33%" style="margin:0 15px;">
+                    <tr>
+                        <td>
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">Brain/Head</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">Breast</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">Neck</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">Chest</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">TMJ</label>
+                        </td>
+                        <td style="display: flex;align-items: center;">
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female"
+                                style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-left: 4px;">Abdomen</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">C-Spine</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">Pelvis</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">T-Spine</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">Prostate</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">L-Spine</label>
+                        </td>
+                        <td style="display: flex;align-items: center;">
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female"
+                                style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-left: 4px;">Extremities</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">CT-Angiograms</label>
+                            <input placeholder="" class="input100" type="text" name="name"
+                                style="background: transparent;;border-width: 0 0 2px;border-color: #fff;">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">Other</label>
+                            <textarea placeholder="" class="text-area" type="text" name="name"
+                                style="width: 100%;height: 200px;background-color: #fff;border:none;"></textarea>
+
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="33.33%" style="margin:0 15px;">
+                    <tr>
+                        <td>
+                            <h5 style="padding: 10px 0px;font-family: poppins;font-size: 17px;padding-bottom: 0;">Some
+                                of these may be contraindication to having an MRI/CT Scan.</h5>
+                            <p style="padding: 0px 0px;font-family: poppins;font-size: 17px;">Does the patient have any
+                                of the following?</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="font-size: 17px;margin: 0;  ">
+                                <span
+                                    style="padding: 10px 0px;font-family: poppins;font-size: 14px;padding-bottom: 0;"><b>Yes</b></span>
+                                <span
+                                    style="padding: 10px 0px;font-family: poppins;font-size: 14px;padding-bottom: 0;"><b>No</b></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span
+                                style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Pacemaker</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Ear or
+                                Eye Implant</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">An
+                                Intracranial Anoursym Clip</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Any
+                                type of heart surgery</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Any
+                                type of surgery within in past month</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Any
+                                type of stent or mechanial or electrial implant</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Has the
+                                patient ever had an eye injury with metal
+                                fragments</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Has the
+                                metal fragment been removed</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Knee
+                                Surgery or Lumbar spine surgery</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span
+                                style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Claustophobic</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Can lie
+                                still for an hour</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span
+                                style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Ambulatory</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Renal
+                                insuffiecieny</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span
+                                style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Dehydration</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span
+                                style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Multiple
+                                Myeloma</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span
+                                style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Solitary
+                                Kidney</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span
+                                style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Vascular
+                                disease</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Other
+                                Risk factors</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex;">
+                            <div class="gender" style="padding: 3px 5px;">
+                                <input type="radio" id="male" name="gender" value="male">
+                            </div>
+                            <div class="gender" style="padding:3px 10px;">
+                                <input type="radio" id="female" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                            </div>
+                            <span
+                                style="font-size: 15px;font-family: poppins;margin-bottom: 0;padding-top:3px;">Diabetes</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="display: flex;padding: 0 0 0 56px;">
+                                <span style="font-size: 14px;font-family: poppins;">
+                                    <li style="list-style: none;">if Yes,is patient taking metforimin</li>
+                                </span>
+                                <div class="gender" style="padding: 3px 5px;display: flex;">
+                                    <input type="radio" id="male" name="gender" value="male">
+                                    <label for="male2"
+                                        style="margin: 0; font-weight: 700;font-family: poppins;font-size: 14px;padding-left: 3px;    margin-top: -3px;">Yes</label>
+                                </div>
+                                <div class="gender" style="padding:3px 10px;display: flex;">
+                                    <input type="radio" id="female" name="gender" value="female"
+                                        style="padding-left: 10px;">
+                                    <label for="male2"
+                                        style="margin: 0; font-weight: 700;font-family: poppins;font-size: 14px;padding-left: 3px;    margin-top: -3px;">No</label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="display: flex;padding: 0 0 0 56px;">
+                                <span style="font-size: 14px;font-family: poppins;">
+                                    <li style="list-style: none;">if yes please confirm if the patient can withhold
+                                        metformin fir 48hours post study. Confirm</li>
+                                </span>
+                                <div class="gender" style="padding: 3px 5px;display: flex;">
+                                    <input type="radio" id="male" name="gender" value="male">
+                                    <label for="male2"
+                                        style="margin: 0;font-weight: 700; font-family: poppins;font-size: 14px;padding-left: 3px;    margin-top: -3px;">Yes</label>
+                                </div>
+                                <div class="gender" style="padding:3px 10px;display: flex;">
+                                    <input type="radio" id="female" name="gender" value="female"
+                                        style="padding-left: 10px;">
+                                    <label for="male2"
+                                        style="margin: 0;font-weight: 700; font-family: poppins;font-size: 14px;padding-left: 3px;    margin-top: -3px;">No</label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table width="33.33%" style="margin:0 15px;">
+                    <tr>
+                        <td>
+                            <p
+                                style="padding: 10px 0px;font-family: poppins;font-size: 17px;padding-bottom: 0;margin-bottom: 0;">
+                                Prevoius Revalant Exams</p>
+                            <h5
+                                style="padding:0px;font-family: poppins;font-size: 17px;padding-bottom: 0;margin-bottom: 5px;">
+                                Please attach a copy</h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="Checkbox" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">X Ray, Flaura</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="Checkbox" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">Ultrasound</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="Checkbox" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">Nuclear Medicine</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="Checkbox" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">X Ray, Flaura</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="Checkbox" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">CT</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="Checkbox" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">MRI</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="Checkbox" id="female" name="gender" value="female" style="margin-right:2px;">
+                            <label for="female" style="font-size: 15px;font-family: poppins;">Other</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <table width="100%" style="padding: 18px;">
+                <tbody>
+                    <tr>
+                        <td style="padding: 18px;padding-bottom: 0;">
+                            <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Dr. ABCD</h5>
+                            <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Adresss: 1234 Back street
+                            </h5>
+                            <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Signature:</h5>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0 18px;">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td>
+                                        <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Copy to:</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50">
+                                        <div style="margin-bottom: 10px;display: flex;">
+                                            <span
+                                                style="font-size: 13px;color: #444444;font-family: poppins; min-width: 53px;">Name</span>
+                                            <input placeholder="" class="input100" type="text" name="name"
+                                                style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                        </div>
+                                        <div style="margin-bottom: 10px;display: flex;">
+                                            <span
+                                                style="font-size: 13px;color: #444444;font-family: poppins; min-width: 52px;">Email</span>
+                                            <input placeholder="" class="input100" type="text" name="name"
+                                                style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                        </div>
+                                        <div style="margin-bottom: 10px;display: flex;">
+                                            <span
+                                                style="font-size: 13px;color: #444444;font-family: poppins; min-width: 34px;">Fax</span>
+                                            <input placeholder="" class="input100" type="text" name="name"
+                                                style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                        </div>
+                                        <div style="margin-bottom: 10px;display: flex;">
+                                            <span
+                                                style="font-size: 13px;color: #444444;font-family: poppins; min-width: 92px;">License
+                                                No.</span>
+                                            <input placeholder="" class="input100" type="text" name="name"
+                                                style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                        </div>
+                                    </td>
+                                    <td align="right" style="vertical-align: top;" width="50">
+                                           <input placeholder="" class="input100" type="text" name="name"
+                                                style="background: transparent;width: 200px;border-width: 0 0 1px;border-color: lightgrey;">
+                                        <h5 style="font-weight: 700;">Date</h5>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

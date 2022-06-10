@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <style>
+        body {
+            font-family: poppins;
+        }
+
+        #exampleCheck1 {
+            width: 22px;
+            height: 22px;
+        }
+    </style>
+</head>
+
+<body style="width: 1000px; max-width: 1000px;">
+    <section class="header" style="padding: 0px 10px 0 10px;">
+    <div class="container" style="padding: 10px 10px;border: 1px solid #a3bdf5;">
+        <table style="color: #000; width: 100%;">
+            <tr>
+                <td style="width: 50%; float: left;">
+                    <img src="img/general-logo.png" class="img-fluid" width="" />
+                </td>
+                <!-- <td width="33%" style="text-align: center;">
+                          <h4 style="font-weight: 700; font-size: 22px;font-family: poppins;">Dr. Rajiv Datoo MD, MBBS, FACP.</h4>
+                          <p style="font-weight: 500; font-size:20px; margin: 0;font-family: poppins;">12345 Dehlki Road. Punjab</p>
+                          <p style="font-weight: 500;font-size:20px;font-family: poppins;">Fax:+1-234-786-9876</p>
+                        </td> -->
+                <td style="width: 50%;float: left;border: 2px solid lightgrey; padding: 7px;">
+                    <table style="width: 100%;">
+                        <tr>
+                            <span
+                                style="color: black;margin-bottom: 0;font-size: 16px;font-weight: 600;font-family:poppins;">For
+                                laboratory use only</span>
+                        </tr>
+                        <tr>
+                            <td width="50%" style="float: left;">
+                                <div style="display: flex; padding: 5px 0;">
+                                    <span
+                                        style="font-size: 14px;color: #444444;font-family: poppins;padding-right: 7px;">Date
+                                        received<br> (yyyy/mm/dd): </span>
+                                    <input placeholder="" class="input100" type="text" name="phone"
+                                        style="background: #a3bdf545;width: 100%;border:0;">
+                                </div>
+                            </td>
+                            <td width="50%" style="float: left;">
+                                <div style="text-align:right;padding: 5px 0;">
+                                    <span
+                                        style="font-size: 14px;color: #444444;font-family: poppins;padding-right: 7px;">PHOL
+                                        No.</span>
+                                    <input placeholder="" class="input100" type="text" name="phone"
+                                        style="background: #a3bdf545;border:0;">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</section>
+<section>
+    <div class="container" style="padding: 0;">
+        <div style="text-align: center;">
+            <h4 style="background-color: #a3bdf5;color: #000;padding: 5px 0;font-family:poppins;">General Test
+                Requistion</h4>
+            <p style="font-size: 18px;font-weight: 600;font-family:poppins;margin-bottom: 0;padding: 5px;">ALL
+                Sections of this form must be completed at every visit</p>
+        </div>
+        <!-- table start -->
+        <div class="table-main-area"
+            style="display: -webkit-box; /* wkhtmltopdf uses this one */
+            display: flex;background-color: #fff; border:1px solid #fff5f5;overflow: hidden;">
+            <div style="width: 50%;border: 1px solid grey;padding: 5px;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            <h5
+                                style="padding: 7px 0 7px 13px;color: black;background: #d3d3d38c;margin-bottom: 0;font-size: 16px;font-weight: 600;font-family:poppins;">
+                                1. Submitter</h5>
+                            <div style="background-color: #d3d3d38c;padding: 15px;">
+                                <div style="background-color: #a3bdf545;padding: 10px;border:1px solid grey;">
+                                    <div style="margin-bottom: 10px;display: flex;">
+                                        <span
+                                            style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Name:</span>
+                                        <!-- <input placeholder="" class="input100" type="text" name="name"
+                                            style="background: transparent;width: 100%;border-bottom: 1px solid #d3d3d38c;border-width: 0 0 1px 0px;"> -->
+                                            <p class="input100"
+                                            style="background: transparent;width: 100%;border-bottom: 1px solid #d3d3d38c;border-width: 0 0 1px 0px;"><%= name %></p>
+                                    </div>
+                                    <div style="margin-bottom: 10px;display: flex;">
+                                        <span
+                                            style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Address:</span><br>
+                                        <!-- <input placeholder="" class="input100" type="text" name="name"
+                                            style="background: transparent;width: 100%;border-bottom: 1px solid #d3d3d38c;border-width: 0 0 1px 0px;"> -->
+                                            <p class="input100"
+                                            style="background: transparent;width: 100%;border-bottom: 1px solid #d3d3d38c;border-width: 0 0 1px 0px;"><%= address %></p>
+                                    </div>
+                                    <div style="margin-bottom: 10px;display: flex;">
+                                        <span
+                                            style="font-size: 14px;color: #444444;font-family: poppins;max-width: 68px;">City
+                                            & Province :</span>
+                                        <!-- <input placeholder="" class="input100" type="text" name="name"
+                                            style="background: transparent;width: 100%;border-bottom: 1px solid #d3d3d38c;border-width: 0 0 1px 0px;"> -->
+                                            <p placeholder="" class="input100" type="text" name="name"
+                                            style="background: transparent;width: 100%;border-bottom: 1px solid #d3d3d38c;border-width: 0 0 1px 0px;"><%= city %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" style="float: left;">
+                            <div style="display: flex;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Postal
+                                    Code:</span>
+                                <p class="input100" 
+                                style="background: #a3bdf545;width: 100%;border:0;"><%= doctor_postalcode %></p>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div style="display: flex;text-align: right;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;padding-right: 5px;">Courier
+                                    Code:</span>
+                                <p placeholder="" class="input100" type="text" name="phone"
+                                    style="background: #a3bdf545;width: 100%;border:0;"><%= doctor_courier %></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <!--Submitter AREA START  -->
+                    <tr>
+                        <td>
+                    <tr style="background-color: #fff;">
+                        <td>
+                            <h6 style="font-size: 14px;">Clinician initial / Surname and OHIP / CPSO No.:</h6>
+                        </td>
+                    </tr>
+                    <tr style="background-color: #fff;">
+                        <td width="50%" style="float: left;">
+                            <div style="display: flex;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; padding-right: 5px;">Telephone:</span>
+                                <!-- <input placeholder="" class="input100" type="text" name="phone"
+                                    style="background: #a3bdf545;width: 100%;border:0;"> -->
+                                    <p class="input100"
+                                    style="background: #a3bdf545;width: 100%;border:0;"><%= telephone %></p>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div style="display: flex;text-align: right;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;padding-right: 5px;">Fax:</span>
+                                <!-- <input placeholder="" class="input100" type="text" name="phone"
+                                    style="background: #a3bdf545;width: 100%;border:0;"> -->
+                                    <p class="input100" 
+                                    style="background: #a3bdf545;width: 100%;border:0;"><%= fax %></p>
+                            </div>
+                        </td>
+                    </tr>
+                    </td>
+                    </tr>
+
+
+                    <!-- SUMIT AREA END -->
+
+                    <!-- cc doctor AREA START -->
+
+                    <tr>
+                        <td>
+                            <h5
+                                style="padding: 7px 0 7px 13px;color: black;background: #d3d3d38c;margin-bottom: 0;font-size: 13px;font-weight: 600;font-family:poppins;">
+                                cc Doctor Qualified Health Care Provider Information</h5>
+                        </td>
+                    </tr>
+                    <td width="50%" style="float: left;">
+                        <div style="display: flex; padding: 5px 0;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins;padding-right: 7px;">Name:</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: #a3bdf545;width: 100%;border:0;">
+                        </div>
+                    </td>
+                    <td width="50%" style="float: left;">
+                        <div style="padding: 5px 0;text-align: right;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; padding-right: 7px;">Tel:</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: #a3bdf545;border:0;">
+                        </div>
+                    </td>
+                    <td width="50%" style="float: left;">
+                        <div style="display: flex; padding: 5px 0;">
+                            <span style="font-size: 14px;color: #444444;font-family: poppins; padding-right: 7px;">Lab
+                                Name:</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: #a3bdf545;width: 100%;border:0;">
+                        </div>
+                    </td>
+                    <td width="50%" style="float: left;text-align: right;">
+                        <div style=" padding: 5px 0;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; padding-right: 7px;">Fax:</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: #a3bdf545;border:0;">
+                        </div>
+                    </td>
+                    <td width="100%" style="float: left;">
+                        <div style="display: flex; padding: 5px 0;">
+                            <span style="font-size: 14px;color: #444444;font-family: poppins; min-width: 90px;">CPSO
+                                No.:</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: #a3bdf545;width: 100%;border:0;">
+                        </div>
+                    </td>
+                    <td width="50%" style="float: left;">
+                        <div style="display: flex; padding: 5px 0;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; min-width: 70px;">Address:</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: #a3bdf545;width: 100%;border:0;">
+                        </div>
+                    </td>
+                    <td width="50%" style="float: left;text-align: right;">
+                        <div style=" padding: 5px 0;">
+                            <span style="font-size: 14px;color: #444444;font-family: poppins;padding-right: 7px;">Postal
+                                Code:</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: #a3bdf545;border:0;">
+                        </div>
+                    </td>
+
+                    <!-- cc doctor AREA end -->
+                    <!-- tes requisten arer start-->
+
+                    <tr>
+                        <td>
+                            <h5
+                                style="padding: 7px 0 7px 13px;color: black;background: #d3d3d38c;margin-bottom: 0;font-size: 16px;font-weight: 600;font-family:poppins;">
+                                3. Test (s) Requested <small style="font-family: poppins;">(Please see descriptions
+                                    on reverse)</small></h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h6 style="font-size: 14px;font-family: poppins;margin-bottom: 0;">Test: Enter test
+                                description below:</h6>
+                        </td>
+                    </tr>
+                    <td width="100%" style="float: left;">
+                        <div style="display: flex; padding: 5px 0;">
+                            <input placeholder=" Comment" class="input100" type="text" name="phone"
+                                style="background: #a3bdf545;width: 100%;border:0;">
+                        </div>
+                    </td>
+
+                    <!-- tes requisten arer end-->
+
+                    <!-- speciman area start-->
+
+                    <tr>
+                        <td>
+                            <h5
+                                style="padding: 7px 0 7px 13px;color: black;background: #d3d3d38c;margin-bottom: 0;font-size: 16px;font-weight: 600;font-family:poppins;">
+                                4. Speciman Type and Site</h5>
+                        </td>
+                    </tr>
+                    <tr style="border:1px solid black; background-color:#fff;padding: 5px;">
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Blood
+                                    / serum</label>
+                            </div>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Faeces</label>
+                            </div>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Nasopharyngeal</label>
+                            </div>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Sputum</label>
+                            </div>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Urine</label>
+                            </div>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Vaginal
+                                    Smear</label>
+                            </div>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Urethral</label>
+                            </div>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Cervix</label>
+                            </div>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Bal</label>
+                            </div>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Other
+                                    (Specify):</label>
+                            </div>
+                        </td>
+
+                        <!--speciman area end-->
+
+                        <!-- Reason for test start-->
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5
+                                style="padding: 7px 0 7px 13px;color: black;background: #d3d3d38c;margin-bottom: 0;font-size: 16px;font-weight: 600;font-family:poppins;">
+                                5. Reason For Test</h5>
+                        </td>
+                    </tr>
+                    <td width="33.33%" style="float: left;">
+                        <div class="gender" style="padding: 0 0 0 0px;display:flex;">
+                            <input type="checkbox" id="exampleCheck1">
+                            <label class="" for="exampleCheck1"
+                                style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Diagnostic</label>
+                        </div>
+                    </td>
+                    <td width="33.33%" style="float: left;">
+                        <div class="gender" style="padding: 0 0 0 0px;display:flex;">
+                            <input type="checkbox" id="exampleCheck1">
+                            <label class="" for="exampleCheck1"
+                                style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Post-mortem</label>
+                        </div>
+                    </td>
+                    <td width="33.33%" style="float: left;">
+                        <div style="display: flex; padding: 0 0 0 0px;display:flex;">
+                            <span style="font-size: 14px;color: #444444;font-family: poppins; min-width: 90px;">Date
+                                Collected:</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: #a3bdf545;width: 100%;border:0;">
+                        </div>
+                    </td>
+                    <td width="33.33%" style="float: left;">
+                        <div class="gender" style="padding: 0 0 0 0px;display:flex;">
+                            <input type="checkbox" id="exampleCheck1">
+                            <label class="" for="exampleCheck1"
+                                style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Needle
+                                Stick</label>
+                        </div>
+                    </td>
+                    <td width="33.33%" style="float: left;">
+                        <div class="gender" style="padding: 0 0 0 0px;display:flex;">
+                            <input type="checkbox" id="exampleCheck1">
+                            <label class="" for="exampleCheck1"
+                                style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Immune
+                                Status</label>
+                        </div>
+                    </td>
+                    <td width="33.33%" style="float: left;">
+                        <div class="gender" style="padding: 0 0 0 0px;display:flex;">
+                            <input type="checkbox" id="exampleCheck1">
+                            <label class="" for="exampleCheck1"
+                                style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Prenatal</label>
+                        </div>
+                    </td>
+                    <td width="33.33%" style="float: left;">
+                        <div class="gender" style="padding: 0 0 0 0px;display:flex;">
+                            <input type="checkbox" id="exampleCheck1">
+                            <label class="" for="exampleCheck1"
+                                style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Follow-up</label>
+                        </div>
+                    </td>
+
+                    <td width="33.33%" style="float: left;">
+                        <div class="gender" style="padding: 0 0 0 0px;display:flex;">
+                            <input type="checkbox" id="exampleCheck1">
+                            <label class="" for="exampleCheck1"
+                                style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Bal</label>
+                        </div>
+                    </td>
+
+                    <td width="33.33%" style="float: left;">
+                        <div class="gender" style="padding: 0 0 0 0px;display:flex;">
+                            <input type="checkbox" id="exampleCheck1">
+                            <label class="" for="exampleCheck1"
+                                style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;word-break: break-all;">Immunocompromised</label>
+                        </div>
+                    </td>
+                    <td width="33.33%" style="float: left;">
+                        <div class="gender" style="padding: 0 0 0 0px;display:flex;">
+                            <input type="checkbox" id="exampleCheck1">
+                            <label class="" for="exampleCheck1"
+                                style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Chronic
+                                Condition</label>
+                        </div>
+                    </td>
+                    <td width="33.33%" style="float: left;">
+                        <div class="gender" style="padding: 0 0 0 0px;display:flex;">
+                            <input type="checkbox" id="exampleCheck1">
+                            <label class="" for="exampleCheck1"
+                                style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Other
+                                (Specify):</label>
+                        </div>
+                    </td>
+                    <td width="33.33%" style="float: left;">
+                        <div style="display: flex; padding: 0 0 0 0px;display:flex;">
+                            <span style="font-size: 14px;color: #444444;font-family: poppins; min-width: 90px;">Onset
+                                Date:</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: #a3bdf545;width: 100%;border:0;">
+                        </div>
+                    </td>
+
+                    <!--speciman area end-->
+                    <tr>
+                        <td width="100%" style="float: left;">
+                            <p style="padding: 18px  0 0 0;font-family: poppins;font-size: 14px;"><strong>For HIV,
+                                    please use the HIV serology form.</strong>
+                                - For referred cultures, please use the reference bacteriology form. To re-order
+                                this test requisition contact your local Public Health Laboratory and ask for form
+                                number F-SD-SCG-1000. Current version of Public Health Laboratory requisitions are
+                                available at <span><a href="#">www.publichealthontario.ca/requisitions.</a></span>
+                            <p>
+                            <p style="padding: 18px  0 0 0;font-family: poppins;font-size: 14px;">The personal
+                                health information is collected under the authority of the Personal Health
+                                Information Protection Act, s.36 (1)(c)(iii) for the purpose of clinical laboratory
+                                testing. If</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- table no. two start -->
+            <div style="width: 50%;border: 1px solid grey;padding: 5px;">
+                <table style="width: 100%;">
+
+                    <tr>
+                        <td>
+                            <h5
+                                style="padding: 7px 0 7px 13px;color: black;background: #d3d3d38c;margin-bottom: 0;font-size: 16px;font-weight: 600;font-family:poppins;">
+                                2. Patient information</h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100%" style="float: left;padding: 13px 0;">
+                            <div style="display: flex;align-items: center;">
+                                <div>
+                                    <span
+                                        style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Health
+                                        Card No.:</span>
+                                    <!-- <input placeholder="" class="input100" type="text" name="phone"
+                                        style="background: #a3bdf545;border:0;"> -->
+                                        <p  class="input100"
+                                        style="background: #a3bdf545;border:0;"><%= health_card_no %></p>
+                                </div>
+                                <div class="gender" style="padding: 0px 5px;">
+                                    <label for="male" style="margin: 0;">Gender:</label>
+                                </div>
+                                <div class="gender" style="padding: 0px 5px;display: flex;align-items: center;">
+                                    <%if (gender == 'male' || gender == 'Male' || gender == 'MALE') { %>
+                                        <input type="radio" id="male" name="gender" value="male"
+                                            style="width: 20px;height: 20px;" checked>
+                                        <% }else{ %>
+                                            <input type="radio" id="male" name="gender" value="male"
+                                            style="width: 20px;height: 20px;">
+                                            <% } %>
+                                    <label for="male"
+                                        style="margin: 0;padding-left: 4px;font-family:poppins;">Male</label>
+                                </div>
+                                <div class="gender" style="padding: 0px 5px;display: flex;align-items: center;">
+                                    <%if (gender == 'female' || gender == 'Feale' || gender == 'FEMALE') { %>
+                                        <input type="radio" id="female" name="gender" value="female"
+                                            style="width: 20px;height: 20px;" checked>
+                                        <% }else{ %>
+                                            <input type="radio" id="female" name="gender" value="female"
+                                            style="width: 20px;height: 20px;">
+                                            <% } %>
+                                    <label for="female"
+                                        style="margin: 0;padding-left: 4px;font-family:poppins;">Female</label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" style="float: left;padding: 13px 0 0 0;">
+                            <div style="display: flex; padding: 5px 0;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 100px;">Date
+                                    of Birth:</span>
+                                    <span class="input100"
+                                    style="background: #a3bdf545;border:0;"><%= dob %></span>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;padding: 13px 0 0 0;">
+                            <div style="display: flex; padding: 5px 0;">
+                                <span style="font-size: 14px;color: #444444;font-family: poppins;">Medical Record
+                                    No.:</span>
+                                <input placeholder="" class="input100" type="text" name="phone"
+                                    style="background: #a3bdf545;border:0;">
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;padding: 13px 0 0 0;">
+                            <div style="display: flex; padding: 5px 0;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 100px;">First
+                                    Name:</span>
+                                <span class="input100"
+                                    style="background: #a3bdf545;width: 100%;border:0;"><%= patient_firstname %></span>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;padding: 13px 0 0 0;">
+                            <div style=" padding: 5px 0;text-align: right;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 100px;">Last
+                                    Name:</span>
+                                <span class="input100" 
+                                    style="background: #a3bdf545;border:0;"><%= patient_lastname %></span>
+                            </div>
+                        </td>
+                        <td width="100%" style="float: left;padding: 13px 0 0 0;">
+                            <div style="display: flex; padding: 5px 0;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 100px;">Address:</span>
+                                <span class="input100" 
+                                    style="background: #a3bdf545;width: 100%;border:0;"><%= patient_address %></span>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;padding: 13px 0 0 0;">
+                            <div style="display: flex; padding: 5px 0;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 100px;">Postal
+                                    Code:</span>
+                                <input placeholder="" class="input100" type="text" name="phone"
+                                    style="background: #a3bdf545;width: 100%;border:0;">
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;padding: 13px 0 0 0;">
+                            <div style="text-align:right;padding: 5px 0;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 100px;">Phone
+                                    No.:</span>
+                                <span class="input100" 
+                                    style="background: #a3bdf545;border:0;"><%= patient_phone %></span>
+                            </div>
+                        </td>
+                        <td width="100%" style="float: left;padding: 13px 0 0 0;">
+                            <div style="display: flex; padding: 5px 0;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 130px;">Submitter
+                                    Lab No.:</span>
+                                <input placeholder="" class="input100" type="text" name="phone"
+                                    style="background: #a3bdf545;width: 100%;border:0;">
+                            </div>
+                        </td>
+                        <td width="100%" style="float: left;padding: 13px 0 0 0;">
+                            <div style="display: flex; padding: 5px 0;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 230px;">Public
+                                    Heath Unit Outbreak No.:</span>
+                                <input placeholder="" class="input100" type="text" name="phone"
+                                    style="background: #a3bdf545;width: 100%;border:0;">
+                            </div>
+                        </td>
+
+
+                    </tr>
+                    <!--Patient information end  -->
+
+                    <!-- public health area start -->
+
+
+                    <tr>
+                        <td>
+                            <h5
+                                style="padding: 7px 0 7px 13px;color: black;background: #d3d3d38c;margin-bottom: 0;font-size: 16px;font-weight: 600;font-family:poppins;">
+                                Public Health Investigator Information</h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100%" style="float: left;padding: 13px 0 0 0;">
+                            <div style="display: flex; padding: 5px 0;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 90px;">Name:</span>
+                                <input placeholder="" class="input100" type="text" name="phone"
+                                    style="background: #a3bdf545;width: 100%;border:0;">
+                            </div>
+                        </td>
+                        <td width="100%" style="float: left;padding: 13px 0 0 0;">
+                            <div style="display: flex; padding: 5px 0;">
+                                <span style="font-size: 14px;color: #444444;font-family: poppins; min-width: 90px;">Name
+                                    Unit:</span>
+                                <input placeholder="" class="input100" type="text" name="phone"
+                                    style="background: #a3bdf545;width: 100%;border:0;">
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;padding: 13px 0 0 0;">
+                            <div style="display: flex; padding: 5px 0;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 90px;">Tel:</span>
+                                <input placeholder="" class="input100" type="text" name="phone"
+                                    style="background: #a3bdf545;width: 100%;border:0;">
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;padding: 13px 0 0 0;">
+                            <div style="text-align:right;padding: 5px 0;">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 90px;">Fax:</span>
+                                <input placeholder="" class="input100" type="text" name="phone"
+                                    style="background: #a3bdf545;border:0;">
+                            </div>
+                        </td>
+
+                    </tr>
+                    <!-- Public heath area end -->
+
+                    <!-- Hepatitis area start -->
+
+                    <tr>
+                        <td>
+                            <h5
+                                style="padding: 7px 0 7px 13px;color: black;background: #d3d3d38c;margin-bottom: 0;font-size: 16px;font-weight: 600;font-family:poppins;">
+                                Hepatitis Serology</h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100%" style="float: left;">
+                            <p
+                                style="padding: 10px 0 0 0; margin: 0;font-size: 16px; font-weight: 700;font-family: poppins;">
+                                Reason For Test (Check Only One Box): </p>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Immune
+                                    Status</label>
+                            </div>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Acute
+                                    Infection</label>
+                            </div>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Chronic
+                                    Infection</label>
+                            </div>
+                        </td>
+                        <td width="100%" style="float: left;">
+                            <p
+                                style="padding: 20px 0 0 0; margin: 0;font-size: 16px; font-weight: 700;font-family: poppins;">
+                                Indicate Specific Viruses (Check All That Apply):</p>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Hepatitis
+                                    A</label>
+                            </div>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Hepatitis
+                                    B</label>
+                            </div>
+                        </td>
+                        <td width="33.33%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Hepatitis
+                                    C</label>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <!-- Hepatitis area end -->
+                    <!-- Patient Setting start -->
+
+                    <tr>
+                        <td>
+                            <h5
+                                style="padding: 7px 0 7px 13px;color: black;background: #d3d3d38c;margin-bottom: 0;font-size: 16px;font-weight: 600;font-family:poppins;">
+                                Patient Setting</h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Physician
+                                    Office</label>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Inpatient
+                                    (ICU)</label>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 10px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Inpatient
+                                    (Ward)</label>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 10px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Institution</label>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 10px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">ER
+                                    (Not Admitted)</label>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <!-- Patient Setting End -->
+
+                    <!-- clinical information start -->
+
+                    <tr>
+                        <td>
+                            <h5
+                                style="padding: 7px 0 7px 13px;color: black;background: #d3d3d38c;margin-bottom: 0;font-size: 16px;font-weight: 600;font-family:poppins;">
+                                Clinical Information</h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Fever</label>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 0px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Gastroenteritis</label>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 10px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Vesicular
+                                    Rash</label>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 10px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">STI</label>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 10px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Headache
+                                    / Stiff Neck</label>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 10px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Maculopapular
+                                    Rash</label>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 10px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Pregnant</label>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 10px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Enecephalitis
+                                    / Meningitis</label>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 10px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Jaundice</label>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;">
+                            <div class="gender" style="padding: 10px 0 0 0px;display:flex;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <label class="" for="exampleCheck1"
+                                    style="margin-bottom: 10px;font-family: poppins; font-size: 14px;padding-left: 7px;">Respiratory
+                                    Symptoms</label>
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;padding: 13px 0 0 0; margin-left: 0px;">
+                            <div style="display: flex; padding: 5px 0;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 250px;    padding-left: 7px;">Other
+                                    (Specify):</span>
+
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;padding: 13px 0 0 0; margin-left: 0px;">
+                            <div style="display: flex; padding: 5px 0;">
+
+                                <input placeholder="" class="input100" type="text" name="phone"
+                                    style="background: #a3bdf545;width: 100%;border:0;">
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;padding: 13px 0 0 0; margin-left: 0px;">
+                            <div style="display: flex; padding: 5px 0;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 250px;    padding-left: 7px;">Influenza
+                                    High Risk (Specify):</span>
+
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;padding: 13px 0 0 0; margin-left: 0px;">
+                            <div style="display: flex; padding: 5px 0;">
+
+                                <input placeholder="" class="input100" type="text" name="phone"
+                                    style="background: #a3bdf545;width: 100%;border:0;">
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;padding: 13px 0 0 0; margin-left: 0px;">
+                            <div style="display: flex; padding: 5px 0;">
+                                <input type="checkbox" id="exampleCheck1">
+                                <span
+                                    style="font-size: 14px;color: #444444;font-family: poppins; min-width: 250px;    padding-left: 7px;">Recent
+                                    Travel (Specify Location):</span>
+
+                            </div>
+                        </td>
+                        <td width="50%" style="float: left;padding: 13px 0 0 0; margin-left: 0px;">
+                            <div style="display: flex; padding: 5px 0;">
+
+                                <input placeholder="" class="input100" type="text" name="phone"
+                                    style="background: #a3bdf545;width: 100%;border:0;">
+                            </div>
+                        </td>
+
+                    </tr>
+                    <!-- clinical information End -->
+                </table>
+
+            </div>
+
+        </div>
+        <table width="100%" style="padding: 18px;background: #abc3f93d;">
+            <tbody>
+                <tr>
+                    <td style="padding: 18px;padding-bottom: 0;">
+                        <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Dr. ABCD</h5>
+                        <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Adresss: 1234 Back street
+                        </h5>
+                        <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Signature: <%= name %></h5>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0 18px;">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Copy to:</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50">
+                                    <div style="margin-bottom: 10px;display: flex;">
+                                        <span
+                                            style="font-size: 13px;color: #444444;font-family: poppins; min-width: 53px;">Name</span>
+                                        <p class="input100" 
+                                            style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;"><%= name %></p>
+                                    </div>
+                                    <div style="margin-bottom: 10px;display: flex;">
+                                        <span
+                                            style="font-size: 13px;color: #444444;font-family: poppins; min-width: 52px;">Email</span>
+                                        <p placeholder="" class="input100" type="text" name="name"
+                                            style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;"><%= doctor_email %></p>
+                                    </div>
+                                    <div style="margin-bottom: 10px;display: flex;">
+                                        <span
+                                            style="font-size: 13px;color: #444444;font-family: poppins; min-width: 34px;">Fax</span>
+                                        <p class="input100" 
+                                            style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;"><%= fax %></p>
+                                    </div>
+                                    <div style="margin-bottom: 10px;display: flex;">
+                                        <span
+                                            style="font-size: 13px;color: #444444;font-family: poppins; min-width: 92px;">License
+                                            No.</span>
+                                        <p class="input100" 
+                                            style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;"><%= licence_no %></p>
+                                    </div>
+                                </td>
+                                <td align="right" style="vertical-align: top;" width="50">
+                                       <p placeholder="" class="input100" type="text" name="name"
+                                                style="background: transparent;width: 200px;border-width: 0 0 1px;border-color: lightgrey;"><%= date %></p>
+                                    <h5 style="font-weight: 700;">Date</h5>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</section>
+</body>
+</html>

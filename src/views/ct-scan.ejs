@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ontario</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <style>
+        .crosscheck input[type="checkbox"] {
+            appearance: initial;
+            width: 16px;
+            height: 16px;
+            position: relative;
+            border: 2px solid #9e9e9e;
+            border-radius: 3px;
+        }
+
+        .crosscheck input[type="checkbox"]:checked {
+            background: #8a8a8a;
+            border: 0;
+        }
+
+        .crosscheck input[type="checkbox"]:checked:after {
+            content: "X";
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        input,
+        textarea:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="" style="padding: 10px 10px;border: 1px solid #a3bdf5;">
+                <table style="color: #000; width: 100%;">
+                    <tr>
+                        <td width="33%">
+                            <img src="../public/img/logo.png" class="img-fluid" width="130px" />
+                        </td>
+                        <td width="33%" style="text-align: center;">
+                            <h4 style="font-weight: 700; font-size: 22px;font-family: poppins;">Dr. Rajiv Datoo MD,
+                                MBBS, FACP.</h4>
+                            <p style="font-weight: 500; font-size:20px; margin: 0;font-family: poppins;">12345
+                                Dehlki Road. Punjab</p>
+                            <p style="font-weight: 500;font-size:20px;font-family: poppins;">Fax:+1-234-786-9876</p>
+                        </td>
+                        <td width="33%" style="text-align: right;">
+                            <h3
+                                style="font-weight: 600;color: red;padding:34% 0 0 0; margin: 0;font-family: poppins;font-size: 22px;">
+                                General Lab Form</h3>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+            <div style="background:#abc3f93d;">
+
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="background:#adc4f9;padding: 4px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td>
+                                        <div style="width: 40%;float: left;padding: 5px;background:white;">
+                                            <table style="width: 100%">
+                                                <tr>
+                                                    <td>
+                                                        <div>
+                                                            <div>
+                                                                <span
+                                                                    style="font-size: 13px;color: #191919;font-family: poppins;">Name</span>
+                                                                <input placeholder="" class="input100" type="text"
+                                                                    name="name"
+                                                                    style="background: #ebf1fe;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                                            </div>
+                                                            <div>
+                                                                <span
+                                                                    style="font-size: 13px;color: #191919;font-family: poppins;">Address</span>
+                                                                <textarea placeholder="" class="input100" rows="2"
+                                                                    style="background: #ebf1fe;width: 100%;border-width: 0 0 1px;border-color: lightgrey;"> </textarea>
+                                                            </div>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table style="width: 100%">
+                                                <tr>
+                                                    <td>
+                                                        <div>
+                                                            <span
+                                                                style="font-size: 13px;color: #191919;font-family: poppins;">Clinician/Practitioner
+                                                                Number</span>
+                                                            <input placeholder="" class="input100" type="text"
+                                                                name="name"
+                                                                style="background: #ebf1fe;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <span
+                                                                style="font-size: 13px;color: #191919;font-family: poppins;">CPSO
+                                                                / Registration No.</span>
+                                                            <input placeholder="" class="input100" type="text"
+                                                                name="name"
+                                                                style="background: #ebf1fe;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table style="width: 100%">
+                                                <tr>
+                                                    <td>
+                                                        <div>
+                                                            <span
+                                                                style="font-size: 13px;color: #191919;font-family: poppins;"><b>Check
+                                                                    (<img src="../public/img/tick.svg" width="10px">)
+                                                                    one.</b></span>
+
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <input type="checkbox" id="Cancer" name="" value=""
+                                                                style="width: 14px;height: 14px;">
+                                                            <div style="width: 100%;margin-top:-5px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">OHIP/Insured</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <input type="checkbox" id="Cancer" name="" value=""
+                                                                style="width: 14px;height: 14px;">
+                                                            <div style="width: 100%;margin-top:-5px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">Third
+                                                                    Party / Uninsured</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+
+                                                        <div style="display: flex;">
+                                                            <input type="checkbox" id="Cancer" name="" value=""
+                                                                style="width: 14px;height: 14px;">
+                                                            <div style="width: 100%;margin-top:-5px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">WSIB</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                            <table style="width: 100%;margin-top: 5px;">
+                                                <tr>
+                                                    <td>
+                                                        <div>
+                                                            <span
+                                                                style="font-size: 13px;color: #191919;font-family: poppins;">Additional
+                                                                Clinical Information (e.g. diagnosis)</span>
+                                                            <textarea placeholder="" class="input100" rows="2"
+                                                                style="background: #ebf1fe;width: 100%;border-width: 0 0 1px;border-color: lightgrey;"> </textarea>
+                                                        </div>
+                                                        <div style="display: flex;">
+                                                            <input type="checkbox" id="Cancer" name="" value=""
+                                                                style="width: 14px;height: 14px;">
+                                                            <div style="width: 100%;margin-top:-5px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">Copy
+                                                                    to: Clinician/Practitioner</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                            <table style="width: 100%;">
+                                                <tr>
+                                                    <td>
+                                                        <div>
+                                                            <span
+                                                                style="font-size: 13px;color: grey;font-family: poppins;">Last
+                                                                Name</span>
+                                                            <input placeholder="" class="input100" type="text"
+                                                                name="name"
+                                                                style="background: #ebf1fe;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <span
+                                                                style="font-size: 13px;color: grey;font-family: poppins;">First
+                                                                Name</span>
+                                                            <input placeholder="" class="input100" type="text"
+                                                                name="name"
+                                                                style="background: #ebf1fe;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                            <table style="width: 100%;">
+                                                <tr>
+                                                    <td>
+                                                        <span
+                                                            style="font-size: 13px;color: grey;font-family: poppins;">Address</span>
+                                                        <textarea placeholder="" class="input100" rows="2"
+                                                            style="background: #ebf1fe;width: 100%;border-width: 0 0 1px;border-color: lightgrey;"> </textarea>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                        </div>
+                                        <div style="width: 60%;float: left;padding: 5px;">
+                                            <table style="width: 100%">
+                                                <tr>
+                                                    <td align="right">
+                                                        <div>
+                                                            <button
+                                                                style="background: #00bf70;padding: 8px 18px;color: white;border: 0;font-size: 16px;font-weight: 600;margin-bottom: 18px;">Clear
+                                                                Form</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1px solid lightgrey;">
+                                                        <div style="width: 70%;float: left;">
+                                                            <table style="width: 100%">
+
+                                                                <tr>
+                                                                    <td>
+                                                                        <span
+                                                                            style="font-size: 13px;color: #191919;font-family: poppins;">Clinician/Practitioner’s
+                                                                            Contact Number for Urgent Results</span>
+                                                                        <input placeholder="" class="input100"
+                                                                            type="text" name="name"
+                                                                            style="background: white;width: 100%;border-width: 0;border-color: lightgrey;">
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+
+                                                        </div>
+                                                        <div style="width: 30%;float: left;text-align: center;">
+                                                            <span
+                                                                style="font-size: 13px;color: #191919;font-family: poppins;text-align: center;">Service
+                                                                Date</span>
+                                                            <table style="width: 100%;">
+                                                                <tr>
+                                                                    <td align="center">
+                                                                        <!-- <span style="font-size: 11px;color: grey;font-family: poppins;">yyyy</span> -->
+                                                                        <div style="display: flex;">
+                                                                            <input placeholder="y" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                            <input placeholder="y" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                            <input placeholder="y" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                            <input placeholder="y" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td align="center">
+                                                                        <!-- <span style="font-size: 11px;color: grey;font-family: poppins;">mm</span> -->
+                                                                        <div style="display: flex;">
+                                                                            <input placeholder="m" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                            <input placeholder="m" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td align="center">
+                                                                        <!-- <span style="font-size: 11px;color: grey;font-family: poppins;">dd</span> -->
+                                                                        <div style="display: flex;">
+                                                                            <input placeholder="d" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                            <input placeholder="d" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table style="width: 100%;">
+                                                <tr>
+                                                    <td style="border: 1px solid lightgrey;">
+                                                        <span
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;">Health
+                                                            Number</span>
+                                                        <div style="display: flex;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                        </div>
+                                                    </td>
+                                                    <td align="center" style="border: 1px solid lightgrey;">
+                                                        <span
+                                                            style="font-size: 11px;color: grey;font-family: poppins;">Version</span>
+                                                        <div style="display: flex;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                        </div>
+                                                    </td>
+                                                    <td align="" style="border: 1px solid lightgrey;">
+                                                        <span
+                                                            style="font-size: 11px;color: grey;font-family: poppins;">Sex</span>
+
+                                                        <div style="display: flex;align-items: center;">
+                                                            <div style="display: flex;align-items: center;">
+                                                                <input type="checkbox" id="" name="" value=""
+                                                                    style="width: 13px;height: 13px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;padding-left: 4px;">M</span>
+                                                            </div>
+                                                            <div
+                                                                style="display: flex;align-items: center;padding-left: 3px;">
+                                                                <input type="checkbox" id="" name="" value=""
+                                                                    style="width: 13px;height: 13px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;padding-left: 4px;">F</span>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+
+                                                    <td style="border: 1px solid lightgrey;">
+
+                                                        <table style="width: 100%;">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="center">
+                                                                        <span
+                                                                            style="font-size: 13px;color: #191919;font-family: poppins;text-align: ce">Date
+                                                                            of Birth</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center">
+                                                                        <!-- <span style="font-size: 11px;color: grey;font-family: poppins;">yyyy</span> -->
+                                                                        <div style="display: flex;">
+                                                                            <input placeholder="y" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                            <input placeholder="y" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                            <input placeholder="y" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                            <input placeholder="y" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td align="center">
+                                                                        <!-- <span style="font-size: 11px;color: grey;font-family: poppins;">mm</span> -->
+                                                                        <div style="display: flex;">
+                                                                            <input placeholder="m" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                            <input placeholder="m" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td align="center">
+                                                                        <!-- <span style="font-size: 11px;color: grey;font-family: poppins;">dd</span> -->
+                                                                        <div style="display: flex;">
+                                                                            <input placeholder="d" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                            <input placeholder="d" class="input100"
+                                                                                type="text" name="name"
+                                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+
+
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+
+                                            <table style="width: 100%;">
+                                                <tr>
+                                                    <td>
+                                                        <div style="width: 10%;float: left;">
+                                                            <span
+                                                                style="font-size: 13px;color: #191919;font-family: poppins;">Province
+                                                            </span>
+                                                            <div style="display: flex;">
+                                                                <input placeholder="" maxlength="1" class="input100"
+                                                                    type="" name=""
+                                                                    style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                                <input placeholder="" maxlength="1" class="input100"
+                                                                    type="" name=""
+                                                                    style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            </div>
+                                                        </div>
+                                                        <div style="width: 50%;float: left;">
+                                                            <span
+                                                                style="font-size: 13px;color: #191919;font-family: poppins;">
+                                                                Other Provincial Registration Number</span>
+                                                            <div style="display: flex;">
+                                                                <input placeholder="" maxlength="1" class="input100"
+                                                                    type="" name=""
+                                                                    style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                                <input placeholder="" maxlength="1" class="input100"
+                                                                    type="" name=""
+                                                                    style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                                <input placeholder="" maxlength="1" class="input100"
+                                                                    type="" name=""
+                                                                    style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                                <input placeholder="" maxlength="1" class="input100"
+                                                                    type="" name=""
+                                                                    style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                                <input placeholder="" maxlength="1" class="input100"
+                                                                    type="" name=""
+                                                                    style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                                <input placeholder="" maxlength="1" class="input100"
+                                                                    type="" name=""
+                                                                    style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                                <input placeholder="" maxlength="1" class="input100"
+                                                                    type="" name=""
+                                                                    style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                                <input placeholder="" maxlength="1" class="input100"
+                                                                    type="" name=""
+                                                                    style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                                <input placeholder="" maxlength="1" class="input100"
+                                                                    type="" name=""
+                                                                    style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                                <input placeholder="" maxlength="1" class="input100"
+                                                                    type="" name=""
+                                                                    style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                                <input placeholder="" maxlength="1" class="input100"
+                                                                    type="" name=""
+                                                                    style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                                <input placeholder="" class="input100" type="text"
+                                                                    name="name"
+                                                                    style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                            </div>
+                                                        </div>
+                                                        <div style="width: 40%;float: left;">
+                                                            <span
+                                                                style="font-size: 13px;color: #191919;font-family: poppins;">Patient’s
+                                                                Telephone Contact Number</span>
+                                                            <input placeholder="" class="input100" type="text"
+                                                                name="name"
+                                                                style="background: white;width: 100%;border-width: 0;border-color: lightgrey;">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table style="width: 100%;">
+                                                <tr>
+                                                    <td>
+
+                                                        <span
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;">Patient’s
+                                                            Last Name <i>(as per OHIP Card)</i></span>
+                                                        <div style="display: flex;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" class="input100" type="text"
+                                                                name="name"
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" class="input100" type="text"
+                                                                name="name"
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table style="width: 100%;">
+                                                <tr>
+                                                    <td>
+
+                                                        <span
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;">
+                                                            Patient’s First & Middle Names <i>(as per OHIP
+                                                                Card)</i></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td>
+                                                        <div style="display: flex;">
+
+                                                            <input placeholder="" class="input100" type="text"
+                                                                name="name"
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div style="display: flex;">
+
+                                                            <input placeholder="" class="input100" type="text"
+                                                                name="name"
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+                                                            <input placeholder="" maxlength="1" class="input100" type=""
+                                                                name=""
+                                                                style="background: white;width: 100%;border-width: 0px 1px 0px 0px;border-color: grey;font-size: 11px;color: grey; font-family: poppins; text-align: center;">
+
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                            <table style="width: 100%;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <span
+                                                                style="font-size: 13px;color: grey;font-family: poppins;">Patient’s
+                                                                Address <i>(including Postal Code)</i></span>
+                                                            <textarea placeholder="" class="input100" rows="5"
+                                                                style="background: white;width: 100%;border-width: 0 0 1px;border-color: lightgrey;"> </textarea>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+
+
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+                <table>
+                    <tr>
+                        <td align="center" style="padding-top: 10px;">
+                            <div style="color: #2f2f2f;font-family: poppins;font-size: 14px;">
+                                <b><i>Note: Separate requisitions are required for cytology, histology / pathology,
+                                        ColonCancerCheck FIT test, and tests performed by Public Health
+                                        Laboratory</i></b>
+                            </div>
+                            <div style="background:#c5c5c5;height: 2px;"></div>
+                        </td>
+                    </tr>
+                </table>
+                <table style="color: #000; margin-top: 10px; width: 100%;" class="crosscheck">
+                    <tr>
+                        <td>
+                            <div style="width: 40%; float: left;border: 1px solid lightgrey;padding: 8px;">
+                                <table style="width: 100%;background:#abc3f93d;border:1px solid lightgrey;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <!-- <input type="checkbox" /> -->
+                                                <div>
+                                                    <span style="font-weight: 600;padding: 10px;">X</span>
+                                                </div>
+                                                <div
+                                                    style="background: #6f6fa0;font-family:poppins;padding: 5px;text-align: center;font-size: 16px;font-weight: 500;color: white;width: 100%;">
+                                                    Biochemistry</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    Glucose</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <span style="display: flex;">
+                                                    <input type="checkbox" />
+                                                    <div
+                                                        style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                        Random</div>
+                                                </span>
+                                                <span style="display: flex;padding-left: 10px;">
+                                                    <input type="checkbox" />
+                                                    <div
+                                                        style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                        Fasting</div>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    HbA1C</div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    Creatinine (eGFR)</div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    Uric Acid </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    Sodium</div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    Potassium</div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    ALT</div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    Alk. Phosphatase</div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    Bilirubin</div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    Albumin</div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: -webkit-inline-box;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    Lipid Assessment (includes Cholesterol, HDL-C, Triglycerides,
+                                                    calculated LDL-C & Chol/HDL-C ratio; individual lipid tests may
+                                                    be ordered in the “Other Tests” section of this form</div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    Albumin / Creatinine Ratio, Urine</div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    Urinalysis (Chemical)</div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    Neonatal Bilirubin:</div>
+                                            </div>
+                                            <ul style="padding: 0 0px 0 23px;margin-bottom: 0;">
+                                                <li style="list-style: none;display: flex;margin-bottom: 3px;">
+                                                    <table style="width: 100%">
+                                                        <tr>
+                                                            <td>
+                                                                <span
+                                                                    style="font-size: 12px;color: #191919;font-family: poppins;">Child’s
+                                                                    Age: </span>
+                                                            </td>
+                                                            <td>
+                                                                <div style="width: 50%;float: left;">
+                                                                    <table style="width: 100%;">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <input placeholder="" class="input100"
+                                                                                    type="text" name="name"
+                                                                                    style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100px;">
+                                                                                <span
+                                                                                    style="font-size: 12px;color: #191919;font-family: poppins;">dyas</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                                <div style="width: 50%;float: left;">
+                                                                    <table style="width: 100%;">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <input placeholder="" class="input100"
+                                                                                    type="text" name="name"
+                                                                                    style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100px;">
+                                                                                <span
+                                                                                    style="font-size: 12px;color: #191919;font-family: poppins;">hours</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </li>
+                                                <li style="list-style: none;display: flex;margin-bottom: 3px;">
+                                                    <table style="width: 100%">
+                                                        <tr>
+                                                            <td>
+                                                                <span
+                                                                    style="font-size: 12px;color: #191919;font-family: poppins;">Clinician/Practitioner’s
+                                                                    tel. no.</span>
+
+                                                            </td>
+                                                            <td>
+                                                                <input placeholder="" class="input100" type="text"
+                                                                    name="name"
+                                                                    style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;">
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </li>
+                                                <li style="list-style: none;display: flex;">
+                                                    <table style="width: 100%">
+                                                        <tr>
+                                                            <td>
+                                                                <span
+                                                                    style="font-size: 12px;color: #191919;font-family: poppins;">Patient’s
+                                                                    24 hr telephone no.</span>
+                                                            </td>
+                                                            <td>
+                                                                <input placeholder="" class="input100" type="text"
+                                                                    name="name"
+                                                                    style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;">
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                <table style="width: 100%;margin-top: 10px;">
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex;align-items: center;">
+                                                <input type="checkbox" />
+                                                <div
+                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                    Therapeutic Drug Monitoring</div>
+                                            </div>
+                                            <ul style="padding: 0 0px 0 23px;">
+                                                <li style="list-style: none;display: flex;margin-bottom: 3px;">
+                                                    <table style="width: 100%">
+                                                        <tr>
+                                                            <td>
+                                                                <span
+                                                                    style="font-size: 12px;color: #191919;font-family: poppins;">Name
+                                                                    of Drug #1</span>
+                                                            </td>
+                                                            <td>
+                                                                <input placeholder="" class="input100" type="text"
+                                                                    name="name"
+                                                                    style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span
+                                                                    style="font-size: 12px;color: #191919;font-family: poppins;">Name
+                                                                    of Drug #2</span>
+                                                            </td>
+                                                            <td>
+                                                                <input placeholder="" class="input100" type="text"
+                                                                    name="name"
+                                                                    style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span
+                                                                    style="font-size: 12px;color: #191919;font-family: poppins;">Time
+                                                                    Collected #1</span>
+                                                            </td>
+                                                            <td>
+                                                                <div style="width: 50%;float: left;">
+                                                                    <table style="width: 100%;">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div style="display: flex;">
+                                                                                    <input placeholder=""
+                                                                                        class="input100" type="text"
+                                                                                        name="name"
+                                                                                        style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100px;">
+                                                                                    <span
+                                                                                        style="font-size: 12px;color: #191919;font-family: poppins;">hr.</span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                                <div style="width: 50%;float: left;">
+                                                                    <table style="width: 100%;">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div style="display: flex;">
+                                                                                    <span
+                                                                                        style="font-size: 12px;color: #191919;font-family: poppins;">#2</span>
+                                                                                    <input placeholder=""
+                                                                                        class="input100" type="text"
+                                                                                        name="name"
+                                                                                        style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100px;">
+                                                                                    <span
+                                                                                        style="font-size: 12px;color: #191919;font-family: poppins;">hr.</span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span
+                                                                    style="font-size: 12px;color: #191919;font-family: poppins;">Time
+                                                                    of Last Dose #1 </span>
+                                                            </td>
+                                                            <td>
+                                                                <div style="width: 50%;float: left;">
+                                                                    <table style="width: 100%;">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div style="display: flex;">
+                                                                                    <input placeholder=""
+                                                                                        class="input100" type="text"
+                                                                                        name="name"
+                                                                                        style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100px;">
+                                                                                    <span
+                                                                                        style="font-size: 12px;color: #191919;font-family: poppins;">hr.</span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                                <div style="width: 50%;float: left;">
+                                                                    <table style="width: 100%;">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div style="display: flex;">
+                                                                                    <span
+                                                                                        style="font-size: 12px;color: #191919;font-family: poppins;">#2</span>
+                                                                                    <input placeholder=""
+                                                                                        class="input100" type="text"
+                                                                                        name="name"
+                                                                                        style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100px;">
+                                                                                    <span
+                                                                                        style="font-size: 12px;color: #191919;font-family: poppins;">hr.</span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span
+                                                                    style="font-size: 12px;color: #191919;font-family: poppins;">Time
+                                                                    of Next Dose #1</span>
+                                                            </td>
+                                                            <td>
+                                                                <div style="width: 50%;float: left;">
+                                                                    <table style="width: 100%;">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div style="display: flex;">
+                                                                                    <input placeholder=""
+                                                                                        class="input100" type="text"
+                                                                                        name="name"
+                                                                                        style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100px;">
+                                                                                    <span
+                                                                                        style="font-size: 12px;color: #191919;font-family: poppins;">hr.</span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                                <div style="width: 50%;float: left;">
+                                                                    <table style="width: 100%;">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div style="display: flex;">
+                                                                                    <span
+                                                                                        style="font-size: 12px;color: #191919;font-family: poppins;">#2</span>
+                                                                                    <input placeholder=""
+                                                                                        class="input100" type="text"
+                                                                                        name="name"
+                                                                                        style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100px;">
+                                                                                    <span
+                                                                                        style="font-size: 12px;color: #191919;font-family: poppins;">hr.</span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </li>
+                                            </ul>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <table style="width: 100%;background:#fff;border:1px solid lightgrey;">
+                                    <tr>
+                                        <td style="width: 100%;float: left;">
+                                            <div
+                                                style="color: #2f2f2f;font-family: poppins;font-size: 14px;font-weight: 600;">
+                                                <i>I hereby certify the tests ordered are not for registered in or
+                                                    out patients of a hospital.</i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div style="height: 100px;"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;float: left;">
+                                            <div style="border-top: 1px solid grey;"></div>
+                                            <div style="font-size: 12px;color: #191919;font-family: poppins;">
+                                                Clinician/Practitioner Signature</div>
+                                        </td>
+
+                                        <td style="width: 50%;float: left;" align="right">
+                                            <div>
+                                                <div style="border-top: 1px solid grey;"></div>
+                                                <div style="font-size: 12px;color: #191919;font-family: poppins;">
+                                                    Date</div>
+
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                            <div style="width: 60%;float: left; ">
+                                <div style="width: 50%; float: left;border: 1px solid lightgrey;padding: 8px;">
+                                    <table style="width: 100%;background:#abc3f93d;border:1px solid lightgrey;">
+                                        <tr>
+                                            <td>
+                                                <div style="display: flex;align-items: center;">
+                                                    <div>
+                                                        <span style="font-weight: 600;padding: 10px;">X</span>
+                                                    </div>
+                                                    <div
+                                                        style="background: #d45441;font-family:poppins;padding: 5px;text-align: center;font-size: 16px;font-weight: 500;color: white;width: 100%;">
+                                                        Hematology</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            CBC</div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Prothrombin Time (INR)</div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center; margin-top: 7px;">
+                                                        <!-- <div>
+                                  <span style="font-weight: 600;padding: 10px;">X</span>
+                                  </div> -->
+                                                        <div
+                                                            style="background: #8e8e8e;font-family:poppins;padding: 7px;text-align: center;font-size: 14px;font-weight: 500;color: white;width: 100%;">
+                                                            Immunology</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Pregnancy Test (Urine)</div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Mononucleosis Screen</div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Rubella</div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Prenatal: ABO, RhD, Antibody Screen(titre and ident. if
+                                                            positive)</div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <table style="width: 100%;margin-top: 7px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center; margin-top: 7px;">
+                                                        <!-- <div>
+                                  <span style="font-weight: 600;padding: 10px;">X</span>
+                                  </div> -->
+                                                        <div
+                                                            style="background: #8e8e8e;font-family:poppins;padding: 7px;text-align: center;font-size: 14px;font-weight: 500;color: white;width: 100%;">
+                                                            Microbiology ID & Sensitivities(if warranted)</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Cervical</div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Vaginal</div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Vaginal / Rectal – Group B Strep</div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td> <input type="checkbox">
+                                                    <span
+                                                        style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">Chlamydia
+                                                        (specify source):</span>
+                                                </td>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+
+                                                        <input placeholder="" class="input100" type="text" name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;">
+                                                    </div>
+
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td> <input type="checkbox">
+                                                    <span
+                                                        style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">GC
+                                                        (specify source):</span>
+                                                </td>
+                                                <td>
+                                                    <input placeholder="" class="input100" type="text" name="name"
+                                                        style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;">
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Throat</div>
+
+                                                    </div>
+
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span>
+                                                        <input type="checkbox">
+                                                    </span>
+                                                    <span
+                                                        style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">Wound
+                                                        (specify source</span>
+                                                </td>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+
+                                                        <input placeholder="" class="input100" type="text" name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;">
+                                                    </div>
+
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Urine</div>
+                                                    </div>
+
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Stool Culture</div>
+                                                    </div>
+
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Stool Ova & Parasites</div>
+                                                    </div>
+
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Other Swabs / Pus (specify source):</div>
+                                                    </div>
+
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <textarea placeholder="" class="input100" rows="3"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;"></textarea>
+                                                    </div>
+
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style="width: 100%;margin-top: 7px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center; margin-top: 7px;">
+                                                        <!-- <div>
+                                  <span style="font-weight: 600;padding: 10px;">X</span>
+                                  </div> -->
+                                                        <div
+                                                            style="background: #8e8e8e;font-family:poppins;padding: 5px;text-align: center;font-size: 14px;font-weight: 500;color: white;width: 100%;">
+                                                            Specimen Collection</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style="width: 100%;margin-top: 7px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Time</div>
+                                                        <input placeholder="24 hour clock" class="input100" type="text"
+                                                            name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;font-size: 13px;text-align: center;">
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Date</div>
+                                                        <input placeholder="yyyy/mm/dd" class="input100" type="text"
+                                                            name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;font-size: 13px;text-align: center;">
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div style="width: 50%; float: left;border: 1px solid lightgrey;padding: 8px;">
+                                    <table style="width: 100%;background:#abc3f93d;border:1px solid lightgrey;">
+                                        <tr>
+                                            <td>
+                                                <div style="display: flex;align-items: center;">
+                                                    <div>
+                                                        <span style="font-weight: 600;padding: 10px;">X</span>
+                                                    </div>
+                                                    <div
+                                                        style="background: #4ba6be;font-family:poppins;padding: 5px;text-align: center;font-size: 16px;font-weight: 500;color: white;width: 100%;">
+                                                        Viral Hepatitis <i>check one only)</i></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Acute Hepatiti</div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Chronic Hepatitis</div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr style="margin-top: 5px;margin-bottom: 5px;">
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+
+                                                    <ul style="padding: 0;margin-bottom: 0;">
+                                                        <li style="list-style: none;">
+                                                            <div style="display: flex;align-items: center;">
+                                                                <input type="checkbox">
+                                                                <div
+                                                                    style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                                    Immune Status / Previous ExposureSpecify: </div>
+                                                            </div>
+                                                        </li>
+                                                        <ul style="padding: 5px 0 0 25px;">
+                                                            <li style="list-style: none;">
+
+                                                                <div style="display: flex;align-items: center;">
+                                                                    <input type="checkbox">
+                                                                    <div
+                                                                        style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                                        Hepatitis A</div>
+                                                                </div>
+
+                                                            </li>
+                                                            <li style="list-style: none;">
+
+                                                                <div style="display: flex;align-items: center;">
+                                                                    <input type="checkbox">
+                                                                    <div
+                                                                        style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                                        Hepatitis B</div>
+                                                                </div>
+
+                                                            </li>
+                                                            <li style="list-style: none;">
+
+                                                                <div style="display: flex;align-items: center;">
+                                                                    <input type="checkbox">
+                                                                    <div
+                                                                        style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                                        Hepatitis C</div>
+                                                                </div>
+
+                                                            </li>
+                                                        </ul>
+                                                        <li style="list-style: none;">
+                                                            <div
+                                                                style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                                or order individual hepatitis tests in the“Other
+                                                                Tests” section below</div>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style="width: 100%;margin-top: 7px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center; margin-top: 7px;">
+                                                        <!-- <div>
+                                  <span style="font-weight: 600;padding: 10px;">X</span>
+                                  </div> -->
+                                                        <div
+                                                            style="background: #8e8e8e;font-family:poppins;padding: 7px;text-align: center;font-size: 14px;font-weight: 500;color: white;width: 100%;">
+                                                            Prostate Specifi c Antigen (PSA)</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <span style="display: flex;">
+                                                            <input type="checkbox">
+                                                            <div
+                                                                style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                                Total PSA</div>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <span style="display: flex;padding-left: 10px;">
+                                                            <input type="checkbox">
+                                                            <div
+                                                                style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                                Free PSA</div>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div
+                                                        style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px; margin-top: 5px;">
+                                                        Specify one below:</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Insured – Meets OHIP eligibility criteria</div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: -webkit-box;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Uninsured – Screening: Patient responsible for
+                                                            paymentcriteria</div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style="width: 100%;margin-top: 0px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center; margin-top: 7px;">
+                                                        <!-- <div>
+                                  <span style="font-weight: 600;padding: 10px;">X</span>
+                                  </div> -->
+                                                        <div
+                                                            style="background: #8e8e8e;font-family:poppins;padding: 7px;text-align: center;font-size: 14px;font-weight: 500;color: white;width: 100%;">
+                                                            Vitamin D (25-Hydroxy)</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: -webkit-box;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Insured - Meets OHIP eligibility criteria:osteopenia;
+                                                            osteoporosis; rickets;renal disease; malabsorption
+                                                            syndromes;medications affecting vitamin D metabolism
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style="width: 100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: -webkit-box;align-items: center;">
+                                                        <input type="checkbox">
+                                                        <div
+                                                            style="font-size: 13px;color: #191919;font-family: poppins;padding-left:10px;">
+                                                            Uninsured - Patient responsible for paymen</div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style="width: 100%;margin-top: 0px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center; margin-top: 7px;">
+                                                        <!-- <div>
+                                  <span style="font-weight: 600;padding: 10px;">X</span>
+                                  </div> -->
+                                                        <div
+                                                            style="background: #8e8e8e;font-family:poppins;padding: 7px;text-align: center;font-size: 14px;font-weight: 500;color: white;width: 100%;">
+                                                            Other Tests - one test per line</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style="width: 100%;margin-top: 7px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div style=" margin-top: 7px;">
+                                                        <input placeholder="" class="input100" type="text" name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;"><br>
+                                                        <input placeholder="" class="input100" type="text" name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;"><br>
+                                                        <input placeholder="" class="input100" type="text" name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;"><br>
+                                                        <input placeholder="" class="input100" type="text" name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;"><br>
+                                                        <input placeholder="" class="input100" type="text" name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;"><br>
+                                                        <input placeholder="" class="input100" type="text" name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;"><br>
+                                                        <input placeholder="" class="input100" type="text" name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;"><br>
+                                                        <input placeholder="" class="input100" type="text" name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;"><br>
+                                                        <input placeholder="" class="input100" type="text" name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;"><br>
+                                                        <input placeholder="" class="input100" type="text" name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;"><br>
+                                                        <input placeholder="" class="input100" type="text" name="name"
+                                                            style="background: #fff;border-width: 0 0 1px;border-color: lightgrey;width: 100%;"><br>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div style="width: 100%;float: left;">
+                                    <table style="width: 100%;background:#fff;border:1px solid lightgrey;">
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 100%;float: left;">
+                                                    <div
+                                                        style="color: #2f2f2f;font-family: poppins;font-size: 14px;font-weight: 600;">
+                                                        Laboratory Use Only</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="height: 8px;"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right">
+                                                    <div>
+                                                        <button
+                                                            style="background: #0037ff;padding: 10px 30px;color: white;border: 0;font-size: 16px;font-weight: 600;">Save
+                                                            to pdf</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table width="100%" style="padding: 18px;background: #abc3f93d;">
+                    <tbody>
+                        <tr>
+                            <td style="padding: 18px;padding-bottom: 0;">
+                                <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Dr. ABCD</h5>
+                                <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Adresss: 1234 Back
+                                    street</h5>
+                                <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Signature:</h5>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0 18px;">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Copy
+                                                to:</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="50">
+                                            <div style="margin-bottom: 10px;display: flex;">
+                                                <span
+                                                    style="font-size: 13px;color: #444444;font-family: poppins; min-width: 53px;">Name</span>
+                                                <input placeholder="" class="input100" type="text" name="name"
+                                                    style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                            </div>
+                                            <div style="margin-bottom: 10px;display: flex;">
+                                                <span
+                                                    style="font-size: 13px;color: #444444;font-family: poppins; min-width: 52px;">Email</span>
+                                                <input placeholder="" class="input100" type="text" name="name"
+                                                    style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                            </div>
+                                            <div style="margin-bottom: 10px;display: flex;">
+                                                <span
+                                                    style="font-size: 13px;color: #444444;font-family: poppins; min-width: 34px;">Fax</span>
+                                                <input placeholder="" class="input100" type="text" name="name"
+                                                    style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                            </div>
+                                            <div style="margin-bottom: 10px;display: flex;">
+                                                <span
+                                                    style="font-size: 13px;color: #444444;font-family: poppins; min-width: 92px;">License
+                                                    No.</span>
+                                                <input placeholder="" class="input100" type="text" name="name"
+                                                    style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                            </div>
+                                        </td>
+                                        <td align="right" style="vertical-align: top;" width="50">
+                                               <input placeholder="" class="input100" type="text" name="name"
+                                                style="background: transparent;width: 200px;border-width: 0 0 1px;border-color: lightgrey;">
+                                            <h5 style="font-weight: 700;">Date</h5>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

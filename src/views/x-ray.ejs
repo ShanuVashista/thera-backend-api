@@ -1,0 +1,2022 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <style>
+        body {
+            font-family: poppins;
+        }
+        @media only screen and (max-width:767px) {
+.ultra{
+    width: 100% !important;
+}
+.uper {
+    width: 100% !important;
+}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="padding: 0;">
+        <div class="" style="padding: 10px 10px;border: 1px solid #a3bdf5; padding: 10px;">
+            <table style="color: #000; width: 100%;">
+                <tr>
+                    <td class="logo" width="33%">
+                        <img src="../public/img/logo.png" class="img-fluid" width="130px" />
+                    </td>
+                    <td class="logo" width="33%" style="text-align: center;">
+                        <h4 style="font-weight: 700; font-size: 22px;font-family: poppins;">Dr. Rajiv Datoo MD, MBBS,
+                            FACP.</h4>
+                        <p style="font-weight: 500; font-size:20px; margin: 0;font-family: poppins;">12345 Dehlki Road.
+                            Punjab</p>
+                        <p style="font-weight: 500;font-size:20px;font-family: poppins;">Fax:+1-234-786-9876</p>
+                    </td>
+                    <td class="logo" width="33%" style="text-align: right;">
+                        <h3
+                            style="font-weight: 600;color: red;padding:34% 0 0 0; margin: 0;font-family: poppins;font-size: 19px;">
+                            X-ray/Ultrasound Requisition Form</h3>
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="container" style="background-color: #eaf3fb;">
+        <!--  <table width="100%">
+     <tr>
+            <td style="background: #a3bdf5;padding: 7px 12px;font-weight: 700;color: #000;font-family: poppins;">PATIENT INFORMATION
+           </td>
+       </tr>
+     </table> -->
+        <div style="padding: 10px; overflow-x: auto;">
+            <table style="color: #000; width: 100%;">
+                <tr>
+                    <td>
+                        <div style="display: flex;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Name:</span>
+                            <input placeholder="" class="input100" type="text" name="name"
+                                style="background: transparent;width: 100%;border-width: 0 0 2px;border-color: #fff;">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="display: flex;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Address:</span><br>
+                            <input placeholder="" class="input101" type="text" name="address"
+                                style="background: transparent;width: 100%;border-width: 0 0 2px;border-color: #fff;">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <div style="display: flex;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Phone:</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: #fff;">
+
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: flex;">
+                            <span style="font-size: 14px;color: #444444;font-family: poppins; min-width: 160px;">Health
+                                Card number :</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: #fff;">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <div style="display: flex;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins;min-width: 58px;padding: 8px 0 0 0;">D.O.B:</span>
+                            <input placeholder="DD/MM/YYYY" class="input100" type="text" name="dob"
+                                style="background: transparent;width: 100%;border-width: 0 0 2px;border-color:#fff; padding: 6px 0;font-size: 14px;">
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Age:</span>
+                            <input placeholder="" class="input100" type="text" name="phone"
+                                style="background: transparent;border-width: 0 0 2px;border-color: #fff;">
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: flex;align-items: center;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Gender:</span>
+                            <div class="gender" style="padding: 0px 15px;">
+                                <input type="radio" id="male1" name="gender" value="male">
+                                <label for="male1" style="margin: 0; font-size: 14px;">Male</label>
+                            </div>
+                            <div class="gender" style="padding: 0px 30px 0 15px;">
+                                <input type="radio" id="female1" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                                <label for="female1" style="margin: 0; font-size: 14px;">Female</label>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span
+                            style="font-size: 14px;color: #444444;font-family: poppins;min-width: 58px;padding: 8px 0 0 0;">Weight:</span>
+                        <input placeholder="" class="input100" type="text" name="phone"
+                            style="background: transparent;border-width: 0 0 2px;border-color: #fff;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="display: flex;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins;min-width: 117px;padding: 8px 0 0 0;">Date
+                                of LMNP</span>
+                            <input placeholder="DD/MM/YYYY" class="input100" type="text" name="dob"
+                                style="background: transparent;width: 100%;border-width: 0 0 2px;border-color:#fff; padding: 6px 0;font-size: 14px;">
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: flex;align-items: center;">
+                            <span
+                                style="font-size: 14px;color: #444444;font-family: poppins; min-width: 58px;">Pregnant:</span>
+                            <div class="gender" style="padding: 0px 15px;">
+                                <input type="radio" id="male2" name="gender" value="male">
+                                <label for="male2" style="margin: 0;font-family: poppins;font-size: 14px;">Yes</label>
+                            </div>
+                            <div class="gender" style="padding: 0px 30px 0 15px;">
+                                <input type="radio" id="female2" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                                <label for="female2" style="margin: 0;font-family: poppins;font-size: 14px;">No</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <h5 style="padding: 10px 0px;font-family: poppins;font-size: 17px;">Significant Clinical History
+                            / Clinical questions to be answered</h5>
+                    </td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td width="33.33%">
+                        <span style="font-size: 16px;color: #444444;font-family: poppins;min-width: 58px;">Creating
+                            Label:</span>
+                        <input placeholder="" class="input100" type="text" name="phone"
+                            style="background: transparent;border-width: 0 0 2px;border-color: #fff;">
+                    </td>
+                    <td width="33.33%">
+                        <span style="font-size: 16px;color: #444444;font-family: poppins; min-width: 58px;">Date of
+                            Collection:</span>
+                        <input placeholder="" class="input100" type="text" name="phone"
+                            style="background: transparent;border-width: 0 0 2px;border-color: #fff;">
+                    </td>
+                    <td width="33.33%">
+                        <div style="display: flex;align-items: center;">
+                            <span style="font-size: 16px;color: #444444;font-family: poppins; min-width: 58px;">Contarst
+                                Allergies?:</span>
+                            <div class="gender" style="padding: 0px 15px;">
+                                <input type="radio" id="male3" name="gender" value="male">
+                                <label for="male3" style="margin: 0;font-family: poppins;font-size: 14px;">Yes</label>
+                            </div>
+                            <div class="gender" style="padding: 0px 30px 0 15px;">
+                                <input type="radio" id="female3" name="gender" value="female"
+                                    style="padding-left: 10px;">
+                                <label for="female3" style="margin: 0;font-family: poppins;font-size: 14px;">No</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table style="width: 100%;border-collapse: collapse;background: #ebf1fe;border-bottom: 1px solid lightgrey;">
+            <tbody>
+                <tr>
+                 <div>
+                    <td class="ultra" style="width: 50%;float: left;padding: 10px;border:1px solid lightgrey; border-bottom: 0;">
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div
+                                            style="background: #3620ff;font-family:poppins;padding: 5px;text-align: center;font-size: 18px;font-weight: 600;color: white;">
+                                            ULTRASOUND</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50%;float: left;padding: 10px; padding-bottom: 0;">
+                                        <table style="width: 100%">
+                                            <tr>
+                                                <td>
+                                                    <div
+                                                        style="font-size: 14px;color: #2b2b2b;font-family: poppins;font-weight: 500;">
+                                                        <b>GENERAL ULTRASOUND</b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;">
+                                                        <input type="checkbox" id="Abdomenpel" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div style="width: 100%;margin-top:-5px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Abdomen
+                                                                + Pelvis</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;">
+                                                        <input type="checkbox" id="reproductive" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div style="width: 100%;margin-top:-5px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Abdomen</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;">
+                                                        <input type="checkbox" id="Kidneys" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div style="width: 100%;margin-top:-5px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Kidneys*</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;">
+                                                        <input type="checkbox" id="Bladder" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div style="width: 100%;margin-top:-5px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Bladder
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Other1" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding:0 10px;">Other</span>
+                                                            <input placeholder="" class="input100" type="text"
+                                                                name="dob"
+                                                                style="background: white;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    *Baseline abdominal ultrasound may be performed
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div
+                                                        style="font-size: 14px;color: #2b2b2b;font-family: poppins;font-weight: 500; margin-top: 18px;">
+                                                        <b>PELVIS</b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Femalep" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Female
+                                                                Pelvis (Incl. Transvaginal)</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Malep" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Male
+                                                                Pelvis (Excl. Transrect</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Prostatep" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Prostate
+                                                                (Incl. Transrectal</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div
+                                                        style="font-size: 14px;color: #2b2b2b;font-family: poppins;font-weight: 500; margin-top: 18px;">
+                                                        <b>OBSTETRICAL</b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Dating" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Dating
+                                                                (< 16 wks)</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Prenatalp" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Prenatal
+                                                                Screening (IPS/eFTS) 11-14 wks</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Anatomic18" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Anatomic18-20
+                                                                wk</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Dual" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Dual
+                                                                Scan Series (NT scan 11-14 wks + Anatomical 18-20
+                                                                wks</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;">
+                                                        <input type="checkbox" id="Trimester" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div style="width: 100%;padding-left: 14px;">
+                                                            <span
+                                                                style="font-size: 14px;color: #444444;font-family: poppins;">3rd
+                                                                Trimester Scan</span>
+                                                            <ul style="padding: 0;margin-bottom: 0;">
+                                                                <li style="list-style: none;display: flex;">
+                                                                    <input type="checkbox" id="Dual" name="" value=""
+                                                                        style="width: 13px;height: 13px;">
+                                                                    <label
+                                                                        style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;padding-left: 5px;">With
+                                                                        Biophysical Profile (BPP)</label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Series" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Twin
+                                                                Series (> 18 wks)- Sudbury Larch</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Follicular" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Follicular
+                                                                Studies</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div
+                                                        style="font-size: 14px;color: #2b2b2b;font-family: poppins;font-weight: 500;margin-top: 18px;">
+                                                        <b>SMALL PARTS</b>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Face" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Face</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Thyroid1" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Thyroid
+                                                                and Neck</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Necks" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Neck</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Necks" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Female
+                                                                Breast*</span>
+                                                            <div>
+                                                                <input type="radio" id="male" name="gender" value="male"
+                                                                    style="width: 13px;height: 13px;">
+                                                                <span>R</span>
+                                                                <input type="radio" id="female" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                                <span>L</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="BreastM" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Male
+                                                                Breast - Bilatera</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Chestm" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Chest</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Groin" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding:0 10px;">Groin</span>
+                                                            <div>
+                                                                <input type="radio" id="male" name="gender" value="male"
+                                                                    style="width: 13px;height: 13px;">
+                                                                <span>R</span>
+                                                                <input type="radio" id="female" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                                <span>L</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Inguinalm" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding:0 10px;">Inguinal
+                                                                Cana</span>
+                                                            <div>
+                                                                <input type="radio" id="male" name="gender" value="male"
+                                                                    style="width: 13px;height: 13px;">
+                                                                <span>R</span>
+                                                                <input type="radio" id="female" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                                <span>L</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Scrotum" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Testes/Scrotum</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                        <input type="checkbox" id="Tissuem" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div
+                                                            style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Soft
+                                                                Tissue/Lump</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td style="width: 50%;float: left;padding: 10px;">
+                                        <table style="width: 100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div
+                                                            style="font-size: 14px;color: #2b2b2b;font-family: poppins;font-weight: 500;">
+                                                            <b>MUSCULOSKELETAL</b>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div>
+                                                            <span style="font-size: 12px;"><b>(Right/Left)</b></span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Rotator" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Rotator1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Rotator
+                                                                Cuff</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Elbow" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Elbow1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Elbow</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Wrist" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Wrist1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Wrist</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Hip" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Hip1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Hip</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Hamstring" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Hamstring1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Hamstring</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Knee" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Knee1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Knee</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="metPoplitealal" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Popliteal1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Popliteal
+                                                                Fossa</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Ankle" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Ankle1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Ankle</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex; margin-top: 6px;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Achillesoved" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Achillesoved1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Achilles
+                                                                Tendon</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex; margin-top: 6px;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Plantar" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Plantar1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Plantar
+                                                                Fascia</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex; margin-top: 6px;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Other2" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Other3" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding:0 10px;">Other</span>
+                                                                <input placeholder="" class="input100" type="text"
+                                                                    name="dob"
+                                                                    style="background: white;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div
+                                                            style="font-size: 14px;color: #2b2b2b;font-family: poppins;font-weight: 500;margin-top: 15px;">
+                                                            <b>US GUIDED PROCEDURES</b>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <input type="checkbox" id="usBiopsy " name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div style="width: 100%;margin-top:-5px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Biopsy
+                                                                    - Thyroid FNA - Sudbury Larch</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div
+                                                            style="font-size: 14px;color: #2b2b2b;font-family: poppins;font-weight: 500;margin-top: 15px;">
+                                                            <b>VASCULAR</b>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div>
+                                                            <span><b>Yes</b></span>
+                                                            <span><b>No</b></span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Venous" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Venous1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 10px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Venous
+                                                                - Lower Extremity (DVT)</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Upper" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Upper1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 10px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Venous
+                                                                - Upper Extremity (DVT)</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Arterial" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Arterial1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 10px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Arterial
+                                                                - Lower Extremity (ABI)</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Arterial2" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Arterial3" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 10px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Arterial
+                                                                - Upper Extremity</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Carotid" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Carotid</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Renal1" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Renal
+                                                                Arteries</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Portal2" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Portal
+                                                                Venous Doppler</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Aorta1" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding:0 10px;">Aorta</span>
+                                                            <input placeholder="" class="input100" type="text"
+                                                                name="dob"
+                                                                style="background: white;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="OTHER4" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                            </div>
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding:0 10px;">Other</span>
+                                                                <input placeholder="" class="input100" type="text"
+                                                                    name="dob"
+                                                                    style="background: white;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- <tr>
+                                       <td>
+                                         *(Imaging with contrast requires server creative)
+                                       </td>
+                                       </tr> -->
+                            </tbody>
+                        </table>
+                    </td>
+                </div>
+                    <td class="ultra" style="width: 50%;float: left;padding: 10px 10px 30px 10px;border:1px solid lightgrey;border-bottom: 0;border-left: 0;">
+                        <div style="overflow-x: auto;">
+                        <table style="width: 100%;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div
+                                            style="background: #ffc000;font-family:poppins;padding: 5px;text-align: center;font-size: 18px;font-weight: 600;color: black;">
+                                            X-RAY (WALK-IN SERVICE)</div>
+                                </tr>
+                                <tr>
+                                    <td class="uper" style="width: 33.33%;float: left;padding: 10px;">
+                                        <table style="width: 100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div
+                                                            style="font-size: 14px;color: #2b2b2b;font-family: poppins;font-weight: 500;">
+                                                            <b>ABDOMINAL</b>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <input type="checkbox" id="Singlex" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div style="width: 100%;margin-top:-5px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Single/KUB</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <input type="checkbox" id="Acutex" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div style="width: 100%;margin-top:-5px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Acute
+                                                                    (includes PA chest)</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div
+                                                            style="font-size: 14px;color: #2b2b2b;font-family: poppins;font-weight: 500; margin-top: 18px;">
+                                                            <b>CHEST</b>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Chestx" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Chest
+                                                                    PA & LAT</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Ribsc" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding: 0 4px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding:0 10px;">Ribs</span>
+                                                                <div>
+                                                                    <input type="radio" id="male" name="gender"
+                                                                        value="male" style="width: 13px;height: 13px;">
+                                                                    <span>R</span>
+                                                                    <input type="radio" id="female" name="gender"
+                                                                        value="female"
+                                                                        style="width: 13px;height: 13px;">
+                                                                    <span>L</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Sternumc" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Sternum</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Chest-Visa" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Chest
+                                                                    Visa</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div
+                                                            style="font-size: 14px;color: #2b2b2b;font-family: poppins;font-weight: 500; margin-top: 18px;">
+                                                            <b>HEAD & NECK</b>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Soft-Tissue-Neck" name=""
+                                                                value="" style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Soft
+                                                                    Tissue Neck</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Skull" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Skull</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Sinuses" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Sinuses</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Facial" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Facial
+                                                                    Bones </span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div
+                                                            style="display: flex; align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Nose" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Nose</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Mandible" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Mandible</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Orbits" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Orbits</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Joints" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">T.M.
+                                                                    Joints </span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Adenoids1" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Adenoids
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Mastoids1" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Mastoids
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div
+                                                            style="font-size: 14px;color: #2b2b2b;font-family: poppins;font-weight: 500; margin-top: 18px;">
+                                                            <input type="checkbox" id="Mastoids1" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <b>NEJAC PROTOCOL</b>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td class="uper" style="width: 33.33%;float: left;padding: 10px;">
+                                        <table style="width: 100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div
+                                                            style="font-size: 14px;color: #2b2b2b;font-family: poppins;font-weight: 500;">
+                                                            <b>LOWER EXTREMITIES</b>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div>
+                                                            <span style="font-size: 12px;"><b>(Right/Left)</b></span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Hipl" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Hipl1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Hip</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Femurl" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Femurl1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Femur</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Kneel" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Kneel1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Knee</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Tib&Fib" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Tib&Fib1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Tib.
+                                                                & Fib</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Anklel" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Anklel1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Ankle</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Footl" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Footl1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Foot</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Heell" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Heell1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Heel</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Toel" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Toel1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Toe</span><br>
+                                                        </div>
+                                                        <div>
+                                                            <input type="radio" id="male" name="gender" value="male"
+                                                                style="width: 13px;height: 13px;">
+                                                            1
+                                                            <input type="radio" id="female" name="gender" value="female"
+                                                                style="width: 13px;height: 13px;"> 2
+                                                            <input type="radio" id="male" name="gender" value="male"
+                                                                style="width: 13px;height: 13px;"> 3
+                                                            <input type="radio" id="female" name="gender" value="female"
+                                                                style="width: 13px;height: 13px;"> 4
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div
+                                                            style="font-size: 14px;color: #2b2b2b;font-family: poppins;font-weight: 500;margin-top: 18px;">
+                                                            <b>SPINE & PELVIS</b>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Cervicals" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Cervical
+                                                                    Spine</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Thoracic-Spine" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Thoracic
+                                                                    Spine</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Lumbars" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Lumbar
+                                                                    (L/S) Spine</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Sacrums" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Sacrum/Coccyx</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="S.I.Joints" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">S.I.
+                                                                    Joints</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Pelviss" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Pelvis</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;align-items: center;margin-top: 0px;">
+                                                            <input type="checkbox" id="Scoliosiss" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Scoliosis
+                                                                    Series</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td class="uper" style="width: 33.33%;float: left;padding: 10px;">
+                                        <table style="width: 100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div
+                                                            style="font-size: 14px;color: #2b2b2b;font-family: poppins;font-weight: 500;">
+                                                            <b>UPPER EXTREMITIES</b>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div>
+                                                            <span style="font-size: 12px;"><b>(Right/Left)</b></span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Shoulderx" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Shoulderx1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Shoulder</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Claviclex" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Claviclex1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Clavicle</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Sternoclavicular-joints"
+                                                                    name="gender" value="male"
+                                                                    style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Sternoclavicular-joints1"
+                                                                    name="gender" value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Sternoclavicular
+                                                                joints</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="A.C.Joint" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="A.C.Joint1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">A.C.
+                                                                Joint</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Scapula" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Scapula1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Scapula</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Humerus" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Humerus1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Humerus</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Elbowx" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Elbowx1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Elbow</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Forearmx" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Forearmx1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Forearm</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex; margin-top: 6px;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Wristx" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Wristx1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Wrist</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex; margin-top: 6px;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Scaphoidx" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Scaphoidx1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Scaphoid</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex; margin-top: 6px;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Handx" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Handx1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Hand</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;">
+                                                                <input type="checkbox" id="Fingerx" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                                <input type="checkbox" id="Fingerx1" name="gender"
+                                                                    value="female"
+                                                                    style="width: 13px;height: 13px;margin-left: 9px;">
+                                                            </div>
+                                                            <span for="female"
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Finger</span><br>
+                                                        </div>
+                                                        <div>
+                                                            <input type="radio" id="male" name="gender" value="male"
+                                                                style="width: 13px;height: 13px;">
+                                                            1
+                                                            <input type="radio" id="female" name="gender" value="female"
+                                                                style="width: 13px;height: 13px;"> 2
+                                                            <input type="radio" id="male" name="gender" value="male"
+                                                                style="width: 13px;height: 13px;"> 3
+                                                            <input type="radio" id="female" name="gender" value="female"
+                                                                style="width: 13px;height: 13px;"> 4
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <input type="checkbox" id="usBiopsy " name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div style="width: 100%;margin-top:-5px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;"><b>LEG
+                                                                        LENGTHS <br>- Sudbury Larch</b></span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <input type="checkbox" id="Trimester" name="" value=""
+                                                                style="width: 13px;height: 13px;">
+                                                            <div
+                                                                style="width: 100%;padding-left: 14px;margin-top: -5px;">
+                                                                <span
+                                                                    style="font-size: 14px;color: #444444;font-family: poppins;"><b>SKELETAL
+                                                                        SURVEY</b></span>
+                                                                <ul style="padding: 0">
+                                                                    <li style="list-style: none;display: flex;">
+                                                                        <input type="checkbox" id="Dual" name=""
+                                                                            value="" style="width: 13px;height: 13px;">
+                                                                        <label
+                                                                            style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;padding-left: 5px;">Bone
+                                                                            Age</label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="display: flex;">
+                                                            <div style="display: flex;align-items: center;">
+                                                                <input type="checkbox" id="OTHER4" name="gender"
+                                                                    value="male" style="width: 13px;height: 13px;">
+                                                            </div>
+                                                            <div
+                                                                style="display: flex;align-items: center;width: 100%;padding-left: 2px;">
+                                                                <span
+                                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding:0 10px;">Other</span>
+                                                                <input placeholder="" class="input100" type="text"
+                                                                    name="dob"
+                                                                    style="background: white;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr>
+                        <div style="padding: 10px;background:white; overflow-x: auto;">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 100%;float: left;margin-bottom: 14px;">
+                                        <div
+                                            style="background: black;font-family:poppins;padding: 5px;text-align: center;font-size: 18px;font-weight: 600;color: white;">
+                                            MAMMOGRAPHY & BONE MINERAL DENSITY</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 80%;float: left;">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 33.33%; float: left;">
+                                                    <div style="display: flex;margin-top: 10px;">
+                                                        <input type="checkbox" id="Abdomenpel" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div style="width: 100%;margin-top:-5px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Mammogram</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style="width: 33.33%; float: left;">
+                                                    <div>
+                                                        <input type="radio" id="male" name="gender" value="male"
+                                                            style="width: 13px;height: 13px;">
+                                                        <span
+                                                            style="font-size: 13px;color: #444444;font-family: poppins;">R</span>
+                                                        <input type="radio" id="female" name="gender" value="female"
+                                                            style="width: 13px;height: 13px;margin-left: 9px;"> <span
+                                                            style="font-size: 13px;color: #444444;font-family: poppins;">L</span>
+                                                    </div>
+                                                </td>
+                                                <td style="width: 33.33%; float: left;">
+                                                    <div style="display: flex;margin-top: 10px;">
+                                                        <input type="checkbox" id="Abdomenpel" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div style="width: 100%;margin-top:-5px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Implants</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style="width: 100%; float: left;">
+                                                    <div style="display: flex;margin-top: 10px;">
+                                                        <input type="checkbox" id="Abdomenpel" name="" value=""
+                                                            style="width: 13px;height: 13px;">
+                                                        <div style="width: 100%;margin-top:-5px;">
+                                                            <span
+                                                                style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Ontario
+                                                                Breast Screening Program (OBSP) 50-74 yrs of age</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td style="width: 20%;float: left;">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="text-align: center;">
+                                                    <img src="../public/img/mamm.png">
+                                                    <div>
+                                                        <span
+                                                            style="font-size: 13px;color: #444444;font-family: poppins;">R</span>
+                                                        <span
+                                                            style="font-size: 13px;color: #444444;font-family: poppins;">L</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100%; float: left;margin-top: 14px;">
+                                        <b>BONE MINERAL DENSITY</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 25%; float: left;">
+                                        <div style="display: flex;margin-top: 10px;">
+                                            <input type="checkbox" id="Abdomenpel" name="" value=""
+                                                style="width: 13px;height: 13px;">
+                                            <div style="width: 100%;margin-top:-5px;">
+                                                <span
+                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Baseline
+                                                    Study</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="width: 25%; float: left;">
+                                        <div style="display: flex;margin-top: 10px;">
+                                            <input type="checkbox" id="Abdomenpel" name="" value=""
+                                                style="width: 13px;height: 13px;">
+                                            <div style="width: 100%;margin-top:-5px;">
+                                                <span
+                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Follow
+                                                    Up</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="width: 25%; float: left;">
+                                        <div style="display: flex;margin-top: 10px;">
+                                            <input type="checkbox" id="Abdomenpel" name="" value=""
+                                                style="width: 13px;height: 13px;">
+                                            <div style="width: 100%;margin-top:-5px;">
+                                                <span
+                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">High
+                                                    Risk</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="width: 25%; float: left;">
+                                        <div style="display: flex;margin-top: 10px;">
+                                            <input type="checkbox" id="Abdomenpel" name="" value=""
+                                                style="width: 13px;height: 13px;">
+                                            <div style="width: 100%;margin-top:-5px;">
+                                                <span
+                                                    style="font-size: 13px;color: #444444;font-family: poppins;padding-left:10px;">Routine</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      
+        <table width="100%" style="padding: 18px;">
+            <tbody>
+                <tr>
+                    <td style="padding: 18px;padding-bottom: 0;">
+                        <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Dr. ABCD</h5>
+                        <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Adresss: 1234 Back street</h5>
+                        <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Signature:</h5>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0 18px;">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <h5 style="color: #0c0c0c;font-family: poppins;font-size: 16px;">Copy to:</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50">
+                                    <div style="margin-bottom: 10px;display: flex;">
+                                        <span
+                                            style="font-size: 13px;color: #444444;font-family: poppins; min-width: 53px;">Name</span>
+                                        <input placeholder="" class="input100" type="text" name="name"
+                                            style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                    </div>
+                                    <div style="margin-bottom: 10px;display: flex;">
+                                        <span
+                                            style="font-size: 13px;color: #444444;font-family: poppins; min-width: 52px;">Email</span>
+                                        <input placeholder="" class="input100" type="text" name="name"
+                                            style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                    </div>
+                                    <div style="margin-bottom: 10px;display: flex;">
+                                        <span
+                                            style="font-size: 13px;color: #444444;font-family: poppins; min-width: 34px;">Fax</span>
+                                        <input placeholder="" class="input100" type="text" name="name"
+                                            style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                    </div>
+                                    <div style="margin-bottom: 10px;display: flex;">
+                                        <span
+                                            style="font-size: 13px;color: #444444;font-family: poppins; min-width: 92px;">License
+                                            No.</span>
+                                        <input placeholder="" class="input100" type="text" name="name"
+                                            style="background: transparent;width: 100%;border-width: 0 0 1px;border-color: lightgrey;">
+                                    </div>
+                                </td>
+                                <td align="right" style="vertical-align: top;" width="50">
+                                     <input placeholder="" class="input100" type="text" name="name"
+                                                style="background: transparent;width: 200px;border-width: 0 0 1px;border-color: lightgrey;">
+                                    <h5 style="font-weight: 700;">Date</h5>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</body>
+
+</html>
