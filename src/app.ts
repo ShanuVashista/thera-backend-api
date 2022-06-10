@@ -30,6 +30,7 @@ import CountryStateCity from "./routes/country_state_city";
 import Organization from "./routes/organization.route";
 import Call from "./routes/call.route";
 import Activity from "./routes/activity.route";
+import Symtoms from "./routes/symtoms.route";
 
 app.use("/user", userRoutes);
 // app.use('/admin/super', superAdminRoutes)
@@ -43,6 +44,7 @@ app.use("/get", CountryStateCity);
 app.use("/organization", Organization);
 app.use("/call", Call);
 app.use("/activity", Activity);
+app.use("/symtoms", Symtoms);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
