@@ -22,6 +22,7 @@ export interface Appointment {
   doctor: number;
   dateOfAppointment: string;
   appointmentType: string;
+  description: string;
 }
 
 //getting all Appointments
@@ -248,6 +249,7 @@ const addAppointment = async (req, res: Response, next: NextFunction) => {
     isEmergency,
     appointmentType,
     dateOfAppointment,
+    description,
     symptoms,
   }: Appointment = req.body;
 
@@ -302,6 +304,7 @@ const addAppointment = async (req, res: Response, next: NextFunction) => {
       isEmergency,
       doctorId,
       appointmentType,
+      Meta: description,
       dateOfAppointment,
     });
     await newAppointment.save();
