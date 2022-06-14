@@ -14,6 +14,7 @@ import mongoose from "mongoose";
 export interface Appointment {
   userId: number;
   patientId: number;
+  isEmergency: boolean;
   appointmentId: number;
   symptoms: Array<string>;
   createdAt: Date;
@@ -244,6 +245,7 @@ const addAppointment = async (req, res: Response, next: NextFunction) => {
   const {
     doctorId,
     patientId,
+    isEmergency,
     appointmentType,
     dateOfAppointment,
     symptoms,
@@ -297,6 +299,7 @@ const addAppointment = async (req, res: Response, next: NextFunction) => {
       userId: user._id,
       patientId,
       symptoms,
+      isEmergency,
       doctorId,
       appointmentType,
       dateOfAppointment,
