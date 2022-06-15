@@ -1,7 +1,8 @@
 import express from 'express';
 import Login from '../controllers/user/login.controller';
+import Register from '../controllers/user/register.controller';
 import Passwordcontroller from '../controllers/user/Password.controller';
-import List_POST from '../controllers/user/list';
+// import List_POST from '../controllers/user/list';
 import Prescription_List_POST from '../controllers/user/prescription_list';
 import patientRouter from './patient.route';
 import doctorRouter from './doctor.route';
@@ -24,6 +25,7 @@ import corporateRoute from './corporate.route';
 const router = express.Router()
 router.use('/patient', patientRouter);
 router.use('/doctor', doctorRouter);
+router.use('/register',Register);
 router.post("/login", Login.login);
 router.post("/admin/login", Login.admin);
 router.use("/admin",admin);
