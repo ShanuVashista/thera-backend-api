@@ -23,7 +23,7 @@ const register = async (req, res) => {
             } else {
                 const user_count = await User.find({ email: registerData.email });
                 if (user_count.length != 0 && user_count[0].role_id == "doctor") {
-                    throw new Error("Doctor already exist");
+                    throw new Error("User already exist");
                 } else {
                     if (user_count.length != 0 && user_count[0].role_id != "doctor") {
                         throw new Error("This Email is already assiociate with us");
@@ -31,6 +31,7 @@ const register = async (req, res) => {
                 }
             }
         }
+
         const isNonWhiteSpace = /^\S*$/;
         if (!isNonWhiteSpace.test(registerData.password)) {
             throw new Error("Password must not contain Whitespaces.");
@@ -88,17 +89,23 @@ const register = async (req, res) => {
 
         await sendEmail(data.email, "Congratulations Account Created Successfully", "Congratulations your account is created. Please add your professional info and wait for the admin approval.");
 
-        const upload_data = {
-            db_response: data,
-            file: req.files[0],
-        };
-        const image_uri = await S3.uploadFile(upload_data);
+
+        // Image Upload code start
+
+        // const upload_data = {
+        //     db_response: data,
+        //     file: req.files[0],
+        // };
+        // const image_uri = await S3.uploadFile(upload_data);
 
         const response = await User.findByIdAndUpdate(
             data._id,
-            { $set: { profile_photo: image_uri.Location } },
+            // { $set: { profile_photo: image_uri.Location } },
             { new: true }
         );
+
+        // Image Upload code start
+
 
         // // check if folder exists
         // if (! await existsSync(`./public/uploads/${data._id}`)) {
@@ -107,20 +114,21 @@ const register = async (req, res) => {
         // }
         // // move the file to the folder
         // await renameSync(`./public/uploads/${req.file.filename}`, `./public/uploads/${data._id}/${req.file.filename}`);
+
         const token = jwt.sign({ _id: data._id }, process.env.JWT_SECRET, {
             expiresIn: "1d",
         });
         res.status(201).json({
             status: true,
             type: "success",
-            message: "Doctor Registration Successfully",
+            message: "User Registration Successfully",
             data: {
                 ...response.toObject(),
                 token: token,
             },
         });
     } catch (error) {
-        deleteFileByPath(req.file?.path);
+        // deleteFileByPath(req.file?.path);
         if (error.code == 11000) {
             res.status(400).json({
                 status: false,
