@@ -26,7 +26,8 @@ const register = async (req, res) => {
     });
   }
   try {
-    const user = await User.create({ ...req.body, role_id: Roles.PATIENT });
+    // const user = await User.create({ ...req.body, role_id: Roles.PATIENT });
+    const user = await User.create({...req.body})
 
     // unset current_practise_address license
     user.current_practise_address = undefined;
