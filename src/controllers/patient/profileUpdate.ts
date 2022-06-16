@@ -38,7 +38,7 @@ const profileUpdate = async (req, res) => {
       tempArray
     );
 
-    // user = JSON.parse(JSON.stringify(user));
+    user = JSON.parse(JSON.stringify(user));
     // const upload_user = {
     //     db_response: user,
     //     file: req.files[0]
@@ -47,7 +47,7 @@ const profileUpdate = async (req, res) => {
 
     // const response = await User.findByIdAndUpdate(user._id, { $set: { "profile_photo": image_uri.Location } }, { new: true });
 
-    res.status(201).json({
+    res.status(200).json({
       status: true,
       type: "success",
       message: "Patient Profile Updated Successfully",

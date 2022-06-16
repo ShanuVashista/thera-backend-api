@@ -59,7 +59,7 @@ const register = async (req, res) => {
 
     await sendEmail(user.email, "Welcome to TeleMD", `Welcome to TeleMD ${user.firstname} ${user.lastname}`);
 
-    res.status(StatusCodes.CREATED).json({
+    res.status(200).json({
       type: "success",
       status: true,
       message: "User created successfully",
