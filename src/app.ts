@@ -80,20 +80,20 @@ io.use(async (socket, next) => {
 });
 
 io.on("connection", (socket) => {
-  console.log("Connected: " + socket.userId);
+  // console.log("Connected: " + socket.userId);
 
   socket.on("disconnect", () => {
-    console.log("Disconnected: " + socket.userId);
+    // console.log("Disconnected: " + socket.userId);
   });
 
   socket.on("joinRoom", ({ appointmentId }) => {
     socket.join(appointmentId);
-    console.log("A user joined chatroom: " + appointmentId);
+    // console.log("A user joined chatroom: " + appointmentId);
   });
 
   socket.on("leaveRoom", ({ appointmentId }) => {
     socket.leave(appointmentId);
-    console.log("A user left chatroom: " + appointmentId);
+    // console.log("A user left chatroom: " + appointmentId);
   });
 
   socket.on("sendMessage", async ({ appointmentId,userId, message }) => {
