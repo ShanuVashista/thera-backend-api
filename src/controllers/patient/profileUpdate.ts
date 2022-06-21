@@ -36,7 +36,7 @@ const profileUpdate = async (req, res) => {
       tempArray
     );
 
-    // user = JSON.parse(JSON.stringify(user));
+    user = JSON.parse(JSON.stringify(user));
     // const upload_user = {
     //     db_response: user,
     //     file: req.files[0]
