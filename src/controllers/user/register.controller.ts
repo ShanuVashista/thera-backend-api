@@ -120,7 +120,7 @@ const register = async (req, res) => {
     const token = jwt.sign({ _id: data._id }, process.env.JWT_SECRET, {
       expiresIn: "1d",
     });
-    res.status(201).json({
+    res.status(200).json({
       status: true,
       type: "success",
       message: "User Registration Successfully",

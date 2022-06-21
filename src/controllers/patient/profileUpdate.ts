@@ -1,8 +1,6 @@
 /* eslint-disable no-useless-escape */
 // import { existsSync, mkdirSync, renameSync } from "fs";
-import StatusCodes from "http-status-codes";
 import User from "../../db/models/user";
-import S3 from "../../services/upload";
 import activityLog from "../../services/activityLog";
 import { ACTIVITY_LOG_TYPES } from "../../../constant";
 
@@ -47,12 +45,12 @@ const profileUpdate = async (req, res) => {
 
     // const response = await User.findByIdAndUpdate(user._id, { $set: { "profile_photo": image_uri.Location } }, { new: true });
 
-    res.status(201).json({
+    res.status(200).json({
       status: true,
       type: "success",
       message: "Patient Profile Updated Successfully",
       data: {
-        registerData
+        registerData,
       },
     });
   } catch (error) {
