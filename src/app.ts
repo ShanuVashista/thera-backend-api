@@ -68,16 +68,16 @@ const io = new socketio.Server(server, {
   },
 });
 
-io.use(async (socket, next) => {
-  try {
-    const token = socket.handshake.query.token;
-    const payload = await jwt.verify(token, process.env.JWT_SECRET);
-    socket.userId = payload._id;
-    next()
-  } catch (err) {
-    console.log("error", err);
-  }
-});
+// io.use(async (socket, next) => {
+//   try {
+//     const token = socket.handshake.query.token;
+//     const payload =  jwt.verify(token, process.env.JWT_SECRET);
+//     socket.userId = payload._id;
+//     next()
+//   } catch (err) {
+//     console.log("error", err);
+//   }
+// });
 
 io.on("connection", (socket) => {
   // console.log("Connected: " + socket.userId);
