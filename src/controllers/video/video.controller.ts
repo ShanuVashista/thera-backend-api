@@ -67,7 +67,7 @@ const GetVideoList = async (req, res: Response, next: NextFunction) => {
       page = 1;
     }
     if (!limit) {
-      limit = 10;
+      limit = 9;
     }
     if (!cond) {
       cond = {}
@@ -106,7 +106,7 @@ const GetVideoList = async (req, res: Response, next: NextFunction) => {
       }
     ]
     limit = parseInt(limit);
-    let result = await Video.aggregate(cond)
+    const result = await Video.aggregate(cond)
 
     let totalPages = 0;
     if (result[0].total.length != 0) {
