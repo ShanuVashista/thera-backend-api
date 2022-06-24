@@ -37,6 +37,7 @@ import Call from "./routes/call.route";
 import Activity from "./routes/activity.route";
 import Symtoms from "./routes/symtoms.route";
 import Message from "./routes/message.route";
+import Video from "./routes/video.route";
 
 app.use("/user", userRoutes);
 app.use("/appointments", appointment);
@@ -50,12 +51,12 @@ app.use("/call", Call);
 app.use("/activity", Activity);
 app.use("/symtoms", Symtoms);
 app.use("/message", Message);
+app.use("/video", Video);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 const PORT = process.env.PORT || 3000;
-
 
 const server = http.createServer(app);
 
@@ -96,29 +97,29 @@ io.on("connection", (socket) => {
     // console.log("A user left chatroom: " + appointmentId);
   });
 
-  socket.on("sendMessage", async ({ appointmentId,userId, message }) => {
+  socket.on("sendMessage", async ({ appointmentId, userId, message }) => {
     if (message.trim().length > 0) {
       const user = await MessageModel.find({ appointmentId: appointmentId });
-      
+
       const newMessage = new MessageModel({
         appointmentId: appointmentId,
         userId: userId,
-        message:message,
+        message: message,
       });
       io.to(appointmentId).emit("newMessage", {
         message,
-        user
+        user,
       });
       await newMessage.save();
     }
   });
 
-  socket.on("getChatMessage",async ({appointmentId,userId})=>{
-    const chatMessage = await MessageModel.find({appointmentId:appointmentId})
-    io.to(appointmentId).emit("chatMessage",{
-
-    })
-  })
+  socket.on("getChatMessage", async ({ appointmentId, userId }) => {
+    const chatMessage = await MessageModel.find({
+      appointmentId: appointmentId,
+    });
+    io.to(appointmentId).emit("chatMessage", {});
+  });
 });
 
 server.listen(PORT, () => {

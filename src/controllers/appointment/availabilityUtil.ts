@@ -1,17 +1,17 @@
-import { differenceInMinutes, addMinutes, subMinutes } from 'date-fns';
-import { ObjectId } from 'mongodb';
-import { MIN_MEETING_DURATION } from '../../../constant';
-import Appointment from '../../db/models/appointment.model';
+import { differenceInMinutes, addMinutes, subMinutes } from "date-fns";
+import { ObjectId } from "mongodb";
+import { MIN_MEETING_DURATION } from "../../../constant";
+import Appointment from "../../db/models/appointment.model";
 import Availability, {
   IAvailability,
-} from '../../db/models/availability.model';
+} from "../../db/models/availability.model";
 
 export async function checkAppointmentTimeConflict(
   dateOfAppointment: Date,
   {
-    doctorId = '',
-    patientId = '',
-    ignoreAppointment = '',
+    doctorId = "",
+    patientId = "",
+    ignoreAppointment = "",
   }: {
     doctorId?: string;
     patientId?: string;
@@ -35,21 +35,21 @@ export async function checkAppointmentTimeConflict(
     ],
   };
   if (doctorId) {
-    filter['doctorId'] = doctorId;
+    filter["doctorId"] = doctorId;
   }
   if (patientId) {
-    filter['patientId'] = patientId;
+    filter["patientId"] = patientId;
   }
   if (ignoreAppointment) {
-    filter['_id'] = { $ne: ignoreAppointment };
+    filter["_id"] = { $ne: ignoreAppointment };
   }
   return await Appointment.findOne(filter);
 }
 
 export async function ListAvailability({
   dateOfAppointment = null,
-  doctorId = '',
-  patientId = '',
+  doctorId = "",
+  patientId = "",
 }: {
   dateOfAppointment?: Date;
   doctorId?: string;
@@ -66,7 +66,7 @@ export async function ListAvailability({
     ...patientIdFilter,
     ...dateOfAppointmentFilter,
   };
-  const availabilities = await Availability.find(filter).populate('doctorId');
+  const availabilities = await Availability.find(filter).populate("doctorId");
   if (dateOfAppointment) {
     return filterTimeIsAvailable(availabilities, dateOfAppointment);
   }

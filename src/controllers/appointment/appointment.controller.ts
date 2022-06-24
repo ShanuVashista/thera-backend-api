@@ -63,8 +63,10 @@ const getAppointments = async (req, res: Response, next: NextFunction) => {
       .sort(sort)
       .skip((page - 1) * limit)
       .limit(limit);
+
     const result_count = await Appointment.find(cond).count();
     const totalPages = Math.ceil(result_count / limit);
+
     return res.status(200).json({
       status: true,
       type: "success",
