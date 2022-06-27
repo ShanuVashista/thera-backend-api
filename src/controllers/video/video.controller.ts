@@ -1,5 +1,7 @@
 import Video from "../../db/models/video.model";
-import { Request, Response, NextFunction } from "express";
+import { Response } from "express";
+import mongoose from "mongoose";
+const ObjectId = <any>mongoose.Types.ObjectId;
 
 export interface IVideo {
   isYoutube: boolean;
@@ -10,7 +12,7 @@ export interface IVideo {
   patients: Array<string>;
 }
 
-const AddVideo = async (req, res, next) => {
+const AddVideo = async (req, res) => {
   const { isYoutube, title, url }: IVideo = req.body;
 
   const user = JSON.parse(JSON.stringify(req.user));
@@ -45,89 +47,81 @@ const AddVideo = async (req, res, next) => {
   }
 };
 
-const GetVideoList = async (req, res: Response, next: NextFunction) => {
+const GetVideoList = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
     let { page, limit, sort, cond } = req.body;
 
-    let uploaderId
-
+    let uploaderId = "";
     if (user.role_id === "doctor") {
-      uploaderId = user._id
-      // cond = {uploaderId: user._id, ...cond}
-    }else{
-      uploaderId="user._id"
+      uploaderId = user._id;
+    } else {
+      uploaderId = "user._id";
     }
 
-    // if (user.role_id === "patient") {
-    //     // cond = { uploaderId: user._id, ...cond };
-    //     // cond = { isdeleted: false, ...cond };
-    // }
-
-    let search = ""
+    let search=""
 
     if (!page || page < 1) {
       page = 1;
     }
     if (!limit) {
-      limit = 10;
+      limit = 9;
     }
     if (!cond) {
-      cond = {}
+      cond = {};
     }
     if (!sort) {
-      sort = { "createdAt": -1 }
+      sort = { createdAt: -1 };
     }
-    if (typeof (cond.search) != 'undefined' && cond.search != null) {
+    if (typeof cond.search != "undefined" && cond.search != null) {
       search = String(cond.search);
       delete cond.search;
     }
 
-    cond = [
-      {
-        $match: {
-          $and: [cond, {
-            $or: [
-              { "title": { $regex: search, '$options': 'i' } },
-              { "url": { $regex: search, '$options': 'i' } },
-              { "isdeleted": false },
-              { "uploaderId": uploaderId },
-            ]
-          }]
-        }
-      },
-      { $sort: sort },
-      {
-        $facet: {
-          data: [{ $skip: (page - 1) * limit }, { $limit: limit }],
-          total: [
-            {
-              $count: 'count'
-            }
-          ]
-        }
-      }
-    ]
-    limit = parseInt(limit);
-    const result = await Video.aggregate(cond)
+    if (user.role_id === "patient") {
+      cond = [
+        {
+          $match: {
+            isdeleted: false,
+            $and: [
+              cond,
+              {
+                $or: [
+                  { title: { $regex: search, $options: "i" } },
+                  { url: { $regex: search, $options: "i" } },
+                ],
+              },
+            ],
+          },
+        },
+        { $sort: sort },
+        {
+          $facet: {
+            data: [{ $skip: (page - 1) * limit }, { $limit: limit }],
+            total: [
+              {
+                $count: "count",
+              },
+            ],
+          },
+        },
+      ];
+      limit = parseInt(limit);
 
-    if (user.role_id === 'patient'){
-      // console.log(result[0].data.length)
-      const videos = result[0].data
-      const arr = []
-      let total
-      for(let i=0; i < videos.length; i++){
+      const result = await Video.aggregate(cond);
+
+      const videos = result[0].data;
+      const arr = [];
+      let total;
+      for (let i = 0; i < videos.length; i++) {
         const patients = videos[i].patients;
-        const found = patients.find(e => e === user._id)
-        if(found != undefined){
-          arr.push(videos[i])
-          total = i
+        const found = patients.find((e) => e === user._id);
+        if (found != undefined) {
+          arr.push(videos[i]);
+          total = i;
         }
       }
-      // if (arr.length != 0) {
-      //   // console.log(arr)
-      //   totalPages = Math.ceil(total / limit);
-      // }
+
       return res.status(200).json({
         status: true,
         type: "success",
@@ -139,6 +133,38 @@ const GetVideoList = async (req, res: Response, next: NextFunction) => {
         data: arr,
       });
     }
+
+    cond = [
+      {
+        $match: {
+          isdeleted: false,
+          uploaderId: ObjectId(uploaderId),
+          $and: [
+            cond,
+            {
+              $or: [
+                { title: { $regex: search, $options: "i" } },
+                { url: { $regex: search, $options: "i" } },
+              ],
+            },
+          ],
+        },
+      },
+      { $sort: sort },
+      {
+        $facet: {
+          data: [{ $skip: (page - 1) * limit }, { $limit: limit }],
+          total: [
+            {
+              $count: "count",
+            },
+          ],
+        },
+      },
+    ];
+    limit = parseInt(limit);
+
+    const result = await Video.aggregate(cond);
 
     let totalPages = 0;
     if (result[0].total.length != 0) {
@@ -164,7 +190,7 @@ const GetVideoList = async (req, res: Response, next: NextFunction) => {
   }
 };
 
-const AssignVideoToPatient = async (req, res: Response, next: NextFunction) => {
+const AssignVideoToPatient = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
     const requestData = req.body;
@@ -174,13 +200,13 @@ const AssignVideoToPatient = async (req, res: Response, next: NextFunction) => {
       return res.status(404).json({
         status: false,
         type: "success",
-        message: "You are not authorise to add a Video",
+        message: "You are not authorise to Edit the Video",
       });
     }
 
     const doc = await Video.findById(id);
 
-    if (!doc){
+    if (!doc) {
       return res.status(404).json({
         status: false,
         type: "error",
@@ -190,19 +216,16 @@ const AssignVideoToPatient = async (req, res: Response, next: NextFunction) => {
     const tempArray = {};
     tempArray["oldData"] = doc;
 
-    // console.log(tempArray)
-    const oldPatinets = doc.patients
-    const newPatients = requestData.patients
+    const oldPatinets = doc.patients;
+    const newPatients = requestData.patients;
 
-    for(let i=0; i<newPatients.length; i++){
-      // console.log(oldpatinets.includes(newPatients[i]))
-      if(!oldPatinets.includes(newPatients[i])){
-        await doc.updateOne({$push:{"patients":newPatients[i]}})
+    for (let i = 0; i < newPatients.length; i++) {
+      if (!oldPatinets.includes(newPatients[i])) {
+        await doc.updateOne({ $push: { patients: newPatients[i] } });
       }
-
     }
 
-    const updatedDoc = await Video.findById(id)
+    const updatedDoc = await Video.findById(id);
 
     tempArray["newData"] = requestData;
 
@@ -224,8 +247,119 @@ const AssignVideoToPatient = async (req, res: Response, next: NextFunction) => {
   }
 };
 
+const EditVideo = async (req, res: Response) => {
+  try {
+    const user = JSON.parse(JSON.stringify(req.user));
+    const requestData = req.body;
+    const id = req.params.videoId;
+
+    if (user.role_id != "doctor") {
+      return res.status(404).json({
+        status: false,
+        type: "success",
+        message: "You are not authorise to Edit a Video Details",
+      });
+    }
+
+    const result = await Video.findByIdAndUpdate(
+      {
+        _id: id,
+      },
+      requestData
+    );
+
+    res.status(200).json({
+      status: true,
+      type: "success",
+      message: "Video Details Updated Successfully",
+      data: result,
+    });
+  } catch (error) {
+    console.log("error", error);
+    return res.status(400).json({
+      status: false,
+      type: "error",
+      message: error.message,
+    });
+  }
+};
+
+const GetVideoById = async (req, res: Response) => {
+  try {
+    const user = JSON.parse(JSON.stringify(req.user));
+    const id = req.params.videoId;
+
+    if (user.role_id != "doctor") {
+      return res.status(404).json({
+        status: false,
+        type: "success",
+        message: "You are not authorise to get a Video Details",
+      });
+    }
+
+    const result = await Video.findById({_id: id});
+
+    res.status(200).json({
+      status: true,
+      type: "success",
+      message: "Video Details Fetch Successfully",
+      data: result,
+    });
+  } catch (error) {
+    console.log("error", error);
+    return res.status(400).json({
+      status: false,
+      type: "error",
+      message: error.message,
+    });
+  }
+};
+
+const DeleteVideo = async (req, res: Response) => {
+  try {
+    const user = JSON.parse(JSON.stringify(req.user));
+    const id = req.params.videoId;
+
+    if (user.role_id != "doctor") {
+      return res.status(404).json({
+        status: false,
+        type: "success",
+        message: "You are not authorise to add a Video",
+      });
+    }
+
+    const newData = {
+      isdeleted: true,
+    };
+
+    const result = await Video.findByIdAndUpdate(
+      {
+        _id: id,
+      },
+      newData
+    );
+
+    res.status(200).json({
+      status: true,
+      type: "success",
+      message: "Video Deleted Successfully",
+      data: result,
+    });
+  } catch (error) {
+    console.log("error", error);
+    return res.status(400).json({
+      status: false,
+      type: "error",
+      message: "Internal server error",
+    });
+  }
+};
+
 export default {
   AddVideo,
   GetVideoList,
   AssignVideoToPatient,
+  DeleteVideo,
+  EditVideo,
+  GetVideoById
 };
