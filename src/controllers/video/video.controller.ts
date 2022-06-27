@@ -153,20 +153,31 @@ const AssignVideoToPatient = async (req, res: Response, next: NextFunction) => {
       });
     }
 
-    const oldData = await Video.findOne({
-      _id: id,
-    });
+    const doc = await Video.findById(id);
+
+    if (!doc){
+      return res.status(404).json({
+        status: false,
+        type: "error",
+        message: "Video not found",
+      });
+    }
     const tempArray = {};
-    tempArray["oldData"] = oldData;
+    tempArray["oldData"] = doc;
 
-    const result = await Video.findByIdAndUpdate(
-      {
-        _id: id,
-      },
-      requestData
-    );
+    // console.log(tempArray)
+    const oldPatinets = doc.patients
+    const newPatients = requestData.patients
 
-    console.log(result);
+    for(let i=0; i<newPatients.length; i++){
+      // console.log(oldpatinets.includes(newPatients[i]))
+      if(!oldPatinets.includes(newPatients[i])){
+        await doc.updateOne({$push:{"patients":newPatients[i]}})
+      }
+
+    }
+
+    const updatedDoc = await Video.findById(id)
 
     tempArray["newData"] = requestData;
 
@@ -175,7 +186,7 @@ const AssignVideoToPatient = async (req, res: Response, next: NextFunction) => {
       type: "success",
       message: "Video Assign To Patient Successfully",
       data: {
-        requestData,
+        updatedDoc,
       },
     });
   } catch (error) {
@@ -183,7 +194,7 @@ const AssignVideoToPatient = async (req, res: Response, next: NextFunction) => {
     return res.status(400).json({
       status: false,
       type: "error",
-      message: error.message,
+      message: "Internal server error",
     });
   }
 };
