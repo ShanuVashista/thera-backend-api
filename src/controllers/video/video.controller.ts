@@ -1,5 +1,7 @@
 import Video from "../../db/models/video.model";
-import { Request, Response, NextFunction } from "express";
+import { Response, NextFunction } from "express";
+import mongoose from 'mongoose'
+const ObjectId = <string>mongoose.Types.ObjectId;
 
 export interface IVideo {
   isYoutube: boolean;
@@ -44,12 +46,12 @@ const AddVideo = async (req, res, next) => {
   }
 };
 
-const GetVideoList = async (req, res: Response, next: NextFunction) => {
+const GetVideoList = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
     let { page, limit, sort, cond } = req.body;
 
-    let uploaderId
+    let uploaderId = ""
     if (user.role_id === "doctor") {
       uploaderId = user._id
     } else {
@@ -57,9 +59,13 @@ const GetVideoList = async (req, res: Response, next: NextFunction) => {
 
     }
 
+
     if (user.role_id === "patient") {
-      //   cond = { uploaderId: user._id, ...cond };
-      cond = { isdeleted: false, ...cond };
+      return res.status(404).json({
+        status: false,
+        type: "success",
+        message: "You are not authorise for that operation",
+      });
     }
 
     let search = "";
@@ -83,12 +89,12 @@ const GetVideoList = async (req, res: Response, next: NextFunction) => {
     cond = [
       {
         $match: {
+          "isdeleted": false, "uploaderId": ObjectId(uploaderId),
           $and: [cond, {
             $or: [
               { "title": { $regex: search, '$options': 'i' } },
               { "url": { $regex: search, '$options': 'i' } },
-              { "isdeleted": false },
-              { "uploaderId": uploaderId },
+
             ]
           }]
         }
@@ -106,14 +112,13 @@ const GetVideoList = async (req, res: Response, next: NextFunction) => {
       }
     ]
     limit = parseInt(limit);
+
     const result = await Video.aggregate(cond)
 
     let totalPages = 0;
     if (result[0].total.length != 0) {
       totalPages = Math.ceil(result[0].total[0].count / limit);
     }
-
-
 
     return res.status(200).json({
       status: true,
