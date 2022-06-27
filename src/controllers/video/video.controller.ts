@@ -1,7 +1,7 @@
 import Video from "../../db/models/video.model";
-import { Response, NextFunction } from "express";
-import mongoose from 'mongoose'
-const ObjectId = mongoose.Types.ObjectId;
+import { Response } from "express";
+import mongoose from "mongoose";
+const ObjectId = <any>mongoose.Types.ObjectId;
 
 export interface IVideo {
   isYoutube: boolean;
@@ -11,7 +11,7 @@ export interface IVideo {
   patients: Array<string>;
 }
 
-const AddVideo = async (req, res, next) => {
+const AddVideo = async (req, res) => {
   const { isYoutube, title, url }: IVideo = req.body;
 
   const user = JSON.parse(JSON.stringify(req.user));
@@ -51,12 +51,11 @@ const GetVideoList = async (req, res: Response) => {
     const user = JSON.parse(JSON.stringify(req.user));
     let { page, limit, sort, cond } = req.body;
 
-    let uploaderId = ""
+    let uploaderId = "";
     if (user.role_id === "doctor") {
-      uploaderId = user._id
+      uploaderId = user._id;
     } else {
-      uploaderId = "user._id"
-
+      uploaderId = "user._id";
     }
 
 
@@ -68,12 +67,12 @@ const GetVideoList = async (req, res: Response) => {
       limit = 9;
     }
     if (!cond) {
-      cond = {}
+      cond = {};
     }
     if (!sort) {
-      sort = { "createdAt": -1 }
+      sort = { createdAt: -1 };
     }
-    if (typeof (cond.search) != 'undefined' && cond.search != null) {
+    if (typeof cond.search != "undefined" && cond.search != null) {
       search = String(cond.search);
       delete cond.search;
     }
@@ -136,14 +135,18 @@ const GetVideoList = async (req, res: Response) => {
     cond = [
       {
         $match: {
-          "isdeleted": false, "uploaderId": ObjectId(uploaderId),
-          $and: [cond, {
-            $or: [
-              { "title": { $regex: search, '$options': 'i' } },
-              { "url": { $regex: search, '$options': 'i' } },
-            ]
-          }]
-        }
+          isdeleted: false,
+          uploaderId: ObjectId(uploaderId),
+          $and: [
+            cond,
+            {
+              $or: [
+                { title: { $regex: search, $options: "i" } },
+                { url: { $regex: search, $options: "i" } },
+              ],
+            },
+          ],
+        },
       },
       { $sort: sort },
       {
@@ -151,15 +154,15 @@ const GetVideoList = async (req, res: Response) => {
           data: [{ $skip: (page - 1) * limit }, { $limit: limit }],
           total: [
             {
-              $count: 'count'
-            }
-          ]
-        }
-      }
-    ]
+              $count: "count",
+            },
+          ],
+        },
+      },
+    ];
     limit = parseInt(limit);
 
-    const result = await Video.aggregate(cond)
+    const result = await Video.aggregate(cond);
 
     let totalPages = 0;
     if (result[0].total.length != 0) {
@@ -185,7 +188,7 @@ const GetVideoList = async (req, res: Response) => {
   }
 };
 
-const AssignVideoToPatient = async (req, res: Response, next: NextFunction) => {
+const AssignVideoToPatient = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
     const requestData = req.body;
@@ -195,13 +198,13 @@ const AssignVideoToPatient = async (req, res: Response, next: NextFunction) => {
       return res.status(404).json({
         status: false,
         type: "success",
-        message: "You are not authorise to add a Video",
+        message: "You are not authorise to Edit the Video",
       });
     }
 
     const doc = await Video.findById(id);
 
-    if (!doc){
+    if (!doc) {
       return res.status(404).json({
         status: false,
         type: "error",
@@ -211,19 +214,16 @@ const AssignVideoToPatient = async (req, res: Response, next: NextFunction) => {
     const tempArray = {};
     tempArray["oldData"] = doc;
 
-    // console.log(tempArray)
-    const oldPatinets = doc.patients
-    const newPatients = requestData.patients
+    const oldPatinets = doc.patients;
+    const newPatients = requestData.patients;
 
-    for(let i=0; i<newPatients.length; i++){
-      // console.log(oldpatinets.includes(newPatients[i]))
-      if(!oldPatinets.includes(newPatients[i])){
-        await doc.updateOne({$push:{"patients":newPatients[i]}})
+    for (let i = 0; i < newPatients.length; i++) {
+      if (!oldPatinets.includes(newPatients[i])) {
+        await doc.updateOne({ $push: { patients: newPatients[i] } });
       }
-
     }
 
-    const updatedDoc = await Video.findById(id)
+    const updatedDoc = await Video.findById(id);
 
     tempArray["newData"] = requestData;
 
@@ -258,11 +258,10 @@ const DeleteVideo = async (req, res: Response) => {
       });
     }
 
-    const newData= {
-      isdeleted:true
-    }
+    const newData = {
+      isdeleted: true,
+    };
 
-    
     const result = await Video.findByIdAndUpdate(
       {
         _id: id,
@@ -290,5 +289,5 @@ export default {
   AddVideo,
   GetVideoList,
   AssignVideoToPatient,
-  DeleteVideo
+  DeleteVideo,
 };
