@@ -156,7 +156,7 @@ const updateAppointment = async (req, res: Response, next: NextFunction) => {
       });
     }
 
-    console.log({ doctorAvailability });
+    // console.log({ doctorAvailability });
 
     const appointmentTimeConflict = await checkAppointmentTimeConflict(
       new Date(dateOfAppointment),

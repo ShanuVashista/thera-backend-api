@@ -3,6 +3,7 @@ import { Request, Response, NextFunction } from "express";
 
 export interface IVideo {
   isYoutube: boolean;
+  isdeleted:boolean;
   title: string;
   url: string;
   uploaderId: string;
@@ -50,19 +51,21 @@ const GetVideoList = async (req, res: Response, next: NextFunction) => {
     let { page, limit, sort, cond } = req.body;
 
     let uploaderId
+
     if (user.role_id === "doctor") {
       uploaderId = user._id
-    } else {
-      uploaderId = "user._id"
-
+      // cond = {uploaderId: user._id, ...cond}
+    }else{
+      uploaderId="user._id"
     }
 
-    if (user.role_id === "patient") {
-      //   cond = { uploaderId: user._id, ...cond };
-      cond = { isdeleted: false, ...cond };
-    }
+    // if (user.role_id === "patient") {
+    //     // cond = { uploaderId: user._id, ...cond };
+    //     // cond = { isdeleted: false, ...cond };
+    // }
 
-    let search = "";
+    let search = ""
+
     if (!page || page < 1) {
       page = 1;
     }
@@ -106,14 +109,41 @@ const GetVideoList = async (req, res: Response, next: NextFunction) => {
       }
     ]
     limit = parseInt(limit);
-    let result = await Video.aggregate(cond)
+    const result = await Video.aggregate(cond)
+
+    if (user.role_id === 'patient'){
+      // console.log(result[0].data.length)
+      const videos = result[0].data
+      const arr = []
+      let total
+      for(let i=0; i < videos.length; i++){
+        const patients = videos[i].patients;
+        const found = patients.find(e => e === user._id)
+        if(found != undefined){
+          arr.push(videos[i])
+          total = i
+        }
+      }
+      // if (arr.length != 0) {
+      //   // console.log(arr)
+      //   totalPages = Math.ceil(total / limit);
+      // }
+      return res.status(200).json({
+        status: true,
+        type: "success",
+        message: "Video's Fetch Successfully",
+        page: page,
+        limit: limit,
+        // totalPages: totalPages,
+        total: result[0].total.length != 0 ? result[0].total[0].count : 0,
+        data: arr,
+      });
+    }
 
     let totalPages = 0;
     if (result[0].total.length != 0) {
       totalPages = Math.ceil(result[0].total[0].count / limit);
     }
-
-
 
     return res.status(200).json({
       status: true,
@@ -148,20 +178,31 @@ const AssignVideoToPatient = async (req, res: Response, next: NextFunction) => {
       });
     }
 
-    const oldData = await Video.findOne({
-      _id: id,
-    });
+    const doc = await Video.findById(id);
+
+    if (!doc){
+      return res.status(404).json({
+        status: false,
+        type: "error",
+        message: "Video not found",
+      });
+    }
     const tempArray = {};
-    tempArray["oldData"] = oldData;
+    tempArray["oldData"] = doc;
 
-    const result = await Video.findByIdAndUpdate(
-      {
-        _id: id,
-      },
-      requestData
-    );
+    // console.log(tempArray)
+    const oldPatinets = doc.patients
+    const newPatients = requestData.patients
 
-    console.log(result);
+    for(let i=0; i<newPatients.length; i++){
+      // console.log(oldpatinets.includes(newPatients[i]))
+      if(!oldPatinets.includes(newPatients[i])){
+        await doc.updateOne({$push:{"patients":newPatients[i]}})
+      }
+
+    }
+
+    const updatedDoc = await Video.findById(id)
 
     tempArray["newData"] = requestData;
 
@@ -170,7 +211,7 @@ const AssignVideoToPatient = async (req, res: Response, next: NextFunction) => {
       type: "success",
       message: "Video Assign To Patient Successfully",
       data: {
-        requestData,
+        updatedDoc,
       },
     });
   } catch (error) {
@@ -178,7 +219,7 @@ const AssignVideoToPatient = async (req, res: Response, next: NextFunction) => {
     return res.status(400).json({
       status: false,
       type: "error",
-      message: error.message,
+      message: "Internal server error",
     });
   }
 };
