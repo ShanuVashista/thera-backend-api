@@ -6,5 +6,6 @@ const router = express.Router();
 router.post("/add-video", auth, controller.AddVideo);
 router.post("/get-video", auth, controller.GetVideoList);
 router.put("/assign-video/:videoId", auth, controller.AssignVideoToPatient);
+router.put("/delete-video/:videoId", auth, controller.DeleteVideo);
 
 export = router;

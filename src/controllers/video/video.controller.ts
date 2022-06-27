@@ -1,7 +1,7 @@
 import Video from "../../db/models/video.model";
 import { Response, NextFunction } from "express";
 import mongoose from 'mongoose'
-const ObjectId = <string>mongoose.Types.ObjectId;
+const ObjectId = mongoose.Types.ObjectId;
 
 export interface IVideo {
   isYoutube: boolean;
@@ -188,8 +188,50 @@ const AssignVideoToPatient = async (req, res: Response, next: NextFunction) => {
   }
 };
 
+const DeleteVideo = async (req, res: Response) => {
+  try {
+    const user = JSON.parse(JSON.stringify(req.user));
+    const id = req.params.videoId;
+
+    if (user.role_id != "doctor") {
+      return res.status(404).json({
+        status: false,
+        type: "success",
+        message: "You are not authorise to add a Video",
+      });
+    }
+
+    const newData= {
+      isdeleted:true
+    }
+
+    
+    const result = await Video.findByIdAndUpdate(
+      {
+        _id: id,
+      },
+      newData
+    );
+
+    res.status(200).json({
+      status: true,
+      type: "success",
+      message: "Video Deleted Successfully",
+      data: result,
+    });
+  } catch (error) {
+    console.log("error", error);
+    return res.status(400).json({
+      status: false,
+      type: "error",
+      message: error.message,
+    });
+  }
+};
+
 export default {
   AddVideo,
   GetVideoList,
   AssignVideoToPatient,
+  DeleteVideo
 };
