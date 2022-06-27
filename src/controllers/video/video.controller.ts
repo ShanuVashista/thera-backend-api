@@ -58,8 +58,7 @@ const GetVideoList = async (req, res: Response) => {
       uploaderId = "user._id";
     }
 
-
-    let search ="";
+    let search = "";
     if (!page || page < 1) {
       page = 1;
     }
@@ -77,19 +76,21 @@ const GetVideoList = async (req, res: Response) => {
       delete cond.search;
     }
 
-
     if (user.role_id === "patient") {
       cond = [
         {
           $match: {
-            "isdeleted": false,
-            $and: [cond, {
-              $or: [
-                { "title": { $regex: search, '$options': 'i' } },
-                { "url": { $regex: search, '$options': 'i' } },
-              ]
-            }]
-          }
+            isdeleted: false,
+            $and: [
+              cond,
+              {
+                $or: [
+                  { title: { $regex: search, $options: "i" } },
+                  { url: { $regex: search, $options: "i" } },
+                ],
+              },
+            ],
+          },
         },
         { $sort: sort },
         {
@@ -97,25 +98,25 @@ const GetVideoList = async (req, res: Response) => {
             data: [{ $skip: (page - 1) * limit }, { $limit: limit }],
             total: [
               {
-                $count: 'count'
-              }
-            ]
-          }
-        }
-      ]
+                $count: "count",
+              },
+            ],
+          },
+        },
+      ];
       limit = parseInt(limit);
-  
-      const result = await Video.aggregate(cond)
 
-      const videos = result[0].data
-      const arr = []
-      let total
-      for(let i=0; i < videos.length; i++){
+      const result = await Video.aggregate(cond);
+
+      const videos = result[0].data;
+      const arr = [];
+      let total;
+      for (let i = 0; i < videos.length; i++) {
         const patients = videos[i].patients;
-        const found = patients.find(e => e === user._id)
-        if(found != undefined){
-          arr.push(videos[i])
-          total = i
+        const found = patients.find((e) => e === user._id);
+        if (found != undefined) {
+          arr.push(videos[i]);
+          total = i;
         }
       }
 
@@ -130,7 +131,6 @@ const GetVideoList = async (req, res: Response) => {
         data: arr,
       });
     }
-
 
     cond = [
       {
@@ -245,6 +245,74 @@ const AssignVideoToPatient = async (req, res: Response) => {
   }
 };
 
+const EditVideo = async (req, res: Response) => {
+  try {
+    const user = JSON.parse(JSON.stringify(req.user));
+    const requestData = req.body;
+    const id = req.params.videoId;
+
+    if (user.role_id != "doctor") {
+      return res.status(404).json({
+        status: false,
+        type: "success",
+        message: "You are not authorise to Edit a Video Details",
+      });
+    }
+
+    const result = await Video.findByIdAndUpdate(
+      {
+        _id: id,
+      },
+      requestData
+    );
+
+    res.status(200).json({
+      status: true,
+      type: "success",
+      message: "Video Details Updated Successfully",
+      data: result,
+    });
+  } catch (error) {
+    console.log("error", error);
+    return res.status(400).json({
+      status: false,
+      type: "error",
+      message: error.message,
+    });
+  }
+};
+
+const GetVideoById = async (req, res: Response) => {
+  try {
+    const user = JSON.parse(JSON.stringify(req.user));
+    const id = req.params.videoId;
+
+    if (user.role_id != "doctor") {
+      return res.status(404).json({
+        status: false,
+        type: "success",
+        message: "You are not authorise to get a Video Details",
+      });
+    }
+
+    const result = await Video.findById({_id: id});
+
+    res.status(200).json({
+      status: true,
+      type: "success",
+      message: "Video Details Fetch Successfully",
+      data: result,
+    });
+  } catch (error) {
+    console.log("error", error);
+    return res.status(400).json({
+      status: false,
+      type: "error",
+      message: error.message,
+    });
+  }
+};
+
 const DeleteVideo = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
@@ -290,4 +358,6 @@ export default {
   GetVideoList,
   AssignVideoToPatient,
   DeleteVideo,
+  EditVideo,
+  GetVideoById
 };
