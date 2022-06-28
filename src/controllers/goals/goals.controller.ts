@@ -1,42 +1,42 @@
-import Video from "../../db/models/video.model";
+import Goals from "../../db/models/goals.model";
+import { IUser } from "../../db/models/user";
 import { Response } from "express";
-import mongoose from "mongoose";
+import mongoose, { PopulatedDoc } from "mongoose";
 const ObjectId = <any>mongoose.Types.ObjectId;
 
-export interface IVideo {
-  isYoutube: boolean;
-  isdeleted: boolean;
+export interface IGoals {
   title: string;
-  url: string;
-  uploaderId: string;
-  patients: Array<string>;
+  goals: Array<unknown>;
+  isdeleted: boolean;
+  doctorId: PopulatedDoc<IUser>;
+  patientId: PopulatedDoc<IUser>;
 }
 
-const AddVideo = async (req, res) => {
-  const { isYoutube, title, url }: IVideo = req.body;
-
+const CreateGoal = async (req, res: Response) => {
+  const { title, goals }: IGoals = req.body;
   const user = JSON.parse(JSON.stringify(req.user));
+
   if (user.role_id != "doctor") {
     return res.status(404).json({
       status: false,
       type: "success",
-      message: "You are not authorise to add a Video",
+      message: "You are not authorise to Create New Goal",
     });
   }
 
   try {
-    const neVideo = new Video({
-      uploaderId: user._id,
-      isYoutube,
+    const newGoal = new Goals({
+      doctorId: user._id,
       title,
-      url,
+      goals,
     });
-    await neVideo.save();
+    await newGoal.save();
 
     res.status(201).json({
       status: true,
       type: "success",
-      data: neVideo,
+      data: newGoal,
+      message: "Goal Created Successfully",
     });
   } catch (Err) {
     console.log(Err);
@@ -47,16 +47,16 @@ const AddVideo = async (req, res) => {
   }
 };
 
-const GetVideoList = async (req, res: Response) => {
+const GetGoals = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
     let { page, limit, sort, cond } = req.body;
 
-    let uploaderId = "";
+    let doctorId = "";
     if (user.role_id === "doctor") {
-      uploaderId = user._id;
+      doctorId = user._id;
     } else {
-      uploaderId = "user._id";
+      doctorId = "user._id";
     }
 
     let search = "";
@@ -65,7 +65,7 @@ const GetVideoList = async (req, res: Response) => {
       page = 1;
     }
     if (!limit) {
-      limit = 9;
+      limit = 10;
     }
     if (!cond) {
       cond = {};
@@ -86,10 +86,7 @@ const GetVideoList = async (req, res: Response) => {
             $and: [
               cond,
               {
-                $or: [
-                  { title: { $regex: search, $options: "i" } },
-                  { url: { $regex: search, $options: "i" } },
-                ],
+                $or: [{ title: { $regex: search, $options: "i" } }],
               },
             ],
           },
@@ -108,16 +105,16 @@ const GetVideoList = async (req, res: Response) => {
       ];
       limit = parseInt(limit);
 
-      const result = await Video.aggregate(cond);
+      const result = await Goals.aggregate(cond);
 
-      const videos = result[0].data;
+      const goals = result[0].data;
       const arr = [];
       let total;
-      for (let i = 0; i < videos.length; i++) {
-        const patients = videos[i].patients;
-        const found = patients.find((e) => e === user._id);
+      for (let i = 0; i < goals.length; i++) {
+        const patientId = goals[i].patientId;
+        const found = patientId.find((e) => e === user._id);
         if (found != undefined) {
-          arr.push(videos[i]);
+          arr.push(goals[i]);
           total = i;
         }
       }
@@ -125,7 +122,7 @@ const GetVideoList = async (req, res: Response) => {
       return res.status(200).json({
         status: true,
         type: "success",
-        message: "Video's Fetch Successfully",
+        message: "Goals's Fetch Successfully",
         page: page,
         limit: limit,
         // totalPages: totalPages,
@@ -138,14 +135,11 @@ const GetVideoList = async (req, res: Response) => {
       {
         $match: {
           isdeleted: false,
-          uploaderId: ObjectId(uploaderId),
+          doctorId: ObjectId(doctorId),
           $and: [
             cond,
             {
-              $or: [
-                { title: { $regex: search, $options: "i" } },
-                { url: { $regex: search, $options: "i" } },
-              ],
+              $or: [{ title: { $regex: search, $options: "i" } }],
             },
           ],
         },
@@ -164,7 +158,7 @@ const GetVideoList = async (req, res: Response) => {
     ];
     limit = parseInt(limit);
 
-    const result = await Video.aggregate(cond);
+    const result = await Goals.aggregate(cond);
 
     let totalPages = 0;
     if (result[0].total.length != 0) {
@@ -174,7 +168,7 @@ const GetVideoList = async (req, res: Response) => {
     return res.status(200).json({
       status: true,
       type: "success",
-      message: "Video's Fetch Successfully",
+      message: "Goal's Fetch Successfully",
       page: page,
       limit: limit,
       totalPages: totalPages,
@@ -190,25 +184,25 @@ const GetVideoList = async (req, res: Response) => {
   }
 };
 
-const GetVideoById = async (req, res: Response) => {
+const GetGoalById = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
-    const id = req.params.videoId;
+    const id = req.params.goalId;
 
     if (user.role_id != "doctor") {
       return res.status(404).json({
         status: false,
         type: "success",
-        message: "You are not authorise to get a Video Details",
+        message: "You are not authorise to get a Goal Details",
       });
     }
 
-    const result = await Video.findById({ _id: id });
+    const result = await Goals.findById({ _id: id });
 
     res.status(200).json({
       status: true,
       type: "success",
-      message: "Video Details Fetch Successfully",
+      message: "Goal Details Fetch Successfully",
       data: result,
     });
   } catch (error) {
@@ -221,49 +215,49 @@ const GetVideoById = async (req, res: Response) => {
   }
 };
 
-const AssignVideoToPatient = async (req, res: Response) => {
+const AssignGoalToPatient = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
     const requestData = req.body;
-    const id = req.params.videoId;
+    const id = req.params.goalId;
 
     if (user.role_id != "doctor") {
       return res.status(404).json({
         status: false,
         type: "success",
-        message: "You are not authorise to Assign the Video",
+        message: "You are not authorise to Assign the Goal",
       });
     }
 
-    const doc = await Video.findById(id);
+    const doc = await Goals.findById(id);
 
     if (!doc) {
       return res.status(404).json({
         status: false,
         type: "error",
-        message: "Video not found",
+        message: "Goal not found",
       });
     }
     const tempArray = {};
     tempArray["oldData"] = doc;
 
-    const oldPatinets = doc.patients;
-    const newPatients = requestData.patients;
+    const oldPatinets = doc.patientId;
+    const newPatients = requestData.patientId;
 
     for (let i = 0; i < newPatients.length; i++) {
       if (!oldPatinets.includes(newPatients[i])) {
-        await doc.updateOne({ $push: { patients: newPatients[i] } });
+        await doc.updateOne({ $push: { patientId: newPatients[i] } });
       }
     }
 
-    const updatedDoc = await Video.findById(id);
+    const updatedDoc = await Goals.findById(id);
 
     tempArray["newData"] = requestData;
 
     res.status(200).json({
       status: true,
       type: "success",
-      message: "Video Assign To Patient Successfully",
+      message: "Goal Assign To Patient Successfully",
       data: {
         updatedDoc,
       },
@@ -278,21 +272,21 @@ const AssignVideoToPatient = async (req, res: Response) => {
   }
 };
 
-const EditVideo = async (req, res: Response) => {
+const EditGoal = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
     const requestData = req.body;
-    const id = req.params.videoId;
+    const id = req.params.goalId;
 
     if (user.role_id != "doctor") {
       return res.status(404).json({
         status: false,
         type: "success",
-        message: "You are not authorise to Edit a Video Details",
+        message: "You are not authorise to Edit Goal Details",
       });
     }
 
-    const result = await Video.findByIdAndUpdate(
+    const result = await Goals.findByIdAndUpdate(
       {
         _id: id,
       },
@@ -302,7 +296,7 @@ const EditVideo = async (req, res: Response) => {
     res.status(200).json({
       status: true,
       type: "success",
-      message: "Video Details Updated Successfully",
+      message: "Goal Details Updated Successfully",
       data: result,
     });
   } catch (error) {
@@ -315,16 +309,16 @@ const EditVideo = async (req, res: Response) => {
   }
 };
 
-const DeleteVideo = async (req, res: Response) => {
+const DeleteGoal = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
-    const id = req.params.videoId;
+    const id = req.params.goalId;
 
     if (user.role_id != "doctor") {
       return res.status(404).json({
         status: false,
         type: "success",
-        message: "You are not authorise to add a Video",
+        message: "You are not authorise to delete a Goal",
       });
     }
 
@@ -332,7 +326,7 @@ const DeleteVideo = async (req, res: Response) => {
       isdeleted: true,
     };
 
-    const result = await Video.findByIdAndUpdate(
+    const result = await Goals.findByIdAndUpdate(
       {
         _id: id,
       },
@@ -342,7 +336,7 @@ const DeleteVideo = async (req, res: Response) => {
     res.status(200).json({
       status: true,
       type: "success",
-      message: "Video Deleted Successfully",
+      message: "Goal Deleted Successfully",
       data: result,
     });
   } catch (error) {
@@ -356,10 +350,10 @@ const DeleteVideo = async (req, res: Response) => {
 };
 
 export default {
-  AddVideo,
-  GetVideoList,
-  AssignVideoToPatient,
-  DeleteVideo,
-  EditVideo,
-  GetVideoById,
+  CreateGoal,
+  GetGoals,
+  GetGoalById,
+  AssignGoalToPatient,
+  EditGoal,
+  DeleteGoal,
 };

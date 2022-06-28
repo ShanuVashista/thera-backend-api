@@ -38,6 +38,7 @@ import Activity from "./routes/activity.route";
 import Symtoms from "./routes/symtoms.route";
 import Message from "./routes/message.route";
 import Video from "./routes/video.route";
+import Goals from "./routes/goals.route";
 
 app.use("/user", userRoutes);
 app.use("/appointments", appointment);
@@ -52,6 +53,7 @@ app.use("/activity", Activity);
 app.use("/symtoms", Symtoms);
 app.use("/message", Message);
 app.use("/video", Video);
+app.use("/goal", Goals);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
