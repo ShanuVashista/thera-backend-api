@@ -190,6 +190,39 @@ const GetVideoList = async (req, res: Response) => {
   }
 };
 
+
+const GetVideoById = async (req, res: Response) => {
+  try {
+    const user = JSON.parse(JSON.stringify(req.user));
+    const id = req.params.videoId;
+
+    if (user.role_id != "doctor") {
+      return res.status(404).json({
+        status: false,
+        type: "success",
+        message: "You are not authorise to get a Video Details",
+      });
+    }
+
+    const result = await Video.findById({_id: id});
+
+    res.status(200).json({
+      status: true,
+      type: "success",
+      message: "Video Details Fetch Successfully",
+      data: result,
+    });
+  } catch (error) {
+    console.log("error", error);
+    return res.status(400).json({
+      status: false,
+      type: "error",
+      message: error.message,
+    });
+  }
+};
+
+
 const AssignVideoToPatient = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
@@ -200,7 +233,7 @@ const AssignVideoToPatient = async (req, res: Response) => {
       return res.status(404).json({
         status: false,
         type: "success",
-        message: "You are not authorise to Edit the Video",
+        message: "You are not authorise to Assign the Video",
       });
     }
 
@@ -272,37 +305,6 @@ const EditVideo = async (req, res: Response) => {
       status: true,
       type: "success",
       message: "Video Details Updated Successfully",
-      data: result,
-    });
-  } catch (error) {
-    console.log("error", error);
-    return res.status(400).json({
-      status: false,
-      type: "error",
-      message: error.message,
-    });
-  }
-};
-
-const GetVideoById = async (req, res: Response) => {
-  try {
-    const user = JSON.parse(JSON.stringify(req.user));
-    const id = req.params.videoId;
-
-    if (user.role_id != "doctor") {
-      return res.status(404).json({
-        status: false,
-        type: "success",
-        message: "You are not authorise to get a Video Details",
-      });
-    }
-
-    const result = await Video.findById({_id: id});
-
-    res.status(200).json({
-      status: true,
-      type: "success",
-      message: "Video Details Fetch Successfully",
       data: result,
     });
   } catch (error) {
