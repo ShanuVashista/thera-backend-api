@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "build": "tsc && copy -R src/views dist/src",
+    "build": "tsc && cp -R src/views dist/src",
     "start": "node dist/src/app.js",
     "dev": "nodemon src/app.ts",
     "lint": "eslint . --ext .ts",
