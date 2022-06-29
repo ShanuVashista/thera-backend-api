@@ -9,7 +9,7 @@ export interface IGoals {
   goals: Array<unknown>;
   isdeleted: boolean;
   doctorId: PopulatedDoc<IUser>;
-  patientId: PopulatedDoc<IUser>;
+  patients: PopulatedDoc<IUser>;
 }
 
 const CreateGoal = async (req, res: Response) => {
@@ -111,8 +111,8 @@ const GetGoals = async (req, res: Response) => {
       const arr = [];
       let total;
       for (let i = 0; i < goals.length; i++) {
-        const patientId = goals[i].patientId;
-        const found = patientId.find((e) => e === user._id);
+        const patients = goals[i].patients;
+        const found = patients.find((e) => e === user._id);
         if (found != undefined) {
           arr.push(goals[i]);
           total = i;
@@ -241,12 +241,12 @@ const AssignGoalToPatient = async (req, res: Response) => {
     const tempArray = {};
     tempArray["oldData"] = doc;
 
-    const oldPatinets = doc.patientId;
-    const newPatients = requestData.patientId;
+    const oldPatinets = doc.patients;
+    const newPatients = requestData.patients;
 
     for (let i = 0; i < newPatients.length; i++) {
       if (!oldPatinets.includes(newPatients[i])) {
-        await doc.updateOne({ $push: { patientId: newPatients[i] } });
+        await doc.updateOne({ $push: { patients: newPatients[i] } });
       }
     }
 

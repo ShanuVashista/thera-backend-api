@@ -6,7 +6,7 @@ export interface IGoal {
   goals: Array<unknown>;
   isdeleted: boolean;
   doctorId: PopulatedDoc<IUser>;
-  patientId: PopulatedDoc<IUser>;
+  patients: PopulatedDoc<IUser>;
 }
 
 const goalSchema = new mongoose.Schema<IGoal>({
@@ -22,7 +22,7 @@ const goalSchema = new mongoose.Schema<IGoal>({
     type: Schema.Types.ObjectId,
     ref: "user",
   },
-  patientId: [
+  patients: [
     {
       type: Schema.Types.ObjectId,
       ref: "user",
@@ -44,7 +44,7 @@ goalSchema.virtual("doctor", {
 
 goalSchema.virtual("patient", {
   ref: "user",
-  localField: "patientId",
+  localField: "patients",
   foreignField: "_id",
   justOne: true,
 });

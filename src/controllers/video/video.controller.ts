@@ -113,6 +113,7 @@ const GetVideoList = async (req, res: Response) => {
       const videos = result[0].data;
       const arr = [];
       let total;
+      
       for (let i = 0; i < videos.length; i++) {
         const patients = videos[i].patients;
         const found = patients.find((e) => e === user._id);
