@@ -6,7 +6,7 @@ export interface IGoal {
   goals: Array<unknown>;
   isdeleted: boolean;
   doctorId: PopulatedDoc<IUser>;
-  patients: PopulatedDoc<IUser>;
+  patients: Array<string>;
 }
 
 const goalSchema = new mongoose.Schema<IGoal>({

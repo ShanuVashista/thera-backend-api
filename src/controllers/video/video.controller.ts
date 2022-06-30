@@ -270,7 +270,7 @@ const AssignVideoToPatient = async (req, res: Response) => {
       },
     });
   } catch (error) {
-    console.log("error", error);
+    // console.log("error", error);
     return res.status(400).json({
       status: false,
       type: "error",
@@ -359,8 +359,8 @@ const DeleteVideo = async (req, res: Response) => {
 export default {
   AddVideo,
   GetVideoList,
-  AssignVideoToPatient,
-  DeleteVideo,
-  EditVideo,
   GetVideoById,
+  AssignVideoToPatient,
+  EditVideo,
+  DeleteVideo,
 };
