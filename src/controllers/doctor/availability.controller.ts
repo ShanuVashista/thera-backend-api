@@ -3,10 +3,9 @@ import Availability from "../../db/models/availability.model";
 import { filterPaginate } from "../../lib/filterPaginate";
 
 export const updateAvailability = async (req, res) => {
-  console.log("req", req.body);
-
   const newArr = req.body.data;
   console.log("newArr", newArr);
+
   try {
     await checkForConflict(newArr, req.user._id);
     const availabilities = await Availability.bulkWrite(

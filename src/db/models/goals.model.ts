@@ -1,11 +1,14 @@
 import mongoose, { Schema, model, PopulatedDoc } from "mongoose";
 import { IUser } from "./user";
+import { ITask } from "./task.model";
 
 export interface IGoal {
+  _id: string;
   title: string;
   goals: Array<unknown>;
   isdeleted: boolean;
   doctorId: PopulatedDoc<IUser>;
+  task: PopulatedDoc<ITask>;
   patients: Array<string>;
 }
 
@@ -22,6 +25,13 @@ const goalSchema = new mongoose.Schema<IGoal>({
     type: Schema.Types.ObjectId,
     ref: "user",
   },
+  task: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "task",
+      default: null,
+    },
+  ],
   patients: [
     {
       type: Schema.Types.ObjectId,

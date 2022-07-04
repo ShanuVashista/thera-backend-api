@@ -32,8 +32,8 @@ export interface IUser {
   total_exp?: string;
   current_practise_address?: Array<unknown>;
   license?: Array<unknown>;
-  healthCardNo?:string;
-  healthProfileId?:mongoose.PopulatedDoc<IHealthProfile>
+  healthCardNo?: string;
+  healthProfileId?: mongoose.PopulatedDoc<IHealthProfile>;
   // weight?: number;
   // height?: number;
   // bmi?: number;
@@ -71,14 +71,14 @@ const userSchema = new mongoose.Schema<IUser>(
       },
       required: true,
     },
-    
-    healthProfileId:{
-      type:mongoose.Schema.Types.ObjectId,
-      ref: 'healthprofiles'
+
+    healthProfileId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "healthprofiles",
     },
-    
-    healthCardNo:{
-      type: String
+
+    healthCardNo: {
+      type: String,
     },
 
     profile_photo: { type: String },

@@ -1,13 +1,15 @@
 import mongoose, { Schema, model, PopulatedDoc } from "mongoose";
 import { IUser } from "./user";
+import { ITask } from "./task.model";
 
 export interface IVideo {
-  isYoutube: boolean;
-  isdeleted: boolean;
   title: string;
   url: string;
+  taskId: PopulatedDoc<ITask>;
+  isYoutube: boolean;
   uploaderId: PopulatedDoc<IUser>;
   patients: Array<string>;
+  isdeleted: boolean;
 }
 
 const videoSchema = new mongoose.Schema<IVideo>(
@@ -26,6 +28,10 @@ const videoSchema = new mongoose.Schema<IVideo>(
     uploaderId: {
       type: Schema.Types.ObjectId,
       ref: "user",
+    },
+    taskId: {
+      type: Schema.Types.ObjectId,
+      ref: "task",
     },
     isdeleted: {
       type: Boolean,
