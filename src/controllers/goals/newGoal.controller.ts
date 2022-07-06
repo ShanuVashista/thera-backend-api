@@ -678,6 +678,53 @@ const deleteVideo = async (req, res: Response) => {
   }
 };
 
+const taskVideoWatch = async (req, res: Response) => {
+  const user = JSON.parse(JSON.stringify(req.user));
+  const { videoId, goalId } = req.body;
+  const id = req.params.taskId;
+
+  try {
+    //  if (user.role_id != "patient") {
+    //    return res.status(404).json({
+    //      status: false,
+    //      type: "success",
+    //      message: "You are not authorise to Remove Video",
+    //    });
+    //  }
+
+    const newData = {
+      iscompleted: true,
+    };
+
+    const result = await Task.findByIdAndUpdate(
+      {
+        _id: id,
+      },
+      newData
+    );
+
+    const result1 = await Video.findByIdAndUpdate(
+      {
+        _id: videoId,
+      },
+      newData
+    );
+
+    res.status(200).json({
+      status: true,
+      type: "success",
+      message: "Video Status Set Completed Successfully",
+      data: result,
+    });
+  } catch (error) {
+    return res.status(400).json({
+      status: false,
+      type: "error",
+      message: "Internal server error",
+    });
+  }
+};
+
 export default {
   CreateGoal,
   AssignVideoToTask,
@@ -690,4 +737,5 @@ export default {
   deleteVideo,
   RemovePatientFromAssignGoal,
   GetTaskById,
+  taskVideoWatch,
 };
