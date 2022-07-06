@@ -683,14 +683,13 @@ const taskVideoWatch = async (req, res: Response) => {
   const id = req.params.taskId;
 
   try {
-
- if (user.role_id != "patient") {
-   return res.status(404).json({
-     status: false,
-     type: "success",
-     message: "You are not authorise to Remove Video",
-   });
- }
+    //  if (user.role_id != "patient") {
+    //    return res.status(404).json({
+    //      status: false,
+    //      type: "success",
+    //      message: "You are not authorise to Remove Video",
+    //    });
+    //  }
 
     const newData = {
       iscompleted: true,
@@ -709,9 +708,6 @@ const taskVideoWatch = async (req, res: Response) => {
       },
       newData
     );
-
-    console.log("result: " + result);
-    console.log("result1: " + result1);
 
     res.status(200).json({
       status: true,
