@@ -29,8 +29,7 @@ const goalSchema = new mongoose.Schema<IGoal>({
   ],
   patients: [
     {
-      type: Schema.Types.ObjectId,
-      ref: "user",
+      type: String,
       default: null,
     },
   ],
@@ -38,6 +37,13 @@ const goalSchema = new mongoose.Schema<IGoal>({
     type: Boolean,
     default: false,
   },
+});
+
+goalSchema.virtual("task_details", {
+  ref: "task",
+  localField: "patients",
+  foreignField: "_id",
+  justOne: true,
 });
 
 goalSchema.virtual("doctor", {

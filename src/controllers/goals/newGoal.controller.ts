@@ -85,7 +85,7 @@ const CreateGoal = async (req, res: Response) => {
 
     const newData = await Goals.findById({ _id: result._id, isdeleted: false });
 
-    console.log(newData);
+    // console.log(newData);
 
     res.status(StatusCodes.OK).json({
       type: "success",
@@ -386,6 +386,7 @@ const RemovePatientFromAssignGoal = async (req, res: Response) => {
 const GetGoalList = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
+
     let { page, limit, sort, cond } = req.body;
 
     let doctorId = "";
