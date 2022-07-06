@@ -9,6 +9,7 @@ export interface IVideo {
   isYoutube: boolean;
   patients: Array<string>;
   isdeleted: boolean;
+  iscompleted: boolean;
   taskId: PopulatedDoc<ITask>;
   goalId: PopulatedDoc<IGoal>;
   uploaderId: PopulatedDoc<IUser>;
@@ -40,6 +41,11 @@ const videoSchema = new mongoose.Schema<IVideo>(
       ref: "goal",
     },
     isdeleted: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    iscompleted: {
       type: Boolean,
       required: true,
       default: false,

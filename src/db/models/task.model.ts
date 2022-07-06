@@ -6,7 +6,7 @@ export interface ITask {
   name: string;
   videoId: Array<string>;
   patients: Array<string>;
-  isCompleted: boolean;
+  iscompleted: boolean;
   isdeleted: boolean;
   goalId: PopulatedDoc<IGoal>;
   uploaderId: PopulatedDoc<IUser>;
@@ -36,7 +36,7 @@ const TaskSchema = new mongoose.Schema<ITask>({
       default: null,
     },
   ],
-  isCompleted: {
+  iscompleted: {
     type: Boolean,
     default: false,
   },

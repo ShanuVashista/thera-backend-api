@@ -26,5 +26,6 @@ router.get("/get-task/:taskId", auth, controller.GetTaskById);
 router.put("/delete-goal/:goalId", auth, controller.deleteGoal);
 router.put("/delete-task/:taskId", auth, controller.deleteTask);
 router.put("/delete-video/:videoId", auth, controller.deleteVideo);
+router.put("/watch-completed/:taskId", auth, controller.taskVideoWatch);
 
 export = router;
