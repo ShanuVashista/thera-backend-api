@@ -1,28 +1,29 @@
-import Goals, { IGoal } from "../../db/models/goals.model";
+import Goals from "../../db/models/goals.model";
 import Task from "../../db/models/task.model";
 import Video from "../../db/models/video.model";
+import PatientTask from "../../db/models/patientTask.model";
 import { Response } from "express";
 import mongoose from "mongoose";
 import { StatusCodes } from "http-status-codes";
 const ObjectId = <any>mongoose.Types.ObjectId;
 
 const CreateGoal = async (req, res: Response) => {
-  const user = JSON.parse(JSON.stringify(req.user));
-
-  const newArr = req.body.task;
-
-  const splitKeyValue = (obj) => {
-    const keys = Object.keys(obj);
-    const res = [];
-    for (let i = 0; i < keys.length; i++) {
-      res.push({
-        _id: ObjectId(obj[keys[i]]),
-      });
-    }
-    return res;
-  };
-
   try {
+    const user = JSON.parse(JSON.stringify(req.user));
+
+    const newArr = req.body.task;
+
+    const splitKeyValue = (obj) => {
+      const keys = Object.keys(obj);
+      const res = [];
+      for (let i = 0; i < keys.length; i++) {
+        res.push({
+          _id: ObjectId(obj[keys[i]]),
+        });
+      }
+      return res;
+    };
+
     if (user.role_id != "doctor") {
       return res.status(404).json({
         status: false,
@@ -30,6 +31,12 @@ const CreateGoal = async (req, res: Response) => {
         message: "You are not authorise to add a Video",
       });
     }
+
+    const result = new Goals({
+      title: req.body.title,
+      doctorId: req.user._id,
+    });
+    await result.save();
 
     const tasks = await Task.bulkWrite(
       newArr.map((task) =>
@@ -42,6 +49,7 @@ const CreateGoal = async (req, res: Response) => {
                 },
                 update: {
                   ...task,
+                  goalId: result._id,
                   uploaderId: req.user._id,
                 },
               },
@@ -50,6 +58,7 @@ const CreateGoal = async (req, res: Response) => {
               insertOne: {
                 document: {
                   ...task,
+                  goalId: result._id,
                   uploaderId: req.user._id,
                 },
               },
@@ -60,33 +69,29 @@ const CreateGoal = async (req, res: Response) => {
     const newTask = splitKeyValue(tasks.insertedIds);
 
     const requestData = {
-      title: req.body.title,
       task: newTask,
     };
 
-    let result;
+    let newResult;
 
-    if (req.body._id) {
-      result = await Goals.findByIdAndUpdate(
+    if (result._id) {
+      newResult = await Goals.findByIdAndUpdate(
         {
-          _id: req.body._id,
+          _id: result._id,
         },
         requestData
       );
-    } else {
-      result = new Goals({
-        title: req.body.title,
-        task: newTask,
-        doctorId: req.user._id,
-      });
-      await result.save();
     }
+
+    const newData = await Goals.findById({ _id: result._id, isdeleted: false });
+
+    console.log(newData);
 
     res.status(StatusCodes.OK).json({
       type: "success",
       status: true,
       message: "Task added",
-      data: result,
+      data: newData,
     });
   } catch (error) {
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
@@ -136,6 +141,7 @@ const AssignVideoToTask = async (req, res: Response) => {
                 update: {
                   ...video,
                   taskId: id,
+                  goalId: req.body.goalId,
                   uploaderId: req.user._id,
                 },
               },
@@ -145,6 +151,7 @@ const AssignVideoToTask = async (req, res: Response) => {
                 document: {
                   ...video,
                   taskId: id,
+                  goalId: req.body.goalId,
                   uploaderId: req.user._id,
                 },
               },
@@ -216,6 +223,86 @@ const AssignGoalToPatient = async (req, res: Response) => {
     for (let i = 0; i < newPatients.length; i++) {
       if (!oldPatinets.includes(newPatients[i])) {
         await doc.updateOne({ $push: { patients: newPatients[i] } });
+      }
+    }
+
+    const updatedDoc = await Goals.findById(id);
+
+    tempArray["newData"] = requestData;
+
+    res.status(200).json({
+      status: true,
+      type: "success",
+      message: "Goal Assign To Patient Successfully",
+      data: {
+        updatedDoc,
+      },
+    });
+  } catch (error) {
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      type: "error",
+      status: false,
+      message: error.message,
+    });
+  }
+};
+
+const AssignTaskToPatient = async (req, res: Response) => {
+  try {
+    const id = req.params.videoId;
+    const { goalId, taskId, patients } = req.body;
+    const user = JSON.parse(JSON.stringify(req.user));
+    const requestData = req.body;
+
+    if (user.role_id != "doctor") {
+      return res.status(404).json({
+        status: false,
+        type: "success",
+        message: "You are not authorise to add a Video",
+      });
+    }
+
+    const doc = await Task.findById({ _id: taskId });
+    const doc1 = await PatientTask.find({ videoId: id });
+
+    console.log("doc1", doc1);
+
+    if (!doc1) {
+      console.log("yes", doc1);
+
+      const tempVideoArray = {};
+      tempVideoArray["oldData"] = doc1;
+
+      const oldVideo = doc.patients;
+      const newVideo = patients;
+    } else {
+      console.log("no", doc1);
+    }
+
+    if (!doc) {
+      return res.status(404).json({
+        status: false,
+        type: "error",
+        message: "Task not found",
+      });
+    }
+    const tempArray = {};
+    tempArray["oldData"] = doc;
+
+    const oldPatinets = doc.patients;
+    const newPatients = patients;
+
+    for (let i = 0; i < newPatients.length; i++) {
+      if (!oldPatinets.includes(newPatients[i])) {
+        await doc.updateOne({ $push: { patients: newPatients[i] } });
+        const newResult = new PatientTask({
+          goalId: goalId,
+          taskId: taskId,
+          videoId: id,
+          patientId: newPatients[i],
+        });
+
+        await newResult.save();
       }
     }
 
@@ -393,22 +480,6 @@ const GetGoalList = async (req, res: Response) => {
           ],
         },
       },
-      {
-        $lookup: {
-          from: "goal",
-          let: { taskId: "$_id" },
-          pipeline: [
-            {
-              $match: {
-                $expr: {
-                  $and: [{ $eq: ["$task", "$$taskId"] }],
-                },
-              },
-            },
-          ],
-          as: "task",
-        },
-      },
       { $sort: sort },
       {
         $facet: {
@@ -421,9 +492,10 @@ const GetGoalList = async (req, res: Response) => {
         },
       },
     ];
+
     limit = parseInt(limit);
 
-    const result = await Goals.aggregate(cond).exec();
+    const result = await Goals.aggregate(cond);
 
     let totalPages = 0;
     if (result[0].total.length != 0) {
@@ -605,12 +677,11 @@ const deleteVideo = async (req, res: Response) => {
   }
 };
 
-// const
-
 export default {
   CreateGoal,
   AssignVideoToTask,
   AssignGoalToPatient,
+  AssignTaskToPatient,
   GetGoalList,
   GetGoalsById,
   deleteGoal,

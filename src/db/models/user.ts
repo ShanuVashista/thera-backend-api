@@ -71,7 +71,6 @@ const userSchema = new mongoose.Schema<IUser>(
       },
       required: true,
     },
-
     healthProfileId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "healthprofiles",

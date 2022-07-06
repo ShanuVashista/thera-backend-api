@@ -1,0 +1,22 @@
+Video URL = main URL + Embed URL
+
+
+Main URL = "https://www.youtube.com/watch?v="
+
+
+Embed URL= "GJ7Jq0e_hj8"
+Embed URL= "QspOloFTHa4"
+Embed URL= "EgrWJRTs3Pk"
+Embed URL= "cSoutfp7SPQ"
+Embed URL= "RtknU1b6vVs"
+Embed URL= "UaMzCEHzgMk"
+Embed URL= "oc4QS2USKmk"
+Embed URL= "KfJPk2roYD4"
+Embed URL= "75iJwIp70ZE"
+Embed URL= "irnHMIPTdV0"
+Embed URL= "o8uTdn_zkok"
+Embed URL= "dQ_PK7Z-vv4"
+Embed URL= "X655B4ISakg"
+Embed URL= "60OlNC0U5Mg"
+Embed URL= "CHSnz0bCaUk"
+

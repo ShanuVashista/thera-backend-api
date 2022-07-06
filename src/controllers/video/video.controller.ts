@@ -9,6 +9,8 @@ export interface IVideo {
   title: string;
   url: string;
   uploaderId: string;
+  goalId: string;
+  taskId: string;
   patients: Array<string>;
 }
 
@@ -50,7 +52,7 @@ const AddVideo = async (req, res) => {
 const GetVideoList = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
-    let { page, limit, sort, cond } = req.body;
+    let { page, limit, sort, cond, goalId, taskId } = req.body;
 
     let uploaderId = "";
     if (user.role_id === "doctor") {
@@ -70,6 +72,12 @@ const GetVideoList = async (req, res: Response) => {
     if (!cond) {
       cond = {};
     }
+    if (!goalId) {
+      goalId = "";
+    }
+    if (!taskId) {
+      taskId = "";
+    }
     if (!sort) {
       sort = { createdAt: -1 };
     }
@@ -83,6 +91,8 @@ const GetVideoList = async (req, res: Response) => {
         {
           $match: {
             isdeleted: false,
+            goalId: ObjectId(goalId),
+            taskId: ObjectId(taskId),
             $and: [
               cond,
               {
@@ -113,7 +123,7 @@ const GetVideoList = async (req, res: Response) => {
       const videos = result[0].data;
       const arr = [];
       let total;
-      
+
       for (let i = 0; i < videos.length; i++) {
         const patients = videos[i].patients;
         const found = patients.find((e) => e === user._id);
@@ -140,6 +150,8 @@ const GetVideoList = async (req, res: Response) => {
         $match: {
           isdeleted: false,
           uploaderId: ObjectId(uploaderId),
+          goalId: ObjectId(goalId),
+          taskId: ObjectId(taskId),
           $and: [
             cond,
             {

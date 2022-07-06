@@ -5,7 +5,6 @@ import { ITask } from "./task.model";
 export interface IGoal {
   _id: string;
   title: string;
-  goals: Array<unknown>;
   isdeleted: boolean;
   doctorId: PopulatedDoc<IUser>;
   task: PopulatedDoc<ITask>;
@@ -16,10 +15,6 @@ const goalSchema = new mongoose.Schema<IGoal>({
   title: {
     type: String,
     required: true,
-  },
-  goals: {
-    type: Array,
-    default: null,
   },
   doctorId: {
     type: Schema.Types.ObjectId,

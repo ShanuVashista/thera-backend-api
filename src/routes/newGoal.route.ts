@@ -11,6 +11,11 @@ router.put(
   controller.AssignGoalToPatient
 );
 router.put(
+  "/task-assign-patient/:videoId",
+  auth,
+  controller.AssignTaskToPatient
+);
+router.put(
   "/goal-remove-patient/:goalId",
   auth,
   controller.RemovePatientFromAssignGoal
