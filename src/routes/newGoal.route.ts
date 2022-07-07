@@ -4,6 +4,7 @@ import auth from "../middlewares/auth.middleware";
 const router = express.Router();
 
 router.put("/create-new-goal", auth, controller.CreateGoal);
+router.put("/edit-goal/:goalId", auth, controller.EditGoal);
 router.put("/assign-task-video/:taskId", auth, controller.AssignVideoToTask);
 router.put(
   "/goal-assign-patient/:goalId",
@@ -23,6 +24,7 @@ router.put(
 router.post("/get-goals", auth, controller.GetGoalList);
 router.get("/get-goal/:goalId", auth, controller.GetGoalsById);
 router.get("/get-task/:taskId", auth, controller.GetTaskById);
+router.get("/get-task-bygoalid/:goalId", auth, controller.GetTaskByGoalId);
 router.put("/delete-goal/:goalId", auth, controller.deleteGoal);
 router.put("/delete-task/:taskId", auth, controller.deleteTask);
 router.put("/delete-video/:videoId", auth, controller.deleteVideo);

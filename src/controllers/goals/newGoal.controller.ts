@@ -582,6 +582,29 @@ const GetTaskById = async (req, res: Response) => {
   }
 };
 
+const GetTaskByGoalId = async (req, res: Response) => {
+  try {
+    const id = req.params.goalId;
+
+    const result = await Task.find({
+      goalId: ObjectId(id),
+      isdeleted: false,
+    });
+
+    res.status(200).json({
+      status: true,
+      type: "success",
+      message: "Task Details Fetch Successfully",
+      data: result,
+    });
+  } catch (error) {
+    return res.status(400).json({
+      status: false,
+      message: error.message,
+    });
+  }
+};
+
 const deleteGoal = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
@@ -625,6 +648,7 @@ const deleteTask = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
     const id = req.params.taskId;
+    const { goalId } = req.body;
 
     if (user.role_id != "doctor") {
       return res.status(404).json({
@@ -634,22 +658,25 @@ const deleteTask = async (req, res: Response) => {
       });
     }
 
-    const newData = {
-      isdeleted: true,
-    };
+    // const newData = {
+    //   isdeleted: true,
+    // };
 
-    const result = await Task.findByIdAndUpdate(
-      {
-        _id: id,
-      },
-      newData
-    );
+    // const result = await Task.findByIdAndUpdate(
+    //   {
+    //     _id: id,
+    //   },
+    //   newData
+    // );
+
+    const goalData = await Goals.find({ _id: goalId });
+    console.log("goalData", goalData);
 
     res.status(200).json({
       status: true,
       type: "success",
       message: "Task Removed Successfully",
-      data: result,
+      // data: result,
     });
   } catch (error) {
     return res.status(400).json({
@@ -746,6 +773,103 @@ const taskVideoWatch = async (req, res: Response) => {
   }
 };
 
+const EditGoal = async (req, res: Response) => {
+  try {
+    const user = JSON.parse(JSON.stringify(req.user));
+    const goalId = req.params.goalId;
+
+    const newArr = req.body.task;
+
+    const splitKeyValue = (obj) => {
+      const keys = Object.keys(obj);
+      const res = [];
+      for (let i = 0; i < keys.length; i++) {
+        res.push({
+          _id: ObjectId(obj[keys[i]]),
+        });
+      }
+      return res;
+    };
+
+    if (user.role_id != "doctor") {
+      return res.status(404).json({
+        status: false,
+        type: "success",
+        message: "You are not authorise to edit goal details",
+      });
+    }
+
+    const result = await Goals.findByIdAndUpdate(
+      {
+        _id: goalId,
+      },
+      { title: req.body.title }
+    );
+
+    const tasks = await Task.bulkWrite(
+      newArr.map((task) =>
+        task._id
+          ? {
+              updateOne: {
+                filter: {
+                  _id: task._id,
+                  uploaderId: req.user._id,
+                },
+                update: {
+                  ...task,
+                  goalId: goalId,
+                  uploaderId: req.user._id,
+                },
+              },
+            }
+          : {
+              insertOne: {
+                document: {
+                  ...task,
+                  goalId: goalId,
+                  uploaderId: req.user._id,
+                },
+              },
+            }
+      )
+    );
+
+    const newTask = splitKeyValue(tasks.insertedIds);
+
+    const requestData = {
+      task: newTask,
+    };
+
+    let newResult;
+
+    if (result._id) {
+      newResult = await Goals.findByIdAndUpdate(
+        {
+          _id: result._id,
+        },
+        requestData
+      );
+    }
+
+    const newData = await Goals.findById({ _id: result._id, isdeleted: false });
+
+    // console.log(newData);
+
+    res.status(StatusCodes.OK).json({
+      type: "success",
+      status: true,
+      message: "Task added",
+      data: newData,
+    });
+  } catch (error) {
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      type: "error",
+      status: false,
+      message: error.message,
+    });
+  }
+};
+
 export default {
   CreateGoal,
   AssignVideoToTask,
@@ -759,4 +883,6 @@ export default {
   RemovePatientFromAssignGoal,
   GetTaskById,
   taskVideoWatch,
+  GetTaskByGoalId,
+  EditGoal,
 };
