@@ -502,6 +502,7 @@ const GetGoalList = async (req, res: Response) => {
     // const goals = result[0].data;
     // const arr = [];
 
+
     // for (let i = 0; i < goals.length; i++) {
     //   const task = goals[i].task;
 
