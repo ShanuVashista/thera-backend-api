@@ -446,6 +446,7 @@ const GetGoalList = async (req, res: Response) => {
 
       const goals = result[0].data;
       const arr = [];
+
       let total;
       for (let i = 0; i < goals.length; i++) {
         const patients = goals[i].patients;
@@ -498,25 +499,25 @@ const GetGoalList = async (req, res: Response) => {
 
     const result = await Goals.aggregate(cond);
 
-    const goals = result[0].data;
-    const arr = [];
+    // const goals = result[0].data;
+    // const arr = [];
 
-    for (let i = 0; i < goals.length; i++) {
-      const task = goals[i].task;
+    // for (let i = 0; i < goals.length; i++) {
+    //   const task = goals[i].task;
 
-      for (let j = 0; j < goals.length; j++) {
-        const taskId = task[j];
+    //   for (let j = 0; j < goals.length; j++) {
+    //     const taskId = task[j];
 
-        if (taskId !== undefined) {
-          const taskData = await Task.find({ _id: taskId, isdeleted: false })
-            .populate("goalId")
-            .exec();
+    //     if (taskId !== undefined) {
+    //       const taskData = await Task.find({ _id: taskId, isdeleted: false })
+    //         .populate("goalId")
+    //         .exec();
 
-          console.log(taskData[0]);
-          arr.push(taskData[0]);
-        }
-      }
-    }
+    //       console.log(taskData[0]);
+    //       arr.push(taskData[0]);
+    //     }
+    //   }
+    // }
 
     let totalPages = 0;
     if (result[0].total.length != 0) {
@@ -531,7 +532,7 @@ const GetGoalList = async (req, res: Response) => {
       limit: limit,
       totalPages: totalPages,
       total: result[0].total.length != 0 ? result[0].total[0].count : 0,
-      result: arr,
+      // result: arr,
       data: result[0].data,
     });
   } catch (error) {
@@ -852,8 +853,6 @@ const EditGoal = async (req, res: Response) => {
     }
 
     const newData = await Goals.findById({ _id: result._id, isdeleted: false });
-
-    // console.log(newData);
 
     res.status(StatusCodes.OK).json({
       type: "success",
