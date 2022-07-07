@@ -621,7 +621,6 @@ const deleteTask = async (req, res: Response) => {
   try {
     const user = JSON.parse(JSON.stringify(req.user));
     const id = req.params.taskId;
-    const { goalId } = req.body;
 
     if (user.role_id != "doctor") {
       return res.status(404).json({
@@ -641,8 +640,6 @@ const deleteTask = async (req, res: Response) => {
       },
       newData
     );
-
-    const goalData = await Goals.find({ _id: goalId });
 
     res.status(200).json({
       status: true,
