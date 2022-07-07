@@ -498,6 +498,26 @@ const GetGoalList = async (req, res: Response) => {
 
     const result = await Goals.aggregate(cond);
 
+    const goals = result[0].data;
+    const arr = [];
+
+    for (let i = 0; i < goals.length; i++) {
+      const task = goals[i].task;
+
+      for (let j = 0; j < goals.length; j++) {
+        const taskId = task[j];
+
+        if (taskId !== undefined) {
+          const taskData = await Task.find({ _id: taskId, isdeleted: false })
+            .populate("goalId")
+            .exec();
+
+          console.log(taskData[0]);
+          arr.push(taskData[0]);
+        }
+      }
+    }
+
     let totalPages = 0;
     if (result[0].total.length != 0) {
       totalPages = Math.ceil(result[0].total[0].count / limit);
@@ -511,6 +531,7 @@ const GetGoalList = async (req, res: Response) => {
       limit: limit,
       totalPages: totalPages,
       total: result[0].total.length != 0 ? result[0].total[0].count : 0,
+      result: arr,
       data: result[0].data,
     });
   } catch (error) {

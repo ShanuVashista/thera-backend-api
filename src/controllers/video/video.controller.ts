@@ -87,51 +87,38 @@ const GetVideoList = async (req, res: Response) => {
     }
 
     if (user.role_id === "patient") {
-      cond = [
-        {
-          $match: {
-            isdeleted: false,
-            goalId: ObjectId(goalId),
-            taskId: ObjectId(taskId),
-            $and: [
-              cond,
-              {
-                $or: [
-                  { title: { $regex: search, $options: "i" } },
-                  { url: { $regex: search, $options: "i" } },
-                ],
-              },
-            ],
-          },
-        },
-        { $sort: sort },
-        {
-          $facet: {
-            data: [{ $skip: (page - 1) * limit }, { $limit: limit }],
-            total: [
-              {
-                $count: "count",
-              },
-            ],
-          },
-        },
-      ];
+      // cond = [
+      //   {
+      //     $match: {
+      //       isdeleted: false,
+      //       goalId: ObjectId(goalId),
+      //       taskId: ObjectId(taskId),
+      //       $and: [
+      //         cond,
+      //         {
+      //           $or: [
+      //             { title: { $regex: search, $options: "i" } },
+      //             { url: { $regex: search, $options: "i" } },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //   },
+      //   { $sort: sort },
+      //   {
+      //     $facet: {
+      //       data: [{ $skip: (page - 1) * limit }, { $limit: limit }],
+      //       total: [
+      //         {
+      //           $count: "count",
+      //         },
+      //       ],
+      //     },
+      //   },
+      // ];
       limit = parseInt(limit);
 
-      const result = await Video.aggregate(cond);
-
-      const videos = result[0].data;
-      const arr = [];
-      let total;
-
-      for (let i = 0; i < videos.length; i++) {
-        const patients = videos[i].patients;
-        const found = patients.find((e) => e === user._id);
-        if (found != undefined) {
-          arr.push(videos[i]);
-          total = i;
-        }
-      }
+      const result = await Video.find({ taskId: taskId });
 
       return res.status(200).json({
         status: true,
@@ -140,8 +127,8 @@ const GetVideoList = async (req, res: Response) => {
         page: page,
         limit: limit,
         // totalPages: totalPages,
-        total: result[0].total.length != 0 ? result[0].total[0].count : 0,
-        data: arr,
+        // total: user[0].total.length != 0 ? user[0].total[0].count : 0,
+        data: result,
       });
     }
 
