@@ -85,8 +85,6 @@ const CreateGoal = async (req, res: Response) => {
 
     const newData = await Goals.findById({ _id: result._id, isdeleted: false });
 
-    // console.log(newData);
-
     res.status(StatusCodes.OK).json({
       type: "success",
       status: true,
@@ -265,18 +263,12 @@ const AssignTaskToPatient = async (req, res: Response) => {
     const doc = await Task.findById({ _id: taskId });
     const doc1 = await PatientTask.find({ videoId: id });
 
-    console.log("doc1", doc1);
-
     if (!doc1) {
-      console.log("yes", doc1);
-
       const tempVideoArray = {};
       tempVideoArray["oldData"] = doc1;
 
       const oldVideo = doc.patients;
       const newVideo = patients;
-    } else {
-      console.log("no", doc1);
     }
 
     if (!doc) {
@@ -499,27 +491,6 @@ const GetGoalList = async (req, res: Response) => {
 
     const result = await Goals.aggregate(cond);
 
-    // const goals = result[0].data;
-    // const arr = [];
-
-
-    // for (let i = 0; i < goals.length; i++) {
-    //   const task = goals[i].task;
-
-    //   for (let j = 0; j < goals.length; j++) {
-    //     const taskId = task[j];
-
-    //     if (taskId !== undefined) {
-    //       const taskData = await Task.find({ _id: taskId, isdeleted: false })
-    //         .populate("goalId")
-    //         .exec();
-
-    //       console.log(taskData[0]);
-    //       arr.push(taskData[0]);
-    //     }
-    //   }
-    // }
-
     let totalPages = 0;
     if (result[0].total.length != 0) {
       totalPages = Math.ceil(result[0].total[0].count / limit);
@@ -660,25 +631,24 @@ const deleteTask = async (req, res: Response) => {
       });
     }
 
-    // const newData = {
-    //   isdeleted: true,
-    // };
+    const newData = {
+      isdeleted: true,
+    };
 
-    // const result = await Task.findByIdAndUpdate(
-    //   {
-    //     _id: id,
-    //   },
-    //   newData
-    // );
+    const result = await Task.findByIdAndUpdate(
+      {
+        _id: id,
+      },
+      newData
+    );
 
     const goalData = await Goals.find({ _id: goalId });
-    console.log("goalData", goalData);
 
     res.status(200).json({
       status: true,
       type: "success",
       message: "Task Removed Successfully",
-      // data: result,
+      data: result,
     });
   } catch (error) {
     return res.status(400).json({
@@ -734,13 +704,13 @@ const taskVideoWatch = async (req, res: Response) => {
   const id = req.params.taskId;
 
   try {
-    //  if (user.role_id != "patient") {
-    //    return res.status(404).json({
-    //      status: false,
-    //      type: "success",
-    //      message: "You are not authorise to Remove Video",
-    //    });
-    //  }
+    if (user.role_id != "patient") {
+      return res.status(404).json({
+        status: false,
+        type: "success",
+        message: "You are not authorise to Remove Video",
+      });
+    }
 
     const newData = {
       iscompleted: true,
