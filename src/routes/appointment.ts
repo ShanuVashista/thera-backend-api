@@ -34,6 +34,7 @@ router.get(
 );
 router.get("/:Appointmentid", controller.getAppointment);
 router.put("/:Appointmentid", controller.updateAppointment);
+router.put("/status/:id", controller.Patient_Appointment_PUT);
 router.delete("/:Appointmentid", controller.deleteAppointment);
 export = router;
 

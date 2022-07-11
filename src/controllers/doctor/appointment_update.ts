@@ -40,7 +40,7 @@ const Doctor_Appointment_PUT = async (req, res) => {
     }
     const appointment_update = await Appointment.findByIdAndUpdate(
       body.appointment_id,
-      { $set: { status: body.status } },
+      { $set: { status: body.status, reason: body.reason } },
       { new: true }
     );
 
@@ -66,4 +66,5 @@ const Doctor_Appointment_PUT = async (req, res) => {
     });
   }
 };
+
 export default Doctor_Appointment_PUT;

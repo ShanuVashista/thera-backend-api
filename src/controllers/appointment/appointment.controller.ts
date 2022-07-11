@@ -11,9 +11,11 @@ import {
 } from "./availabilityUtil";
 import StatusCodes from "http-status-codes";
 import mongoose from "mongoose";
+const ObjectId = <any>mongoose.Types.ObjectId;
+
 export interface Appointment {
   userId: number;
-  patientId: number;
+  patientId: string;
   isEmergency: boolean;
   appointmentId: number;
   symptoms: Array<string>;
@@ -23,6 +25,7 @@ export interface Appointment {
   dateOfAppointment: string;
   appointmentType: string;
   description: string;
+  reason: string;
 }
 
 //getting all Appointments
@@ -457,6 +460,35 @@ const Count_Appointment_Thera = async (req, res) => {
   }
 };
 
+const Patient_Appointment_PUT = async (req, res) => {
+  try {
+    const body = req.body;
+    const id = req.params.id;
+    console.log("body", body);
+
+    const result = await Appointment.findByIdAndUpdate(
+      {
+        _id: id,
+      },
+      body
+    );
+
+    res.status(200).json({
+      status: true,
+      type: "success",
+      message: "Appointment Details Updated Successfully",
+      data: result,
+    });
+  } catch (error) {
+    console.log("error", error);
+    return res.status(400).json({
+      status: false,
+      type: "error",
+      message: error.message,
+    });
+  }
+};
+
 export default {
   getAppointments,
   addAppointment,
@@ -465,4 +497,5 @@ export default {
   deleteAppointment,
   Count_Appointment,
   Count_Appointment_Thera,
+  Patient_Appointment_PUT,
 };
