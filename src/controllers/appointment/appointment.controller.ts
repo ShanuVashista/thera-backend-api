@@ -456,6 +456,7 @@ const Count_Appointment_Thera = async (req, res) => {
     });
   }
 };
+
 export default {
   getAppointments,
   addAppointment,
