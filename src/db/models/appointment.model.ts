@@ -24,7 +24,6 @@ const AppointmentSchema = new Schema<IAppointment>(
     patientId: {
       type: Schema.Types.ObjectId,
       ref: "healthProfile",
-      required: true,
     },
     doctorId: { type: Schema.Types.ObjectId, ref: "user" },
     appointmentType: { type: String, required: true },
@@ -41,6 +40,7 @@ const AppointmentSchema = new Schema<IAppointment>(
   },
   { timestamps: true, toJSON: { virtuals: true } }
 );
+
 
 AppointmentSchema.virtual("patient_details", {
   ref: "healthProfile",
@@ -64,5 +64,6 @@ AppointmentSchema.virtual("doctor_details", {
 });
 
 const Appointment = model("Appointment", AppointmentSchema);
+
 
 export default Appointment;

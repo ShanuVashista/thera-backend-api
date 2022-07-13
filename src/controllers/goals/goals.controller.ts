@@ -263,7 +263,7 @@ const AssignGoalToPatient = async (req, res: Response) => {
       },
     });
   } catch (error) {
-    console.log("error", error);
+    // console.log("error", error);
     return res.status(400).json({
       status: false,
       type: "error",
