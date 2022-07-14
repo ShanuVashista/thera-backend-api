@@ -133,16 +133,14 @@ const userSchema = new mongoose.Schema<IUser>(
     current_practise_address: {
       type: Array,
       default: defaultByRole({
-        [Roles.DOCTOR]: [
-          {
-            location: "",
-            postcode: "",
-            city: "",
-            address: "",
-            state: "",
-            country: "",
-          },
-        ],
+        [Roles.DOCTOR]: [{
+            postcode:"",
+            country:"",
+            location:"",
+            state:"",
+            city:"",
+            address:""
+        }],
       }),
     },
 
