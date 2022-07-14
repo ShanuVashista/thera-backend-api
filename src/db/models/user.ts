@@ -140,7 +140,7 @@ const userSchema = new mongoose.Schema<IUser>(
     license: {
       type: Array,
       default: defaultByRole({
-        [Roles.DOCTOR]: [],
+        [Roles.DOCTOR]: [{authority:"",country:"",licence_no:""}],
       }),
     },
     // weight: { type: Number },
