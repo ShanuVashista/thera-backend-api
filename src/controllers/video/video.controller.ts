@@ -87,6 +87,7 @@ const GetVideoList = async (req, res: Response) => {
     }
 
     if (user.role_id === "patient") {
+
       // cond = [
       //   {
       //     $match: {
@@ -189,6 +190,7 @@ const GetVideoList = async (req, res: Response) => {
     });
   }
 };
+
 
 const GetVideoById = async (req, res: Response) => {
   try {
@@ -327,6 +329,8 @@ const DeleteVideo = async (req, res: Response) => {
         message: "You are not authorise to add a Video",
       });
     }
+
+
 
     const newData = {
       isdeleted: true,
