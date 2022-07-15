@@ -438,14 +438,18 @@ const GetGoalList = async (req, res: Response) => {
 
       const goals = result[0].data;
       const arr = [];
-
       let total;
+
+
       for (let i = 0; i < goals.length; i++) {
         const patients = goals[i].patients;
-        const found = patients.find((e) => e === user._id);
-        if (found != undefined) {
-          arr.push(goals[i]);
-          total = i;
+        // console.log(patients)
+        if (patients != undefined){
+          const found = await patients.find((e) => e === user._id);
+          if (found != undefined) {
+            arr.push(goals[i]);
+            total = i;
+          }
         }
       }
 
