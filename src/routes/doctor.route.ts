@@ -21,7 +21,11 @@ import {
   listAvailability,
   updateAvailability,
 } from "../controllers/doctor/availability.controller";
+
+import{addAvailability} from "../controllers/doctor/newAvailability.controller"
+
 import {
+  addAvailabilitySchema,
   listAvailabilitySchema,
   updateAvailabilitySchema,
 } from "../validator/availability.validation";
@@ -38,13 +42,20 @@ doctorRouter.put("/prescription/update", auth, controller.Prescription_PUT);
 
 doctorRouter.put("/profile/update", auth, profileUpdate);
 
+// doctorRouter.put(
+//   "/availability",
+//   auth,
+//   userRole(Roles.DOCTOR),
+//   // validateBody(updateAvailabilitySchema),
+//   updateAvailability
+// );
+
 doctorRouter.put(
-  "/availability",
-  auth,
-  userRole(Roles.DOCTOR),
-  // validateBody(updateAvailabilitySchema),
-  updateAvailability
-);
+    "/availability",
+    auth,
+    userRole(Roles.DOCTOR),
+    addAvailability
+)
 
 doctorRouter.get(
   "/availability",

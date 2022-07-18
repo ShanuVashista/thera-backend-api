@@ -5,26 +5,6 @@ import StatusCodes from "http-status-codes";
 import User from "../../db/models/user";
 const List_User = async (req, res) => {
   try {
-    if (req.user.role_id == "admin") {
-      let { page, limit, sort, cond } = req.body;
-      let search = "";
-      if (!page || page < 1) {
-        page = 1;
-      }
-      if (!limit) {
-        limit = 10;
-      }
-      if (!cond) {
-        cond = {};
-      }
-      if (!sort) {
-        sort = { createdAt: -1 };
-      }
-      if (typeof cond.search != "undefined" && cond.search != null) {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        search = String(cond.search);
-        delete cond.search;
-      }
       // if (typeof (cond.role_id) != 'undefined' && cond.role_id != null) {
       //     cond = [
       //         { $addFields: { phonestr: { $toString: '$phone' } } },
@@ -129,6 +109,28 @@ const List_User = async (req, res) => {
       //         }
       //     ]
       // }
+
+    // if (req.user.role_id == "admin") {
+      let { page, limit, sort, cond } = req.body;
+      let search = "";
+      if (!page || page < 1) {
+        page = 1;
+      }
+      if (!limit) {
+        limit = 10;
+      }
+      if (!cond) {
+        cond = {};
+      }
+      if (!sort) {
+        sort = { createdAt: -1 };
+      }
+      if (typeof cond.search != "undefined" && cond.search != null) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        search = String(cond.search);
+        delete cond.search;
+      }
+
       cond = [
         {
           $match: {
@@ -175,13 +177,15 @@ const List_User = async (req, res) => {
         total: user[0].total.length != 0 ? user[0].total[0].count : 0,
         data: user[0].data,
       });
-    } else {
-      res.status(400).send({
-        status: false,
-        type: "error",
-        message: "You Are Not Authorized User",
-      });
-    }
+    // }
+
+    // else {
+    //   res.status(400).send({
+    //     status: false,
+    //     type: "error",
+    //     message: "You Are Not Authorized User",
+    //   });
+    // }
   } catch (error) {
     res.status(StatusCodes.BAD_REQUEST).json({
       status: false,
