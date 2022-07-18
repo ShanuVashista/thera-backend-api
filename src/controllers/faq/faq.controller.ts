@@ -1,6 +1,5 @@
 import { StatusCodes } from "http-status-codes";
 import Faq from "../../db/models/faq.model";
-import { filterPaginate } from "../../lib/filterPaginate";
 
 export const getFaq = async (req, res) => {
   try {
@@ -15,8 +14,6 @@ export const getFaq = async (req, res) => {
           message: "Faq not found",
         });
       }
-
-      console.log("1");
 
       res.status(StatusCodes.OK).json({
         type: "success",
