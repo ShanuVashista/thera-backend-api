@@ -1,24 +1,30 @@
 import {StatusCodes} from "http-status-codes";
 import NewAvailability from "../../db/models/newAvailability.model";
+import {addMinutes, eachHourOfInterval, isEqual} from 'date-fns'
+import {date} from "joi";
 
 
 const addAvailability = async (req,res) => {
-    const data = req.body;
+    const data = req.body.timeslots;
     try{
-        // const availability = await NewAvailability.create({
-        //     doctorId: req.user._id,
-        //     _id: req.user._id,
-        //     ...req.body,
-        // })
+        data.map((data)=>{
+            const arr=[];
+            let start = new Date(data.start)
+            const end = new Date(data.end)
+            while(!isEqual(start,end)){
+                start = addMinutes(start,30);
+                arr.push(start)
+                console.log(start)
+            }
 
-        const availabilities = await NewAvailability.findOne({_id:Object(req.user._Id)});
-
+            console.log(arr)
+        });
 
         res.status(StatusCodes.OK).json({
             type: "success",
             status: true,
             message: "Availability added done",
-            data:availabilities,
+            data:data,
         });
     }catch (err){
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({

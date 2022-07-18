@@ -42,20 +42,20 @@ doctorRouter.put("/prescription/update", auth, controller.Prescription_PUT);
 
 doctorRouter.put("/profile/update", auth, profileUpdate);
 
-// doctorRouter.put(
-//   "/availability",
-//   auth,
-//   userRole(Roles.DOCTOR),
-//   // validateBody(updateAvailabilitySchema),
-//   updateAvailability
-// );
-
 doctorRouter.put(
-    "/availability",
-    auth,
-    userRole(Roles.DOCTOR),
-    addAvailability
-)
+  "/availability",
+  auth,
+  userRole(Roles.DOCTOR),
+  // validateBody(updateAvailabilitySchema),
+  updateAvailability
+);
+
+// doctorRouter.put(
+//     "/availability",
+//     auth,
+//     userRole(Roles.DOCTOR),
+//     addAvailability
+// )
 
 doctorRouter.get(
   "/availability",
