@@ -15,7 +15,8 @@ const availabilitySchema = new mongoose.Schema<IAvailability>({
     },
     timeslots:[
         {
-            time:Date,
+            start:Date,
+            end:Date,
             active:Boolean,
             isBreak:Boolean,
         }

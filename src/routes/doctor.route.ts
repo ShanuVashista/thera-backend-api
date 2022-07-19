@@ -22,7 +22,7 @@ import {
   updateAvailability,
 } from "../controllers/doctor/availability.controller";
 
-import{addAvailability} from "../controllers/doctor/newAvailability.controller"
+import {addAvailability, getAvailabilities} from "../controllers/doctor/newAvailability.controller"
 
 import {
   addAvailabilitySchema,
@@ -42,28 +42,30 @@ doctorRouter.put("/prescription/update", auth, controller.Prescription_PUT);
 
 doctorRouter.put("/profile/update", auth, profileUpdate);
 
-doctorRouter.put(
-  "/availability",
-  auth,
-  userRole(Roles.DOCTOR),
-  // validateBody(updateAvailabilitySchema),
-  updateAvailability
-);
-
 // doctorRouter.put(
-//     "/availability",
-//     auth,
-//     userRole(Roles.DOCTOR),
-//     addAvailability
-// )
+//   "/availability",
+//   auth,
+//   userRole(Roles.DOCTOR),
+//   // validateBody(updateAvailabilitySchema),
+//   updateAvailability
+// );
+
+doctorRouter.post(
+    "/availability",
+    auth,
+    userRole(Roles.DOCTOR),
+    addAvailability
+)
 
 doctorRouter.get(
   "/availability",
   auth,
   userRole(Roles.DOCTOR),
   validateQuery(listAvailabilitySchema),
-  listAvailability
+  // listAvailability
+    getAvailabilities
 );
+
 
 doctorRouter.get(
   "/availability/:id",
