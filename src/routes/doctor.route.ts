@@ -22,7 +22,11 @@ import {
   updateAvailability,
 } from "../controllers/doctor/availability.controller";
 
-import {addAvailability, getAvailabilities} from "../controllers/doctor/newAvailability.controller"
+import {
+  addAvailability,
+  getAvailabilities,
+  getAvailabilitiesPatient,
+} from "../controllers/doctor/newAvailability.controller";
 
 import {
   addAvailabilitySchema,
@@ -51,11 +55,11 @@ doctorRouter.put("/profile/update", auth, profileUpdate);
 // );
 
 doctorRouter.post(
-    "/availability",
-    auth,
-    userRole(Roles.DOCTOR),
-    addAvailability
-)
+  "/availability",
+  auth,
+  userRole(Roles.DOCTOR),
+  addAvailability
+);
 
 doctorRouter.get(
   "/availability",
@@ -63,9 +67,17 @@ doctorRouter.get(
   userRole(Roles.DOCTOR),
   validateQuery(listAvailabilitySchema),
   // listAvailability
-    getAvailabilities
+  getAvailabilities
 );
 
+doctorRouter.get(
+  "/availability-patient/:id",
+  auth,
+  userRole(Roles.PATIENT),
+  validateQuery(listAvailabilitySchema),
+  // listAvailability
+  getAvailabilitiesPatient
+);
 
 doctorRouter.get(
   "/availability/:id",
