@@ -14,6 +14,8 @@ const addAvailability = async (req,res) => {
                 const breakStart = new Date(data.break_start)
                 // const breakEnd = new Date (data.break_end)
 
+                console.log(start,end)
+
                 while(!isEqual(start,end)){
                     let isBreak= false;
                     let isActive = true;
@@ -34,7 +36,7 @@ const addAvailability = async (req,res) => {
 
                     timeslots.push(slot)
                 }
-                console.log(timeslots)
+                // console.log(timeslots)
             });
 
 
