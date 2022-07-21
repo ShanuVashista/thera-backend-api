@@ -4,7 +4,7 @@ import { addMinutes, eachHourOfInterval, isEqual, subMinutes } from "date-fns";
 import { filterPaginate } from "../../lib/filterPaginate";
 
 const addAvailability = async (req, res) => {
-  const data = req.body.timeslots;
+  const data = req.body.data;
   const timeslots = [];
   try {
     data.map((data) => {
