@@ -140,6 +140,7 @@ const List_User = async (req, res) => {
               $or: [
                 { email: { $regex: search, $options: "i" } },
                 { firstname: { $regex: search, $options: "i" } },
+                {fullname: {$regex:search,$options:"i"}},
                 { lastname: { $regex: search, $options: "i" } },
                 { phone: { $regex: search, $options: "i" } },
               ],
