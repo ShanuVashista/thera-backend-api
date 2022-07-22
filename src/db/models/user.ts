@@ -169,13 +169,13 @@ const userSchema = new mongoose.Schema<IUser>(
       type: String,
       enum: DoctorStatus,
       default: defaultByRole({
-        [Roles.DOCTOR]: "disable",
+        [Roles.DOCTOR]: "enable",
       }),
     },
     isApproved: {
       type: mongoose.Schema.Types.Boolean,
       default: defaultByRole({
-        [Roles.DOCTOR]: false,
+        [Roles.DOCTOR]: true,
       }),
     },
     isProfessionalInfo: {
