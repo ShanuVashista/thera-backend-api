@@ -5,9 +5,10 @@ import { filterPaginate } from "../../lib/filterPaginate";
 
 const addAvailability = async (req, res) => {
   const data = req.body.data;
-  const timeslots = [];
+
   try {
-    data.map((data) => {
+    data.map(async (data) => {
+      const timeslots = [];
       let start = new Date(data.start);
       const end = new Date(data.end);
       const breakStart = new Date(data.break_start);
@@ -33,16 +34,18 @@ const addAvailability = async (req, res) => {
 
         timeslots.push(slot);
       }
-      console.log(timeslots);
+      // console.log(timeslots);
+      const document = {
+        timeslots,
+        doctorId: req.user._id,
+      };
+console.log(document)
+
+      await NewAvailability.create({document});
     });
 
-    console.log(timeslots);
-    const document = {
-      timeslots,
-      doctorId: req.user._id,
-    };
 
-    await NewAvailability.create(document);
+    // console.log(timeslots);
 
     res.status(StatusCodes.OK).json({
       type: "success",
