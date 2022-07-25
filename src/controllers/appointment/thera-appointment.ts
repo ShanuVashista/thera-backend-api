@@ -49,31 +49,31 @@ const addAppointment = async (req, res: Response, next: NextFunction) => {
             });
         }
 
-        const doctorAvailability = await ListAvailability({
-            dateOfAppointment: new Date(dateOfAppointment),
-            doctorId,
-        });
+        // const doctorAvailability = await ListAvailability({
+        //     dateOfAppointment: new Date(dateOfAppointment),
+        //     doctorId,
+        // });
 
-        if (doctorAvailability.length === 0) {
-            return res.status(404).json({
-                status: false,
-                type: 'success',
-                message: 'Doctor is not available on this date',
-            });
-        }
+        // if (doctorAvailability.length === 0) {
+        //     return res.status(404).json({
+        //         status: false,
+        //         type: 'success',
+        //         message: 'Doctor is not available on this date',
+        //     });
+        // }
 
-        const appointmentTimeConflict = await checkAppointmentTimeConflict(
-            new Date(dateOfAppointment),
-            { doctorId }
-        );
-
-        if (appointmentTimeConflict) {
-            return res.status(404).json({
-                status: false,
-                type: 'success',
-                message: 'This time slot is already booked',
-            });
-        }
+        // const appointmentTimeConflict = await checkAppointmentTimeConflict(
+        //     new Date(dateOfAppointment),
+        //     { doctorId }
+        // );
+        //
+        // if (appointmentTimeConflict) {
+        //     return res.status(404).json({
+        //         status: false,
+        //         type: 'success',
+        //         message: 'This time slot is already booked',
+        //     });
+        // }
 
         const newAppointment = new Appointment({
             userId: user._id,

@@ -19,9 +19,10 @@ router.post(
 router.post(
   "/create/thera-appointment",
   auth,
-  validateBody(createAppointmentSchema),
+  // validateBody(createAppointmentSchema),
   there_controller.addAppointment
 );
+
 router.post("/list", auth, controller.getAppointments);
 router.get("/count", auth, controller.Count_Appointment);
 router.get("/count/thera", auth, controller.Count_Appointment_Thera);
