@@ -6,10 +6,10 @@ import { Roles } from "../../lib/roles";
 
 const login = async (req, res) => {
   const { email, password, role } = req.body;
-
+  const verifiedEmail = email.toLowerCase();
   try {
     User.findOne({
-      email: email,
+      email: verifiedEmail,
     }).exec((err, user) => {
       if (err) {
         res.status(500).send({
