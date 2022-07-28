@@ -20,6 +20,7 @@ export interface Appointment {
     doctor: number;
     dateOfAppointment: string;
     appointmentType: string;
+    description:string;
 }
 const addAppointment = async (req, res: Response, next: NextFunction) => {
     // Get the data from query body
