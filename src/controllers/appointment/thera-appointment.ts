@@ -29,6 +29,7 @@ const addAppointment = async (req, res: Response, next: NextFunction) => {
         appointmentType,
         dateOfAppointment,
         symptoms,
+        description,
     }: Appointment = req.body;
 
     const user = JSON.parse(JSON.stringify(req.user));
@@ -82,6 +83,7 @@ const addAppointment = async (req, res: Response, next: NextFunction) => {
             doctorId,
             appointmentType:"virtual",
             dateOfAppointment,
+            description:description,
             status:"Approved"
         });
         await newAppointment.save();
