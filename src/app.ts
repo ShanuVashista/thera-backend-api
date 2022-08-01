@@ -87,9 +87,10 @@ const io = new socketio.Server(server, {
 io.on("connection", (socket) => {
   // console.log("Connected: " + socket.userId);
 
+
   socket.on("disconnect", () => {
-    // console.log("Disconnected: " + socket.userId);
-  });
+    console.log("chat is disconnected")
+  })
 
   socket.on("joinRoom", ({ appointmentId }) => {
     socket.join(appointmentId);
@@ -116,6 +117,7 @@ io.on("connection", (socket) => {
       });
       await newMessage.save();
     }
+
   });
 
   socket.on("getChatMessage", async ({ appointmentId, userId }) => {
@@ -124,6 +126,7 @@ io.on("connection", (socket) => {
     });
     io.to(appointmentId).emit("chatMessage", {});
   });
+
 });
 
 server.listen(PORT, () => {

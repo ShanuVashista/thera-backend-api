@@ -64,6 +64,7 @@ const addAppointment = async (req, res: Response, next: NextFunction) => {
         //     });
         // }
 
+
         // const appointmentTimeConflict = await checkAppointmentTimeConflict(
         //     new Date(dateOfAppointment),
         //     { doctorId }
