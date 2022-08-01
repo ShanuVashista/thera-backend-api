@@ -98,13 +98,35 @@ io.on("connection", (socket) => {
 
   socket.on("stop typing", (room) => socket.in(room).emit("stop typing"));
 
-  socket.on("sendMessage", async (data) => {
-    const appointmentId = data.appointmentId;
+  // socket.on("sendMessage", async (data) => {
+  //   const appointmentId = data.appointmentId;
 
-    socket.emit("message", `A new user, ${Date.now()}, has connected`);
+  //   socket.emit("message", `A new user, ${Date.now()}, has connected`);
 
-    socket.in(appointmentId).emit("newMessage", data);
-    // socket.to(appointmentId).emit("newMessage", data);
+  //   socket.in(appointmentId).emit("newMessage", data);
+  //   // socket.to(appointmentId).emit("newMessage", data);
+  // });
+
+  socket.on("sendMessage", async ({ appointmentId, userId, message }) => {
+    if (message.trim().length > 0) {
+      const user = await MessageModel.find({ appointmentId: appointmentId });
+
+      const newMessage = new MessageModel({
+        appointmentId: appointmentId,
+        userId: userId,
+        message: message,
+      });
+      io.to(appointmentId).emit("newMessage", {
+        message,
+        user,
+      });
+      await newMessage.save();
+
+      socket.emit("message", {
+        message,
+        user,
+      });
+    }
   });
 });
 
