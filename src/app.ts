@@ -40,6 +40,7 @@ import Message from "./routes/message.route";
 import Video from "./routes/video.route";
 // import Goals from "./routes/goals.route";
 import NewGoals from "./routes/newGoal.route";
+import Chat from "./routes/chat.route";
 
 app.use("/user", userRoutes);
 app.use("/appointments", appointment);
@@ -54,8 +55,8 @@ app.use("/activity", Activity);
 app.use("/symtoms", Symtoms);
 app.use("/message", Message);
 app.use("/video", Video);
-// app.use("/goal", Goals);
 app.use("/goal", NewGoals);
+app.use("/chat", Chat);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
@@ -73,19 +74,12 @@ const io = new socketio.Server(server, {
   },
 });
 
-// io.use(async (socket, next) => {
-//   try {
-//     const token = socket.handshake.query.token;
-//     const payload =  jwt.verify(token, process.env.JWT_SECRET);
-//     socket.userId = payload._id;
-//     next()
-//   } catch (err) {
-//     console.log("error", err);
-//   }
-// });
-
 io.on("connection", (socket) => {
-  // console.log("Connected: " + socket.userId);
+  socket.on("setup", (userData) => {
+    socket.join(userData.fullname);
+    socket.emit("connected");
+    console.log("Connected: ");
+  });
 
   socket.on("disconnect", () => {
     // console.log("Disconnected: " + socket.userId);
@@ -93,36 +87,24 @@ io.on("connection", (socket) => {
 
   socket.on("joinRoom", ({ appointmentId }) => {
     socket.join(appointmentId);
-    // console.log("A user joined chatroom: " + appointmentId);
+    console.log("A user joined chatroom: " + appointmentId);
   });
 
   socket.on("leaveRoom", ({ appointmentId }) => {
     socket.leave(appointmentId);
-    // console.log("A user left chatroom: " + appointmentId);
   });
 
-  socket.on("sendMessage", async ({ appointmentId, userId, message }) => {
-    if (message.trim().length > 0) {
-      const user = await MessageModel.find({ appointmentId: appointmentId });
+  socket.on("typing", (room) => socket.in(room).emit("typing"));
 
-      const newMessage = new MessageModel({
-        appointmentId: appointmentId,
-        userId: userId,
-        message: message,
-      });
-      io.to(appointmentId).emit("newMessage", {
-        message,
-        user,
-      });
-      await newMessage.save();
-    }
-  });
+  socket.on("stop typing", (room) => socket.in(room).emit("stop typing"));
 
-  socket.on("getChatMessage", async ({ appointmentId, userId }) => {
-    const chatMessage = await MessageModel.find({
-      appointmentId: appointmentId,
-    });
-    io.to(appointmentId).emit("chatMessage", {});
+  socket.on("sendMessage", async (data) => {
+    const appointmentId = data.appointmentId;
+
+    socket.emit("message", `A new user, ${Date.now()}, has connected`);
+
+    socket.in(appointmentId).emit("newMessage", data);
+    // socket.to(appointmentId).emit("newMessage", data);
   });
 });
 

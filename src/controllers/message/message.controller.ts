@@ -22,7 +22,7 @@ export const getMessageByAppointmentId = async (req, res) => {
     res.status(StatusCodes.OK).json({
       type: "success",
       status: true,
-      message: "Faq found",
+      message: "Message found",
       data: message,
     });
   } catch (error) {
@@ -52,7 +52,7 @@ export const getAppointmentList = async (req, res) => {
     res.status(StatusCodes.OK).json({
       type: "success",
       status: true,
-      message: "Faq found",
+      message: "Message found",
       data: message,
     });
   } catch (error) {
