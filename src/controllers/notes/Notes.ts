@@ -18,9 +18,10 @@ const addNote = async (req, res:Response, next: NextFunction) =>{
 
         const user = JSON.parse(JSON.stringify(req.user));
 
-        const {_id} = req.params;
+        // const {_id} = req.params;
     
         const{
+            _id,
             appointmentId,
             patientId,
             title,
