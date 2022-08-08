@@ -100,9 +100,9 @@ const getNoteById = async(req,res:Response,next:NextFunction) => {
         const {id} = req.params
 
         const result = await Note.findById(id)
-            .populate("patient")
-            .populate("doctor")
-            .populate("appointment")
+            // .populate("patient")
+            // .populate("doctor")
+            // .populate("appointment")
 
             return res.status(200).json({
                 status: true,
