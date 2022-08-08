@@ -102,6 +102,23 @@ io.on("connection", (socket) => {
     // console.log("A user left chatroom: " + appointmentId);
   });
 
+  // socket.on("sendMessage", async ({ appointmentId, userId, message }) => {
+  //   if (message.trim().length > 0) {
+  //     const user = await MessageModel.find({ appointmentId: appointmentId });
+
+  //     const newMessage = new MessageModel({
+  //       appointmentId: appointmentId,
+  //       userId: userId,
+  //       message: message,
+  //     });
+  //     io.to(appointmentId).emit("newMessage", {
+  //       message,
+  //       user,
+  //     });
+  //     await newMessage.save();
+  //   }
+  // });
+
   socket.on("sendMessage", async ({ appointmentId, userId, message }) => {
     if (message.trim().length > 0) {
       const user = await MessageModel.find({ appointmentId: appointmentId });
@@ -116,6 +133,11 @@ io.on("connection", (socket) => {
         user,
       });
       await newMessage.save();
+
+      socket.emit("message", {
+        message,
+        user,
+      });
     }
 
   });
