@@ -15,6 +15,8 @@ export interface Note{
 const addNote = async (req, res:Response, next: NextFunction) =>{
     const user = JSON.parse(JSON.stringify(req.user));
 
+    const {_id} = req.params;
+
     const{
         appointmentId,
         patientId,
@@ -32,21 +34,55 @@ const addNote = async (req, res:Response, next: NextFunction) =>{
               });
         }
 
-        const newNote = new Note ({
-            doctorId: user._id,
-            appointmentId,
-            patientId,
-            title,
-            text
-        })
+        
+        if(_id){
+            const doc = await Note.findById(_id);
 
-        await newNote.save();
+            if (!doc) {
+                res.status(404).json({
+                    status: false,
+                    message: "Note with this Id is not found",
+                  });
+            }
 
-        res.status(201).json({
-            status: true,
-            type: "success",
-            data: newNote,
-          });
+
+            const update = {
+                text:text,
+                title:title
+            }
+    
+            await doc.updateOne(update);
+    
+            const updatedDoc = await Note.findById(_id)
+    
+            res.status(201).json({
+                status: true,
+                type: "success",
+                data: updatedDoc,
+              });
+        }
+           
+        
+
+        // Create a New Note
+            const newNote = new Note ({
+                doctorId: user._id,
+                appointmentId,
+                patientId,
+                title,
+                text
+            })
+    
+            await newNote.save();
+
+            res.status(201).json({
+                status: true,
+                type: "success",
+                data: newNote,
+              });
+        
+
+       
 
     }catch(err){
         res.status(404).json({
@@ -56,6 +92,7 @@ const addNote = async (req, res:Response, next: NextFunction) =>{
     }
 
 }
+
 
 
 
