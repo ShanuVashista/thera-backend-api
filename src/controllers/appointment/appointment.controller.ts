@@ -105,7 +105,7 @@ const getAppointment = async (
     return res.status(200).json({
       status: true,
       type: "success",
-      message: "Appointment List Fetched",
+      message: "Appointment Fetched",
       data: result,
     });
   } catch (Err) {

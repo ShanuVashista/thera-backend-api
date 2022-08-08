@@ -13,19 +13,21 @@ export interface Note{
 
 
 const addNote = async (req, res:Response, next: NextFunction) =>{
-    const user = JSON.parse(JSON.stringify(req.user));
-
-    const {_id} = req.params;
-
-    const{
-        appointmentId,
-        patientId,
-        title,
-        text
-    }: Note = req.body;
-
 
     try{
+
+        const user = JSON.parse(JSON.stringify(req.user));
+
+        const {_id} = req.params;
+    
+        const{
+            appointmentId,
+            patientId,
+            title,
+            text
+        }: Note = req.body;
+
+
         if(user.role_id != "doctor"){
             return res.status(404).json({
                 status: false,
@@ -94,8 +96,95 @@ const addNote = async (req, res:Response, next: NextFunction) =>{
 }
 
 
+const getNoteById = async(req,res:Response,next:NextFunction) => {
+    try{
+        const {id} = req.params
+
+        const result = await Note.findById(id)
+            .populate("patient")
+            .populate("doctor")
+            .populate("appointment")
+
+            return res.status(200).json({
+                status: true,
+                type: "success",
+                message: "Note Fetched",
+                data: result,
+              });
+    }catch(err){
+        res.status(404).json({
+            status: false,
+            message: "Internal Server Error",
+          });
+    }
+}
+
+
+const getNotes = async(req,res:Response,next:NextFunction) => {
+    try{
+        const user = JSON.parse(JSON.stringify(req.user));
+        let { page, limit, sort, cond } = req.body;
+
+        if (user.role_id === "patient"){
+            return res.status(400).json({
+                status: false,
+                message: "You are not authorized",
+              });
+        }
+
+        if (!page || page < 1) {
+            page = 1;
+          }
+          if (!limit) {
+            limit = 10;
+          }
+          if (!cond) {
+            cond = {};
+          }
+          if (!sort) {
+            sort = { createdAt: -1 };
+          }
+      
+
+          
+    limit = parseInt(limit);
+    // console.log(cond);
+    const result = await Note.find(cond)
+      .populate("doctor")
+      .populate("patient")
+      .populate("appointment")
+      .sort(sort)
+      .skip((page - 1) * limit)
+      .limit(limit);
+
+
+    const result_count = await Note.find(cond).count();
+    const totalPages = Math.ceil(result_count / limit);
+
+
+    
+    return res.status(200).json({
+        status: true,
+        type: "success",
+        message: "Appointment Fetch Successfully",
+        page: page,
+        limit: limit,
+        totalPages: totalPages,
+        total: result_count,
+        data: result,
+      });
+    
+    }catch(err){
+        res.status(404).json({
+            status: false,
+            message: "Internal Server Error",
+          });
+    }
+}
 
 
 export default {
-    addNote
+    addNote,
+    getNoteById,
+    getNotes
 }

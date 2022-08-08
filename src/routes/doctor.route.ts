@@ -47,6 +47,9 @@ doctorRouter.put("/prescription/update", auth, controller.Prescription_PUT);
 
 // Route for Make Notes
 doctorRouter.put("/note",auth, Note.addNote )
+doctorRouter.get("/notes",auth, Note.getNotes )
+doctorRouter.get("/note/:id",auth, Note.getNoteById )
+
 
 doctorRouter.put("/profile/update", auth, profileUpdate);
 
