@@ -1,5 +1,5 @@
 import { NextFunction,Request,Response } from "express";
-import Note from "../../db/models/notes.model"
+import Note from "../../db/models/notes.model" 
 
 export interface Note{
     _id: string,
@@ -84,7 +84,6 @@ const addNote = async (req, res:Response, next: NextFunction) =>{
               });
         
 
-       
 
     }catch(err){
         res.status(404).json({
@@ -183,8 +182,81 @@ const getNotes = async(req,res:Response,next:NextFunction) => {
 }
 
 
+const getNotesByAppointment = async(req,res:Response,next:NextFunction) =>{
+    try{
+            const user = JSON.parse(JSON.stringify(req.user));
+            const {id} = req.params;
+
+         
+            let { page, limit, sort, cond } = req.body;
+    
+            if (user.role_id === "patient"){
+                return res.status(400).json({
+                    status: false,
+                    message: "You are not authorized",
+                  });
+            }
+
+            cond = {appointmentId:id, ...cond}
+           
+            if (!page || page < 1) {
+                page = 1;
+              }
+              if (!limit) {
+                limit = 10;
+              }
+              if (!cond) {
+                cond = {};
+              }
+              if (!sort) {
+                sort = { createdAt: -1 };
+              }
+          
+             
+              
+        limit = parseInt(limit);
+        // console.log(cond);
+       
+        const result = await Note.find(cond)
+          .populate("doctor")
+        //   .populate("patient")
+        //   .populate("appointment")
+          .sort(sort)
+          .skip((page - 1) * limit)
+          .limit(limit);
+
+
+        //   console.log(id)
+         
+        const result_count = await Note.find(cond).count();
+        const totalPages = Math.ceil(result_count / limit);
+    
+        
+        
+        return res.status(200).json({
+            status: true,
+            type: "success",
+            message: "Appointment Fetch Successfully",
+            page: page,
+            limit: limit,
+            totalPages: totalPages,
+            total: result_count,
+            data: result,
+          });
+
+        //   console.log(id)
+    }catch(err){
+        res.status(404).json({
+            status: false,
+            message: "Internal Server Error",
+          });
+    }
+
+}
+
 export default {
     addNote,
     getNoteById,
-    getNotes
+    getNotes,
+    getNotesByAppointment
 }
