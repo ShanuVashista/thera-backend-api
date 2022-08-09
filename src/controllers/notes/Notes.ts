@@ -50,6 +50,7 @@ const addNote = async (req, res: Response, next: NextFunction) => {
         status: true,
         type: "success",
         data: updatedDoc,
+        message: "Note Updated..."
       });
     } else {
       // Create a New Note
@@ -67,6 +68,7 @@ const addNote = async (req, res: Response, next: NextFunction) => {
         status: true,
         type: "success",
         data: newNote,
+        message:"New Note Created..."
       });
     }
   } catch (err) {
