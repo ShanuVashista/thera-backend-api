@@ -168,7 +168,10 @@ const getNotesByAppointment = async (
 
     let { page, limit, sort, cond,search } = req.body;
 
-    search =""
+    if(!search){
+      search =""
+    }
+    
     if (user.role_id === "patient") {
       return res.status(400).json({
         status: false,
