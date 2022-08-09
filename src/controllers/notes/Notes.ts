@@ -225,55 +225,9 @@ const getNotesByAppointment = async (
   }
 };
 
-const deleteNote = async (req, res: Response, next: NextFunction) => {
-  try {
-    const user = JSON.parse(JSON.stringify(req.user));
-
-    const { id } = req.params;
-
-    if (user.role_id != "doctor") {
-      return res.status(404).json({
-        status: false,
-        type: "success",
-        message: "You are not authorise to create a Note",
-      });
-    }
-
-    const doc = await Note.findById(id);
-
-    if (!doc) {
-      res.status(404).json({
-        status: false,
-        message: "Note with this Id is not found",
-      });
-    }
-
-    const update = {
-      isdeleted: true,
-    };
-
-    await doc.updateOne(update);
-
-    const updatedDoc = await Note.findById(id);
-
-    res.status(201).json({
-      status: true,
-      type: "success",
-      data: updatedDoc,
-      message: "Note Deleted successfully.",
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: false,
-      message: "One Or More Required Field is empty",
-    });
-  }
-};
-
 export default {
   addNote,
   getNoteById,
   getNotes,
   getNotesByAppointment,
-  deleteNote,
 };
