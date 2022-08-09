@@ -178,7 +178,7 @@ const getNotesByAppointment = async (
     }
 
     if(search){
-      cond = { appointmentId: id,title:search,isdeleted:false, ...cond };
+      cond = { appointmentId: id,title:{$regex:search},isdeleted:false, ...cond };
     }else{
       cond = { appointmentId: id, isdeleted:false, ...cond };
     }
