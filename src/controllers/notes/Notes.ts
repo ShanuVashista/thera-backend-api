@@ -168,9 +168,6 @@ const getNotesByAppointment = async (
 
     let { page, limit, sort, cond,search } = req.body;
 
-    if(!search){
-      search =""
-    }
     
     if (user.role_id === "patient") {
       return res.status(400).json({
@@ -179,7 +176,12 @@ const getNotesByAppointment = async (
       });
     }
 
-    cond = { appointmentId: id,title:search, ...cond };
+    if(search){
+      cond = { appointmentId: id,title:search, ...cond };
+    }else{
+      cond = { appointmentId: id, ...cond };
+    }
+    
 
     if (!page || page < 1) {
       page = 1;
