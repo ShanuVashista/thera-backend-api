@@ -112,6 +112,7 @@ const getNotes = async (req, res: Response, next: NextFunction) => {
         message: "You are not authorized",
       });
     }
+    
 
     if (!page || page < 1) {
       page = 1;
@@ -177,9 +178,9 @@ const getNotesByAppointment = async (
     }
 
     if(search){
-      cond = { appointmentId: id,title:search, ...cond };
+      cond = { appointmentId: id,title:search,isdeleted:false, ...cond };
     }else{
-      cond = { appointmentId: id, ...cond };
+      cond = { appointmentId: id, isdeleted:false, ...cond };
     }
     
 
@@ -242,7 +243,7 @@ const deleteNote = async (req, res: Response, next: NextFunction) => {
       return res.status(404).json({
         status: false,
         type: "success",
-        message: "You are not authorise to create a Note",
+        message: "You are not authorise user",
       });
     }
 
@@ -272,7 +273,7 @@ const deleteNote = async (req, res: Response, next: NextFunction) => {
   } catch (err) {
     res.status(404).json({
       status: false,
-      message: "One Or More Required Field is empty",
+      message: "Internal Server Error",
     });
   }
 };
