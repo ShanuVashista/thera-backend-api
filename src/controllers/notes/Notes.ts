@@ -176,7 +176,7 @@ const getNotesByAppointment = async (
       });
     }
 
-    cond = { appointmentId: id,title:search ...cond };
+    cond = { appointmentId: id,title:search, ...cond };
 
     if (!page || page < 1) {
       page = 1;
