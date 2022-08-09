@@ -46,7 +46,7 @@ const addNote = async (req, res: Response, next: NextFunction) => {
 
       const updatedDoc = await Note.findById(_id);
 
-      res.status(201).json({
+      res.status(200).json({
         status: true,
         type: "success",
         data: updatedDoc,
@@ -63,7 +63,7 @@ const addNote = async (req, res: Response, next: NextFunction) => {
 
       await newNote.save();
 
-      res.status(201).json({
+      res.status(200).json({
         status: true,
         type: "success",
         data: newNote,
@@ -165,7 +165,11 @@ const getNotesByAppointment = async (
     const user = JSON.parse(JSON.stringify(req.user));
     const { id } = req.params;
 
-    let { page, limit, sort, cond } = req.body;
+    let { page, limit, sort, cond,search} = req.body;
+
+    if(!search){
+      search=""
+    }
 
     if (user.role_id === "patient") {
       return res.status(400).json({
@@ -174,7 +178,7 @@ const getNotesByAppointment = async (
       });
     }
 
-    cond = { appointmentId: id, ...cond };
+    cond = { appointmentId: id, title:search, ...cond };
 
     if (!page || page < 1) {
       page = 1;
@@ -208,7 +212,7 @@ const getNotesByAppointment = async (
     return res.status(200).json({
       status: true,
       type: "success",
-      message: "Appointment Fetch Successfully",
+      message: "Notes for this appointment Fetch Successfully",
       page: page,
       limit: limit,
       totalPages: totalPages,
