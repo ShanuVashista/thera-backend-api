@@ -1,7 +1,7 @@
 import express from "express";
 import Doctor_Register_POST from "../controllers/doctor/register";
 import Professional_PUT from "../controllers/doctor/professional";
-import Note from "../controllers/notes/Notes"
+import Note from "../controllers/notes/Notes";
 import Doctor_Appointment_PUT from "../controllers/doctor/appointment_update";
 import auth from "../middlewares/auth.middleware";
 import controller from "../controllers/doctor/prescription.controller";
@@ -46,11 +46,11 @@ doctorRouter.post("/prescription/add", auth, controller.Prescription_POST);
 doctorRouter.put("/prescription/update", auth, controller.Prescription_PUT);
 
 // Route for Make Notes
-doctorRouter.put("/note",auth, Note.addNote )
-doctorRouter.get("/notes",auth, Note.getNotes )
-doctorRouter.get("/notes/:id",auth, Note.getNotesByAppointment )
-doctorRouter.get("/note/:id",auth, Note.getNoteById )
-
+doctorRouter.put("/note", auth, Note.addNote);
+doctorRouter.get("/notes", auth, Note.getNotes);
+doctorRouter.get("/notes/:id", auth, Note.getNotesByAppointment);
+doctorRouter.get("/note/:id", auth, Note.getNoteById);
+doctorRouter.put("/note-delete/:id", auth, Note.deleteNote);
 
 doctorRouter.put("/profile/update", auth, profileUpdate);
 
