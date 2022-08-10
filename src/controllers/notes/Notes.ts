@@ -50,7 +50,7 @@ const addNote = async (req, res: Response, next: NextFunction) => {
         status: true,
         type: "success",
         data: updatedDoc,
-        message: "Note Updated..."
+        message: "Note Updated...",
       });
     } else {
       // Create a New Note
@@ -68,7 +68,7 @@ const addNote = async (req, res: Response, next: NextFunction) => {
         status: true,
         type: "success",
         data: newNote,
-        message:"New Note Created..."
+        message: "New Note Created...",
       });
     }
   } catch (err) {
@@ -114,7 +114,6 @@ const getNotes = async (req, res: Response, next: NextFunction) => {
         message: "You are not authorized",
       });
     }
-    
 
     if (!page || page < 1) {
       page = 1;
@@ -169,9 +168,8 @@ const getNotesByAppointment = async (
     const user = JSON.parse(JSON.stringify(req.user));
     const { id } = req.params;
 
-    let { page, limit, sort, cond,search } = req.body;
+    let { page, limit, sort, cond, search } = req.body;
 
-    
     if (user.role_id === "patient") {
       return res.status(400).json({
         status: false,
@@ -179,12 +177,16 @@ const getNotesByAppointment = async (
       });
     }
 
-    if(search){
-      cond = { appointmentId: id,title:{$regex:search},isdeleted:false, ...cond };
-    }else{
-      cond = { appointmentId: id, isdeleted:false, ...cond };
+    if (search) {
+      cond = {
+        appointmentId: id,
+        title: { $regex: search },
+        isdeleted: false,
+        ...cond,
+      };
+    } else {
+      cond = { appointmentId: id, isdeleted: false, ...cond };
     }
-    
 
     if (!page || page < 1) {
       page = 1;

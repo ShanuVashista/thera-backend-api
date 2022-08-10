@@ -57,7 +57,21 @@ export const updateAvailability = async (req, res) => {
 
 export const listAvailability = async (req, res) => {
   try {
-    const { f = {}, upcoming = 1 } = req.query;
+    const { f = {}, upcoming = 1 } = req.body;
+
+    let { page, limit, sort } = req.body;
+
+    if (!page || page < 1) {
+      page = 1;
+    }
+    if (!limit) {
+      limit = 10;
+    }
+    if (!sort) {
+      sort = { createdAt: -1 };
+    }
+
+    limit = parseInt(limit);
 
     const filter = {
       doctorId: req.user._id,
@@ -70,7 +84,7 @@ export const listAvailability = async (req, res) => {
       };
     }
 
-    const data = await filterPaginate(Availability, filter, req.query);
+    const data = await filterPaginate(Availability, filter, req.body);
 
     if (data.total === 0) {
       return res.status(StatusCodes.OK).json({

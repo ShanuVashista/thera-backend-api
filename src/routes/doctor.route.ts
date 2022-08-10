@@ -69,7 +69,7 @@ doctorRouter.put(
 //   addAvailability
 // );
 
-doctorRouter.get(
+doctorRouter.post(
   "/availability",
   auth,
   userRole(Roles.DOCTOR),
