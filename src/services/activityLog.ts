@@ -9,6 +9,7 @@ const create = async (userId, userType, type, req, data) => {
   const macAddress = "mac-address";
   const endPoint = req.originalUrl;
   let currentDate = new Date();
+
   // Get the data from query body
   const newActivity = new activityLog({
     roleId: userId,

@@ -2,8 +2,10 @@ import { StatusCodes } from "http-status-codes";
 import twilio from "twilio";
 // import AccessToken, { VideoGrant } from "twilio/lib/jwt/AccessToken";
 import Appointment from "../../db/models/appointment.model";
+
 const AccessToken = twilio.jwt.AccessToken;
 const { VideoGrant } = AccessToken;
+
 const generateToken = () => {
   const token = new AccessToken(
     process.env.TWILIO_ACCOUNT_SID,
@@ -12,6 +14,7 @@ const generateToken = () => {
   );
   return token;
 };
+
 const videoToken = async (req, res) => {
   try {
     let result = await Appointment.find({ _id: req.body.room });
@@ -46,4 +49,5 @@ const videoToken = async (req, res) => {
     });
   }
 };
+
 export default videoToken;

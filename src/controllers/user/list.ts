@@ -3,6 +3,7 @@
 // import jwt from "jsonwebtoken";
 import StatusCodes from "http-status-codes";
 import User from "../../db/models/user";
+
 const List_User = async (req, res) => {
   try {
     // if (typeof (cond.role_id) != 'undefined' && cond.role_id != null) {
@@ -140,7 +141,7 @@ const List_User = async (req, res) => {
               $or: [
                 { email: { $regex: search, $options: "i" } },
                 { firstname: { $regex: search, $options: "i" } },
-                {fullname: {$regex:search,$options:"i"}},
+                { fullname: { $regex: search, $options: "i" } },
                 { lastname: { $regex: search, $options: "i" } },
                 { phone: { $regex: search, $options: "i" } },
               ],
@@ -187,4 +188,5 @@ const List_User = async (req, res) => {
     });
   }
 };
+
 export default List_User;

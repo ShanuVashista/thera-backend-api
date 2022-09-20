@@ -17,7 +17,9 @@ export const findMd = async (req, res) => {
         new Date(appointmentTime),
         { patientId: req.user._id }
       );
+
       console.log({ appointmentConflict });
+
       if (appointmentConflict) {
         return res.status(StatusCodes.BAD_REQUEST).json({
           type: "error",

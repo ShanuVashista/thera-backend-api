@@ -34,6 +34,7 @@ export async function checkAppointmentTimeConflict(
       },
     ],
   };
+
   if (doctorId) {
     filter["doctorId"] = doctorId;
   }
@@ -66,7 +67,9 @@ export async function ListAvailability({
     ...patientIdFilter,
     ...dateOfAppointmentFilter,
   };
+
   const availabilities = await Availability.find(filter).populate("doctorId");
+
   if (dateOfAppointment) {
     return filterTimeIsAvailable(availabilities, dateOfAppointment);
   }

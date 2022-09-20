@@ -76,8 +76,12 @@ const Professional_PUT = async (req, res) => {
       req,
       tempArray
     );
-    await sendEmail(user.email, "Successfully Added The Professional Info", "Congratulations!! your professional info is added successfully. Please wait for the admin approval.");
-    
+    await sendEmail(
+      user.email,
+      "Successfully Added The Professional Info",
+      "Congratulations!! your professional info is added successfully. Please wait for the admin approval."
+    );
+
     res.status(200).json({
       status: true,
       type: "success",

@@ -87,36 +87,6 @@ const GetVideoList = async (req, res: Response) => {
     }
 
     if (user.role_id === "patient") {
-
-      // cond = [
-      //   {
-      //     $match: {
-      //       isdeleted: false,
-      //       goalId: ObjectId(goalId),
-      //       taskId: ObjectId(taskId),
-      //       $and: [
-      //         cond,
-      //         {
-      //           $or: [
-      //             { title: { $regex: search, $options: "i" } },
-      //             { url: { $regex: search, $options: "i" } },
-      //           ],
-      //         },
-      //       ],
-      //     },
-      //   },
-      //   { $sort: sort },
-      //   {
-      //     $facet: {
-      //       data: [{ $skip: (page - 1) * limit }, { $limit: limit }],
-      //       total: [
-      //         {
-      //           $count: "count",
-      //         },
-      //       ],
-      //     },
-      //   },
-      // ];
       limit = parseInt(limit);
 
       const result = await Video.find({ taskId: taskId });
@@ -190,7 +160,6 @@ const GetVideoList = async (req, res: Response) => {
     });
   }
 };
-
 
 const GetVideoById = async (req, res: Response) => {
   try {
@@ -329,8 +298,6 @@ const DeleteVideo = async (req, res: Response) => {
         message: "You are not authorise to add a Video",
       });
     }
-
-
 
     const newData = {
       isdeleted: true,

@@ -19,6 +19,7 @@ const Prescription_List_POST = async (req, res) => {
       sort = { createdAt: -1 };
     }
     limit = parseInt(limit);
+
     const prescription = await Prescription.find(cond)
       .populate("patient_details")
       .populate("doctor_details")
@@ -26,8 +27,10 @@ const Prescription_List_POST = async (req, res) => {
       .sort(sort)
       .skip((page - 1) * limit)
       .limit(limit);
+
     const prescription_count = await Prescription.find(cond).count();
     const totalPages = Math.ceil(prescription_count / limit);
+
     res.status(StatusCodes.OK).send({
       status: true,
       type: "success",
@@ -46,4 +49,5 @@ const Prescription_List_POST = async (req, res) => {
     });
   }
 };
+
 export default Prescription_List_POST;

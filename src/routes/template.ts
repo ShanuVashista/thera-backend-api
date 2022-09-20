@@ -1,7 +1,8 @@
 import express from "express";
-import pdf from '../controllers/pdf/lab-test.controller'
+import pdf from "../controllers/pdf/lab-test.controller";
+
 const router = express.Router();
-router.get('/lab-test', pdf)
+router.get("/lab-test", pdf);
 // router.get('/cardiac', (req, res) => {
 //     res.render('cardiac', {})
 // })

@@ -34,8 +34,6 @@ export const getFaq = async (req, res) => {
         });
       }
 
-      console.log("2");
-
       res.status(StatusCodes.OK).json({
         type: "success",
         status: true,

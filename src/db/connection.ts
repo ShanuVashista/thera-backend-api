@@ -1,5 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 import mongoose from "mongoose";
+
 const getConnection = async (req, res, next) => {
   if (!process.env.DATABASE_URI) {
     throw new Error("Database URI not found");

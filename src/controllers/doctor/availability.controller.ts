@@ -4,7 +4,7 @@ import { filterPaginate } from "../../lib/filterPaginate";
 
 export const updateAvailability = async (req, res) => {
   const newArr = req.body.data;
-  console.log("newArr", newArr);
+  // console.log("newArr", newArr);
 
   try {
     await checkForConflict(newArr, req.user._id);

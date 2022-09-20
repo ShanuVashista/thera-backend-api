@@ -73,24 +73,12 @@ const io = new socketio.Server(server, {
   },
 });
 
-// io.use(async (socket, next) => {
-//   try {
-//     const token = socket.handshake.query.token;
-//     const payload =  jwt.verify(token, process.env.JWT_SECRET);
-//     socket.userId = payload._id;
-//     next()
-//   } catch (err) {
-//     console.log("error", err);
-//   }
-// });
-
 io.on("connection", (socket) => {
   // console.log("Connected: " + socket.userId);
 
-
   socket.on("disconnect", () => {
-    console.log("chat is disconnected")
-  })
+    console.log("chat is disconnected");
+  });
 
   socket.on("joinRoom", ({ appointmentId }) => {
     socket.join(appointmentId);
@@ -139,7 +127,6 @@ io.on("connection", (socket) => {
         user,
       });
     }
-
   });
 
   socket.on("getChatMessage", async ({ appointmentId, userId }) => {
@@ -148,7 +135,6 @@ io.on("connection", (socket) => {
     });
     io.to(appointmentId).emit("chatMessage", {});
   });
-
 });
 
 server.listen(PORT, () => {

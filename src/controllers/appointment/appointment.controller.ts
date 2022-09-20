@@ -374,6 +374,7 @@ const Count_Appointment = async (req, res) => {
           },
         },
       ];
+
       let appointment = await Appointment.aggregate(cond);
       res.status(StatusCodes.OK).send({
         status: true,
@@ -444,6 +445,7 @@ const Count_Appointment_Thera = async (req, res) => {
         },
       },
     ];
+
     let appointment = await Appointment.aggregate(cond);
     res.status(StatusCodes.OK).send({
       status: true,
@@ -464,7 +466,6 @@ const Patient_Appointment_PUT = async (req, res) => {
   try {
     const body = req.body;
     const id = req.params.id;
-    console.log("body", body);
 
     const result = await Appointment.findByIdAndUpdate(
       {

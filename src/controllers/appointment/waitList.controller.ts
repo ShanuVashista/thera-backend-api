@@ -1,11 +1,11 @@
-import { StatusCodes } from 'http-status-codes';
-import { differenceInMinutes, subMinutes } from 'date-fns';
-import Appointment from '../../db/models/appointment.model';
-import { AppointmentStatuses } from '../../lib/appointmentStatuses';
-import { getSlotIndex, getSlots } from '../../lib/utils/timeSlots';
-import Availability from '../../db/models/availability.model';
-import { generateAvailabilityByTimeFilter } from './availabilityUtil';
-import { MIN_MEETING_DURATION } from '../../../constant';
+import { StatusCodes } from "http-status-codes";
+import { differenceInMinutes, subMinutes } from "date-fns";
+import Appointment from "../../db/models/appointment.model";
+import { AppointmentStatuses } from "../../lib/appointmentStatuses";
+import { getSlotIndex, getSlots } from "../../lib/utils/timeSlots";
+import Availability from "../../db/models/availability.model";
+import { generateAvailabilityByTimeFilter } from "./availabilityUtil";
+import { MIN_MEETING_DURATION } from "../../../constant";
 
 export const waitList = async (req, res) => {
   try {
@@ -14,16 +14,16 @@ export const waitList = async (req, res) => {
       status: AppointmentStatuses.APPROVED,
       dateOfAppointment: {
         $gte: subMinutes(new Date(), MIN_MEETING_DURATION),
-      }
+      },
     })
       .sort({ dateOfAppointment: 1 })
       .limit(1);
 
     if (appointmentData.length === 0) {
       return res.status(StatusCodes.NOT_FOUND).json({
-        type: 'error',
+        type: "error",
         status: false,
-        message: 'No appointment found',
+        message: "No appointment found",
       });
     }
 
@@ -41,9 +41,9 @@ export const waitList = async (req, res) => {
 
     if (availability === null) {
       return res.status(StatusCodes.OK).json({
-        type: 'success',
+        type: "success",
         status: true,
-        message: 'Doctor Not Available At booked Time Schedule',
+        message: "Doctor Not Available At booked Time Schedule",
       });
     }
 
@@ -90,14 +90,14 @@ export const waitList = async (req, res) => {
     const estimatedWaitTime = inProgressAppointment
       ? precidingAppointmentCompletionTime + MIN_MEETING_DURATION
       : Math.max(
-        0,
-        differenceInMinutes(appointment.dateOfAppointment, new Date())
-      );
+          0,
+          differenceInMinutes(appointment.dateOfAppointment, new Date())
+        );
 
     return res.status(StatusCodes.OK).json({
-      type: 'success',
+      type: "success",
       status: true,
-      message: 'Appointment found',
+      message: "Appointment found",
       data: { appointment },
       est: estimatedWaitTime,
       inProgressAppointment: inProgressAppointment
@@ -108,7 +108,7 @@ export const waitList = async (req, res) => {
   } catch (error) {
     console.log({ error });
     return res.status(400).json({
-      type: 'error',
+      type: "error",
       status: false,
       message: error.message,
     });

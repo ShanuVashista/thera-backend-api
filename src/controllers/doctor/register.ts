@@ -86,7 +86,11 @@ const Register_POST = async (req, res) => {
 
     data = JSON.parse(JSON.stringify(data));
 
-    await sendEmail(data.email, "Congratulations Account Created Successfully", "Congratulations your account is created. Please add your professional info and wait for the admin approval.");
+    await sendEmail(
+      data.email,
+      "Congratulations Account Created Successfully",
+      "Congratulations your account is created. Please add your professional info and wait for the admin approval."
+    );
 
     const upload_data = {
       db_response: data,

@@ -11,6 +11,7 @@ import S3 from "../../services/upload";
 import activityLog from "../../services/activityLog";
 import { ACTIVITY_LOG_TYPES } from "../../../constant";
 import sendEmail from "../../services/sendEmail";
+
 const register = async (req, res) => {
   try {
     const registerData = req.body;
@@ -77,6 +78,7 @@ const register = async (req, res) => {
     const tempArray = {};
     tempArray["oldData"] = null;
     tempArray["newData"] = data;
+
     const activityData = await activityLog.create(
       data._id,
       data.role_id,

@@ -103,10 +103,5 @@ patientRouter.put(
   profileUpdate
 );
 
-patientRouter.get(
-  "/get-faq",
-  auth,
-  validateQuery(findMdSchema),
-  getFaq
-);
+patientRouter.get("/get-faq", auth, validateQuery(findMdSchema), getFaq);
 export default patientRouter;

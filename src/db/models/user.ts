@@ -22,7 +22,7 @@ export interface IUser {
   role_id: Roles;
   firstname: string;
   lastname: string;
-  fullname:string,
+  fullname: string;
   location?: string;
   gender: GenderEnum;
   dob: string;
@@ -102,10 +102,10 @@ const userSchema = new mongoose.Schema<IUser>(
 
     firstname: { type: String, required: true, minlength: 2, maxlength: 50 },
 
-    lastname: { type: String, required: true, minlength: 2, maxlength: 50 }, 
-      
-      fullname:{type:String},
-      
+    lastname: { type: String, required: true, minlength: 2, maxlength: 50 },
+
+    fullname: { type: String },
+
     location: { type: String },
 
     gender: { type: String, enum: GenderEnum, required: true },
@@ -152,7 +152,13 @@ const userSchema = new mongoose.Schema<IUser>(
     license: {
       type: Array,
       default: defaultByRole({
-        [Roles.DOCTOR]: [{ authority: "", country: "", license_no: "" }],
+        [Roles.DOCTOR]: [
+          {
+            authority: "",
+            country: "",
+            license_no: "",
+          },
+        ],
       }),
     },
     // weight: { type: Number },
@@ -172,36 +178,42 @@ const userSchema = new mongoose.Schema<IUser>(
         [Roles.DOCTOR]: "enable",
       }),
     },
+
     isApproved: {
       type: mongoose.Schema.Types.Boolean,
       default: defaultByRole({
         [Roles.DOCTOR]: true,
       }),
     },
+
     isProfessionalInfo: {
       type: mongoose.Schema.Types.Boolean,
       default: defaultByRole({
         [Roles.DOCTOR]: false,
       }),
     },
+
     isHealthDataInfo: {
       type: mongoose.Schema.Types.Boolean,
       default: defaultByRole({
         [Roles.PATIENT]: false,
       }),
     },
+
     isBankDetails: {
       type: mongoose.Schema.Types.Boolean,
       default: defaultByRole({
         [Roles.DOCTOR]: false,
       }),
     },
+
     isAvailability: {
       type: mongoose.Schema.Types.Boolean,
       default: defaultByRole({
         [Roles.DOCTOR]: false,
       }),
     },
+
     dialCode: { type: String },
     currencyCode: { type: String },
     countryCode: { type: String },
@@ -243,7 +255,7 @@ userSchema.pre("save", function (this: mongoose.HydratedDocument<IUser>, next) {
 
   user.email = user.email.toLowerCase();
 
-  user.fullname = user.firstname +" "+ user.lastname
+  user.fullname = user.firstname + " " + user.lastname;
 });
 
 userSchema.methods.toJSON = function (this: mongoose.HydratedDocument<IUser>) {
@@ -260,6 +272,7 @@ userSchema.methods.comparePassword = function (
 
   return bcrypt.compareSync(password, user.password);
 };
+
 const User = mongoose.model("user", userSchema);
 export default User;
 

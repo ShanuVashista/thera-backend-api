@@ -1,5 +1,8 @@
-import mongoose from 'mongoose';
-import { OrganizationStatuses, OrganizationTypes } from '../../lib/organizationEnum';
+import mongoose from "mongoose";
+import {
+  OrganizationStatuses,
+  OrganizationTypes,
+} from "../../lib/organizationEnum";
 
 export interface IOrganization {
   name: string;
@@ -34,5 +37,5 @@ const OrganizationSchema = new mongoose.Schema<IOrganization>(
   }
 );
 
-const Organization = mongoose.model('organization', OrganizationSchema);
+const Organization = mongoose.model("organization", OrganizationSchema);
 export default Organization;

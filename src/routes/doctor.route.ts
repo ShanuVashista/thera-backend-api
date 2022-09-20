@@ -22,19 +22,18 @@ import {
   listAvailability,
   updateAvailability,
 } from "../controllers/doctor/availability.controller";
-
 import {
   addAvailability,
   getAvailabilities,
   getAvailabilitiesPatient,
 } from "../controllers/doctor/newAvailability.controller";
-
 import {
   addAvailabilitySchema,
   listAvailabilitySchema,
   updateAvailabilitySchema,
 } from "../validator/availability.validation";
 import { pathParamIdSchema } from "../validator/util";
+
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 const doctorRouter = express.Router();
@@ -105,4 +104,5 @@ doctorRouter.delete(
 doctorRouter.post("/sickNote", auth, userRole(Roles.DOCTOR), sickNote);
 doctorRouter.get("/qualification", auth, userRole(Roles.DOCTOR), qualification);
 doctorRouter.get("/spaciality", auth, userRole(Roles.DOCTOR), spaciality);
+
 export default doctorRouter;

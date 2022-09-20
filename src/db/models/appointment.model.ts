@@ -15,7 +15,7 @@ export interface IAppointment {
   symptoms: Array<string>;
   reason: string;
   Meta: string;
-  description:string;
+  description: string;
 }
 
 const AppointmentSchema = new Schema<IAppointment>(
@@ -36,13 +36,12 @@ const AppointmentSchema = new Schema<IAppointment>(
     },
     isEmergency: { default: false, type: Boolean, required: true },
     symptoms: [{ type: String, required: true, default: null }],
-      description:{type:String},
+    description: { type: String },
     Meta: { type: String },
     reason: { type: String },
   },
   { timestamps: true, toJSON: { virtuals: true } }
 );
-
 
 AppointmentSchema.virtual("patient_details", {
   ref: "healthProfile",
@@ -66,6 +65,5 @@ AppointmentSchema.virtual("doctor_details", {
 });
 
 const Appointment = model("Appointment", AppointmentSchema);
-
 
 export default Appointment;

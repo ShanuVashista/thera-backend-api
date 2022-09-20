@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 import NewAvailability from "../../db/models/newAvailability.model";
-import { addMinutes, eachHourOfInterval, isEqual, subMinutes } from "date-fns";
+import { addMinutes, isEqual, subMinutes } from "date-fns";
 import { filterPaginate } from "../../lib/filterPaginate";
 
 const addAvailability = async (req, res) => {
@@ -39,11 +39,10 @@ const addAvailability = async (req, res) => {
         timeslots,
         doctorId: req.user._id,
       };
-console.log(document)
+      console.log(document);
 
-      await NewAvailability.create({document});
+      await NewAvailability.create({ document });
     });
-
 
     // console.log(timeslots);
 

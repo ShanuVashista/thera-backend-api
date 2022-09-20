@@ -1,17 +1,15 @@
-import { Schema, model} from "mongoose";
+import { Schema, model } from "mongoose";
 
 const spacialitySchema: Schema = new Schema(
-  { 
-    spacialityName :{ type: String }
+  {
+    spacialityName: { type: String },
   },
   {
-    timestamps: true, toJSON: {
-        virtuals: true
-    }
-}
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
+  }
 );
-const spaciality = model(
-  "spaciality",
-  spacialitySchema
-);
+const spaciality = model("spaciality", spacialitySchema);
 export default spaciality;

@@ -90,6 +90,7 @@ const resetPassword = async (
       password: Joi.string().required(),
       confirmPassword: Joi.string().required(),
     });
+
     const { error } = schema.validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
@@ -100,6 +101,7 @@ const resetPassword = async (
       userId: user._id,
       token: req.params.token,
     });
+
     if (!token) return res.status(400).send("Invalid Link or expired");
 
     if (!pass_rgex.test(password)) {

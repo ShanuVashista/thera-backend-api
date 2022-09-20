@@ -17,12 +17,14 @@ const clinicalNoteSchema: Schema = new Schema(
     },
   }
 );
+
 clinicalNoteSchema.virtual("doctor_details", {
   ref: "user",
   localField: "doctorId",
   foreignField: "_id",
   justOne: true,
 });
+
 clinicalNoteSchema.virtual("patient_details", {
   ref: "user",
   localField: "patientId",
