@@ -5,10 +5,9 @@ import methodOverride from "method-override";
 import { config } from "dotenv";
 import getConnection from "./db/connection";
 import MessageModel from "./db/models/message.model";
-import UserModel from "./db/models/user";
 import * as http from "http";
 import * as socketio from "socket.io";
-import jwt from "jsonwebtoken";
+import Router from "./routes/index";
 
 config();
 
@@ -24,38 +23,10 @@ app.use("/public", express.static("./public"));
 //View Engine
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
-//ROUTES
-import userRoutes from "./routes/userRoute";
-import appointment from "./routes/appointment";
-import rating from "./routes/rating";
-import clinicalNote from "./routes/clinicalNote";
-import referral from "./routes/referral";
-import template from "./routes/template";
-import CountryStateCity from "./routes/country_state_city";
-import Organization from "./routes/organization.route";
-import Call from "./routes/call.route";
-import Activity from "./routes/activity.route";
-import Symtoms from "./routes/symtoms.route";
-import Message from "./routes/message.route";
-import Video from "./routes/video.route";
-// import Goals from "./routes/goals.route";
-import NewGoals from "./routes/newGoal.route";
 
-app.use("/user", userRoutes);
-app.use("/appointments", appointment);
-app.use("/rating", rating);
-app.use("/clinicalNote", clinicalNote);
-app.use("/referral", referral);
-app.use("/template", template);
-app.use("/get", CountryStateCity);
-app.use("/organization", Organization);
-app.use("/call", Call);
-app.use("/activity", Activity);
-app.use("/symtoms", Symtoms);
-app.use("/message", Message);
-app.use("/video", Video);
-// app.use("/goal", Goals);
-app.use("/goal", NewGoals);
+//ROUTES
+
+app.use("/", Router);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

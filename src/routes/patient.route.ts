@@ -19,6 +19,7 @@ import {
   listHealthProfile,
   updateHealthProfile,
 } from "../controllers/patient/healthProfile";
+import patientProfileController from "../controllers/patientProfile/patientProfile.controller";
 import { Roles } from "../lib/roles";
 import userRole from "../middlewares/userRole.middleware";
 import Prescription_Renewal_PUT from "../controllers/patient/prescription";
@@ -43,6 +44,43 @@ patientRouter.put(
   validateBody(healthDataSchema),
   healthData
 );
+
+// Patient Profile Routes Start here
+
+patientRouter.post(
+  "/patient-profile",
+  auth,
+  userRole(Roles.PATIENT),
+  upload.any(),
+  patientProfileController.createPatientProfile
+);
+
+patientRouter.delete(
+  "/patient-profile-delete/:id",
+  auth,
+  userRole(Roles.PATIENT),
+  validateParams(pathParamIdSchema),
+  patientProfileController.deletePatientProfile
+);
+
+patientRouter.get(
+  "/patient-profile/:id",
+  auth,
+  userRole(Roles.PATIENT),
+  validateParams(pathParamIdSchema),
+  patientProfileController.getPatientProfile
+);
+
+patientRouter.put(
+  "/patient-profile/:id",
+  auth,
+  userRole(Roles.PATIENT),
+  upload.any(),
+  validateParams(pathParamIdSchema),
+  patientProfileController.updatePatientProfile
+);
+
+// Patient Profile Routes Ends here
 
 patientRouter.post(
   "/healthProfiles",

@@ -1,0 +1,42 @@
+import express from "express";
+import activityRoutes from "./activity.route";
+import appointmentRoutes from "./appointment";
+import callRoutes from "./call.route";
+import clinicalNoteRoutes from "./clinicalNote";
+import country_state_cityRoutes from "./country_state_city";
+import diagnosisRoutes from "./diagnosis.routes";
+import goalRoutes from "./goals.route";
+import medicineRoutes from "./medicine.routes";
+import messageRoutes from "./message.route";
+import messagenewGoalRoutes from "./newGoal.route";
+import organizationRoutes from "./organization.route";
+import prescriptionRoutes from "./prescription.routes";
+import ratingRoutes from "./rating";
+import referralRoutes from "./referral";
+import symtomsRoutes from "./symtoms.route";
+import templateRoutes from "./template";
+import userRoutes from "./userRoute";
+import videoRoutes from "./video.route";
+
+const Router = express.Router();
+
+Router.use("/activity", activityRoutes);
+Router.use("/appointments", appointmentRoutes);
+Router.use("/call", callRoutes);
+Router.use("/clinicalNote", clinicalNoteRoutes);
+Router.use("/get", country_state_cityRoutes);
+Router.use("/diagnosis", diagnosisRoutes);
+Router.use("/old-goal", goalRoutes);
+Router.use("/medicine", medicineRoutes);
+Router.use("/message", messageRoutes);
+Router.use("/goal", messagenewGoalRoutes);
+Router.use("/organization", organizationRoutes);
+Router.use("/prescription", prescriptionRoutes);
+Router.use("/rating", ratingRoutes);
+Router.use("/referral", referralRoutes);
+Router.use("/symtoms", symtomsRoutes);
+Router.use("/template", templateRoutes);
+Router.use("/user", userRoutes);
+Router.use("/video", videoRoutes);
+
+export default Router;
